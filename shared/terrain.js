@@ -7,6 +7,10 @@
  * per-facet grain so the ground reads as rock rather than wallpaper. The
  * PRNG is seeded, so every visitor sees the same country every visit.
  *
+ * The inner pages carry the same country as a slim divider strip. It is
+ * built at that height rather than squashed into it, so a page's band is the
+ * full mesh, shallower: every ridge, facet and hairline the tall one has.
+ *
  * Scrolling moves the ranges at different rates - the far ridge barely, the
  * near ridge most - so the terrain has parallax depth rather than sitting
  * on the page like a sticker. Under prefers-reduced-motion the mesh still
@@ -42,12 +46,14 @@
       Math.round(A[2] + (B[2] - A[2]) * t) + ")";
   }
 
-  const W = 1440, H = 360, OVER = 90; /* overdraw so parallax never shows a seam */
+  const W = 1440, OVER = 90; /* overdraw so parallax never shows a seam */
+  const FULL = 360;          /* the band the country was drawn for */
+  const SLIM = 100;          /* the divider strip on the inner pages */
   const NS = "http://www.w3.org/2000/svg";
 
   /* one range: ridgeline -> foothill row -> triangulated apron */
   function buildRange(rnd, g, opts) {
-    const { top, amp, step, base, lit, dark } = opts;
+    const { top, amp, step, base, lit, dark, H, s } = opts;
     const pts = [];
     let x = -OVER;
     let y = top + rnd() * amp;
@@ -63,7 +69,7 @@
     /* foothill row between ridge and valley floor */
     const foot = pts.map(([px, py]) => [
       px + (rnd() - 0.5) * step * 0.5,
-      py + 46 + rnd() * 46,
+      py + (46 + rnd() * 46) * s,
     ]);
 
     const tris = [];
@@ -81,10 +87,11 @@
       poly.setAttribute("stroke", "rgba(10, 10, 10, 0.75)");
       poly.setAttribute("stroke-width", "1");
       poly.setAttribute("vector-effect", "non-scaling-stroke");
-      /* slope shading: rising-westward faces take the light */
-      const s = Math.max(-1, Math.min(1, t.slope / 55));
+      /* slope shading: rising-westward faces take the light. The reference
+         slope scales with the band, or a slim strip would come out flat grey */
+      const sl = Math.max(-1, Math.min(1, t.slope / (55 * s)));
       const grain = (rnd() - 0.5) * 0.16;
-      const k = Math.max(0, Math.min(1, 0.5 - s * 0.5 + grain));
+      const k = Math.max(0, Math.min(1, 0.5 - sl * 0.5 + grain));
       poly.setAttribute("fill", k > 0.5 ? mix(base, lit, (k - 0.5) * 2) : mix(base, dark, (0.5 - k) * 2));
       g.appendChild(poly);
       t.el = poly;
@@ -92,10 +99,11 @@
 
     /* solid apron from the foothills to well past the bottom edge */
     const apron = document.createElementNS(NS, "polygon");
+    const floorY = H + OVER * s;
     apron.setAttribute(
       "points",
       foot.map((q) => q[0].toFixed(1) + "," + q[1].toFixed(1)).join(" ") +
-        " " + (W + OVER) + "," + (H + OVER) + " " + -OVER + "," + (H + OVER)
+        " " + (W + OVER) + "," + floorY.toFixed(1) + " " + -OVER + "," + floorY.toFixed(1)
     );
     /* the apron resolves to the page itself, so the band's lower edge
        dissolves instead of seaming */
@@ -106,6 +114,12 @@
   }
 
   function build(band) {
+    /* The inner pages carry the same country as a divider strip. It is built
+       at its own height rather than squashed into one, or the ranges would
+       flatten to a grey smear and the hairlines would close over them. */
+    const H = band.classList.contains("slim") ? SLIM : FULL;
+    const s = H / FULL;
+
     const old = band.querySelector("svg");
     const svg = document.createElementNS(NS, "svg");
     svg.setAttribute("viewBox", "0 0 " + W + " " + H);
@@ -118,20 +132,22 @@
     const rnd = mulberry32(1995);
     const layers = [];
 
+    /* the heights scale with the band; the steps do not, so a slim strip
+       keeps every ridge and facet the full one has, only shallower */
     const far = document.createElementNS(NS, "g");
-    buildRange(rnd, far, { top: 118, amp: 84, step: 96, base: "#1a1b20", lit: "#23252d", dark: "#131419" });
+    buildRange(rnd, far, { H, s, top: 118 * s, amp: 84 * s, step: 96, base: "#1a1b20", lit: "#23252d", dark: "#131419" });
     svg.appendChild(far);
-    layers.push({ g: far, fy: 8, fx: 0 });
+    layers.push({ g: far, fy: 8 * s, fx: 0 });
 
     const mid = document.createElementNS(NS, "g");
-    buildRange(rnd, mid, { top: 186, amp: 76, step: 120, base: "#121317", lit: "#1a1c22", dark: "#0c0d11" });
+    buildRange(rnd, mid, { H, s, top: 186 * s, amp: 76 * s, step: 120, base: "#121317", lit: "#1a1c22", dark: "#0c0d11" });
     svg.appendChild(mid);
-    layers.push({ g: mid, fy: 22, fx: 0 });
+    layers.push({ g: mid, fy: 22 * s, fx: 0 });
 
     const near = document.createElementNS(NS, "g");
-    buildRange(rnd, near, { top: 252, amp: 70, step: 150, base: "#0c0d10", lit: "#14161c", dark: "#060708", floor: "#0a0a0a" });
+    buildRange(rnd, near, { H, s, top: 252 * s, amp: 70 * s, step: 150, base: "#0c0d10", lit: "#14161c", dark: "#060708", floor: "#0a0a0a" });
     svg.appendChild(near);
-    layers.push({ g: near, fy: 40, fx: 0 });
+    layers.push({ g: near, fy: 40 * s, fx: 0 });
 
     if (old) old.replaceWith(svg);
     else band.insertBefore(svg, band.firstChild);

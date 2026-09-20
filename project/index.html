@@ -36,13 +36,13 @@
     </nav>
 
 
-    <div class="facet-band slim" aria-hidden="true">
+    <div class="facet-band slim" data-terrain aria-hidden="true">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
             <rect width="1440" height="100" fill="#0a0a0a" />
             <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
             <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
             <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
-            <polygon class="facet-hot" points="940,74 1180,44 1240,100 1040,100" fill="#ff2d16" />
+            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
             <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
         </svg>
     </div>
@@ -51,12 +51,12 @@
         <section class="section">
             <div class="wrap">
                 <div class="section-head">
-                    <span class="idx">01 &mdash;</span>
+                    <span class="idx">01</span>
                     <h1 class="display overprint" data-text="Drone Strike Map">Drone Strike Map</h1>
                     <a class="mono" href="/projects/">&larr; all projects</a>
                 </div>
 
-                <p class="setup">Every reported drone and missile strike in the Russia&ndash;Ukraine war, day by
+                <p class="setup">Every reported drone and missile strike in the Russia-Ukraine war, day by
                     day. Every figure is a claim, and each one names the outlet that made it. It reads a few dozen
                     sources every morning and has run on its own server since launch.</p>
 
@@ -67,7 +67,7 @@
                             problem</h2>
                         <p>Strike reporting is scattered across dozens of outlets, in different languages, with
                             different counting rules, and none of it stays findable a week later. There was no
-                            single place where a day's claims sat next to their sources &mdash; only aggregates
+                            single place where a day's claims sat next to their sources: only aggregates
                             with the sourcing stripped out.</p>
 
                         <h2 class="display"
@@ -76,11 +76,11 @@
                             claim, and a Leaflet map that walks the days. It runs under systemd on its own server
                             and serves a public JSON API as well as the site. The core decision: never merge
                             claims. Two outlets giving two figures for the same strike stay two rows, each with
-                            its byline &mdash; the map reports reporting, it does not adjudicate it.</p>
+                            its byline. The map reports reporting, it does not adjudicate it.</p>
 
                         <h2 class="display"
                             style="font-size: clamp(1.2rem, 2.2vw, 1.6rem); margin: 22px 0 8px;">What went wrong</h2>
-                        <p class="placeholder">[ Yours to write &mdash; the scraper that silently broke, the outlet
+                        <p class="placeholder">[ Yours to write: the scraper that silently broke, the outlet
                             that changed its markup, the dedup rule that was wrong for a month. This is the section
                             an interviewer actually reads. ]</p>
 
@@ -93,7 +93,7 @@
                     </div>
 
                     <dl class="fact-list">
-                        <div><dt class="k">Role</dt><dd>Solo &mdash; everything</dd></div>
+                        <div><dt class="k">Role</dt><dd>Solo, everything</dd></div>
                         <div><dt class="k">Status</dt><dd><span class="status live">live</span></dd></div>
                         <div><dt class="k">Stack</dt><dd>Python, SQLite, systemd, Leaflet</dd></div>
                         <div><dt class="k">Map</dt><dd><a href="https://dronestrikemap.com/" target="_blank"
@@ -114,11 +114,11 @@
                 <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
                 <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
             </ul>
-            <span class="colophon">Set in Archivo, Inter Tight and JetBrains Mono. Black stock, one red &mdash; and one visitor in blue. Static HTML, no build step.</span>
         </div>
     </footer>
     <script src="/shared/extras.js?v=2"></script>
     <script src="/shared/motion.js"></script>
+    <script src="/shared/terrain.js"></script>
 </body>
 
 </html>

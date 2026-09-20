@@ -44,13 +44,13 @@
         </div>
     </nav>
 
-    <div class="facet-band slim" aria-hidden="true">
+    <div class="facet-band slim" data-terrain aria-hidden="true">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
             <rect width="1440" height="100" fill="#0a0a0a" />
             <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
             <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
             <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
-            <polygon class="facet-hot" points="940,74 1180,44 1240,100 1040,100" fill="#ff2d16" />
+            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
             <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
         </svg>
     </div>
@@ -59,13 +59,13 @@
         <section class="section" id="work">
             <div class="wrap">
                 <div class="section-head">
-                    <span class="idx">Index &mdash;</span>
+                    <span class="idx">Index</span>
                     <h1 class="display overprint" data-text="Projects">Projects</h1>
                     <span class="aside mono" id="project-count"></span>
                 </div>
                 <p class="setup">Every project, in the order they show off best. Each entry carries what it is,
                     what it is written in, and every door into it: the write-up, the source, the thing itself
-                    where it runs in a browser. Durak plays right here &mdash; <a href="#durak">deal a hand</a>.</p>
+                    where it runs in a browser. Durak plays right here: <a href="#durak">deal a hand</a>.</p>
                 <div class="filter-row" role="group" aria-label="Filter projects">
                     <button class="filter" data-filter="all" aria-pressed="true">All <span class="count"></span></button>
                     <button class="filter" data-filter="software" aria-pressed="false">Software <span
@@ -88,7 +88,6 @@
                 <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
                 <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
             </ul>
-            <span class="colophon">Set in Archivo, Inter Tight and JetBrains Mono. Black stock, one red &mdash; and one visitor in blue. Static HTML, no build step.</span>
         </div>
     </footer>
 
@@ -115,6 +114,7 @@
     <script src="/shared/egg.js?v=2"></script>
     <script src="/shared/extras.js?v=2"></script>
     <script src="/shared/motion.js"></script>
+    <script src="/shared/terrain.js"></script>
 </body>
 
 </html>

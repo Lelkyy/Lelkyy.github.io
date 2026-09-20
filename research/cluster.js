@@ -1,9 +1,5 @@
 /* The cluster, still evaporating.
  *
- * Now also a laboratory: CLICK anywhere in the band and a heavy
- * intruder drops in where you clicked, and the cluster has to live with
- * the consequences. This is, give or take, the paper's actual question.
- *
  * A little N-body globular cluster, the subject of the physics paper, running
  * live in a canvas band. Softened pairwise gravity, leapfrog integration,
  * every star in bone - the primordial binaries of the paper's question are
@@ -42,7 +38,7 @@
   let W = 0, H = 0, dpr = 1;
 
   /* the footer reads these; anyone else is welcome to */
-  window.clusterStats = { escaped: 0, intruders: 0 };
+  window.clusterStats = { escaped: 0 };
 
   function size() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -132,7 +128,7 @@
     for (const s of stars) {
       if (s.gone) continue;
       ctx.fillStyle = "rgba(242, 240, 236, 0.75)";
-      const r = s.m > 1 ? 3 : s.red ? 1.8 : 1.2;
+      const r = s.red ? 1.8 : 1.2;
       ctx.fillRect(s.x - r, s.y - r, r * 2, r * 2);
     }
     if (readout) {
@@ -178,22 +174,6 @@
   } else if (!still) {
     start();
   }
-
-  /* the perturbation experiment: a click drops a heavy intruder */
-  root.addEventListener("click", (e) => {
-    const rc = root.getBoundingClientRect();
-    const live = stars.filter((st) => st.m > 1 && !st.gone).length;
-    if (live >= 3) return; /* three rogue masses is plenty of science */
-    stars.push({
-      x: e.clientX - rc.left,
-      y: e.clientY - rc.top,
-      vx: (Math.random() - 0.5) * 6,
-      vy: (Math.random() - 0.5) * 4,
-      m: 7, red: true, gone: false,
-    });
-    window.clusterStats.intruders++;
-    start();
-  });
 
   let resizeAt = 0;
   window.addEventListener("resize", () => {

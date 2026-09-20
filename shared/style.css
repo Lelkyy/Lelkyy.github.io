@@ -1492,8 +1492,6 @@ footer .col-label {
   100% { opacity: 0; }
 }
 
-/* the cluster takes clicks */
-.cluster-band.is-live { cursor: crosshair; }
 
 /* registration debris, on the misprinted page */
 .debris {

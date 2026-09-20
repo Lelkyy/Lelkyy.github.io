@@ -42,13 +42,13 @@
         </div>
     </nav>
 
-    <div class="facet-band slim" aria-hidden="true">
+    <div class="facet-band slim" data-terrain aria-hidden="true">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
             <rect width="1440" height="100" fill="#0a0a0a" />
             <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
             <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
             <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
-            <polygon class="facet-hot" points="940,74 1180,44 1240,100 1040,100" fill="#ff2d16" />
+            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
             <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
         </svg>
     </div>
@@ -57,12 +57,12 @@
         <section class="section" id="live">
             <div class="wrap">
                 <div class="section-head">
-                    <span class="idx">Live &mdash;</span>
+                    <span class="idx">Live</span>
                     <h1 class="display overprint" data-text="Live fire">Live fire</h1>
                     <a class="mono" href="https://dronestrikemap.com/" target="_blank" rel="noopener">open in its
                         own tab</a>
                 </div>
-                <p class="setup">The Drone Strike Map, served from its own box and running below &mdash; not a
+                <p class="setup">The Drone Strike Map, served from its own box and running below, not a
                     picture of it. Every figure is a claim, and each one names the outlet that made it; the arrows
                     walk the days. Its server admits this page by name, so the map you are reading is the same one
                     the world gets. The build is written up on <a href="/project/">its own page</a>.</p>
@@ -83,11 +83,11 @@
         <section class="section" id="activity">
             <div class="wrap">
                 <div class="section-head">
-                    <span class="idx">Commits &mdash;</span>
+                    <span class="idx">Commits</span>
                     <h2 class="display">Recent commits</h2>
                     <a class="mono" href="https://github.com/Leonid-Elkin?tab=repositories" target="_blank" rel="noopener">all repositories</a>
                 </div>
-                <p class="setup">A year of work, one square a day, then the newest of it in longhand &mdash; both
+                <p class="setup">A year of work, one square a day, then the newest of it in longhand, both
                     pulled live from the GitHub API in your browser, across the ten repositories pushed to most
                     recently. Each line is what was edited, and when.</p>
                 <div id="commit-graph" class="commit-graph"></div>
@@ -104,7 +104,6 @@
                 <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
                 <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
             </ul>
-            <span class="colophon">Set in Archivo, Inter Tight and JetBrains Mono. Black stock, one red &mdash; and one visitor in blue. Static HTML, no build step.</span>
             <span class="colophon mono" id="last-change"></span>
         </div>
     </footer>
@@ -113,6 +112,7 @@
     <script src="/live/commits.js?v=5"></script>
     <script src="/shared/extras.js?v=2"></script>
     <script src="/shared/motion.js"></script>
+    <script src="/shared/terrain.js"></script>
 </body>
 
 </html>

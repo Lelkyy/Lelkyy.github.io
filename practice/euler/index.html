@@ -39,13 +39,13 @@
         </div>
     </nav>
 
-    <div class="facet-band slim" aria-hidden="true">
+    <div class="facet-band slim" data-terrain aria-hidden="true">
         <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
             <rect width="1440" height="100" fill="#0a0a0a" />
             <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
             <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
             <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
-            <polygon class="facet-hot" points="940,74 1180,44 1240,100 1040,100" fill="#ff2d16" />
+            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
             <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
         </svg>
     </div>
@@ -54,7 +54,7 @@
         <section class="section">
             <div class="wrap">
                 <div class="section-head">
-                    <span class="idx">Practice &mdash;</span>
+                    <span class="idx">Practice</span>
                     <h1 class="display overprint" data-text="Project Euler">Project Euler</h1>
                     <div class="track-switch mono">
                         <a href="/practice/leetcode/">LeetCode</a>
@@ -68,7 +68,7 @@
                      the folder is the whole of "publishing" it. Answers are never
                      printed: Project Euler asks that solutions are not published,
                      and a page that hands you the number is not one worth having. -->
-                <p class="setup">Pick a problem number and the solution appears beside it &mdash; the file as it was
+                <p class="setup">Pick a problem number and the solution appears beside it: the file as it was
                     written, not tidied for display. <span id="euler-count"></span> solved. The number links to the
                     statement on projecteuler.net. Answers are not printed on the page, but every solution can be
                     run in your browser (Python, through Pyodide) if you want to see one.</p>
@@ -110,9 +110,6 @@
                 <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
                 <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
             </ul>
-            <span class="colophon">Set in Archivo, Inter Tight and JetBrains Mono. Black stock, one red &mdash; and one
-                visitor in blue. Static HTML, no build step; the solutions are read straight out of the folder they
-                live in.</span>
         </div>
     </footer>
 
@@ -120,6 +117,7 @@
     <script src="/shared/solutions.js"></script>
     <script src="/shared/extras.js?v=2"></script>
     <script src="/shared/motion.js"></script>
+    <script src="/shared/terrain.js"></script>
 </body>
 
 </html>

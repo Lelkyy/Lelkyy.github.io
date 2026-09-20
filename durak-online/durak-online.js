@@ -442,7 +442,7 @@
 
     /* the running score, once there is one */
     if (S.score && (S.score[0] || S.score[1])) {
-      $("peer-text").textContent = "you " + S.score[me] + " — " + S.score[foe] + " them";
+      $("peer-text").textContent = "you " + S.score[me] + ", them " + S.score[foe];
     }
 
     /* whose move, in words - this page is allowed them */
