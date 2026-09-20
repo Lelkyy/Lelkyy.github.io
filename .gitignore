@@ -10,3 +10,8 @@ __pycache__/
 
 # batch logs from fetch_tobis / build_shelves
 FugueSplit_source/_*.log
+
+# the writing surface from tools/text_sync.py. Regenerated in a second, and
+# committing it would both serve a copy of the whole site as plain text at
+# /site-text.txt and leave a second, staler place the copy appears to live.
+site-text.txt

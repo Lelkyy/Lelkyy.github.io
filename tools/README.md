@@ -1,7 +1,7 @@
 # tools/
 
-Two scripts. Neither is part of the site — GitHub Pages serves files and runs
-nothing. Standard library Python, nothing to install.
+Three scripts. None of them is part of the site — GitHub Pages serves files
+and runs nothing. Standard library Python, nothing to install.
 
 ## Adding a solution
 
@@ -42,6 +42,52 @@ Two behaviours worth knowing:
   problem reads a data file then the folder is the working copy.
 - **Encodings vary.** These were written on Windows over several years, so each
   file is tried as UTF-8, then cp1252, then latin-1 before giving up.
+
+## text_sync.py
+
+Every word on the fourteen pages, in one file, so changing a sentence does not
+mean opening a page and hunting for it.
+
+```sh
+python tools/text_sync.py           # pages  -> site-text.txt
+# edit site-text.txt in anything
+python tools/text_sync.py --apply   # pages <-  site-text.txt
+```
+
+`site-text.txt` is not served and nothing loads it — it is a writing surface,
+not a content file, and the HTML stays the only source of truth. It looks like
+this:
+
+```
+# <h1 class="display overprint">
+[index.html#14]
+Leonid Elkin
+```
+
+Edit the text under a key; leave the key alone. Apply rewrites only those runs
+of text, so the diff afterwards is the sentences you changed and nothing else —
+markup, attributes, indentation and CRLF endings all survive untouched.
+
+Four behaviours worth knowing:
+
+- **A stale file is refused, not guessed at.** Each page carries a
+  `fingerprint` of its markup. Edit a page by hand after exporting and
+  `--apply` stops rather than writing sentences into the wrong elements.
+  Re-export and redo the edit.
+- **Inline tags split a sentence.** `Read the <a href="...">case study</a>.` is
+  three runs of text, so three blocks. Edit each in place.
+- **`data-text` is carried along.** The display headings print themselves twice
+  — once as text, once as `attr(data-text)` under `.overprint` in style.css.
+  Change the heading and the attribute follows, or the ghost layer would keep
+  saying the old word.
+- **Words, not markup.** Adding a paragraph, changing a class or deleting an
+  element is still a job for the HTML. Emptying a block deletes its words, and
+  that is as structural as it gets.
+
+`fuguesplit/index.html` is left out: a generated score viewer with thirteen
+thousand runs of text in it, none of them site copy. The project captions and
+case write-ups are not in here either — they already live in one file each,
+`shared/script.js` and `case/cases.js`.
 
 ## refresh_titles.py
 
