@@ -10,8 +10,8 @@
 (function () {
   const P = {
     "Drone Strike Map": "/previews/drone-strike-map.jpg",
-    "SHELLFALL": "/previews/shellfall.jpg",
-    "FugueSplit": "/previews/fuguesplit.jpg",
+    "Penumbra": "/previews/shellfall.jpg",
+    "Bach Works Guitar Arranger": "/previews/fuguesplit.jpg",
     "Sheet2Tab": "/previews/sheet2tab.jpg",
     "Chess Vision Bot": "/previews/chess-vision-bot.jpg",
     "YT Grab": "/previews/yt-grab.jpg",

@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FugueSplit library · Leonid Elkin</title>
-    <meta name="description" content="Bach arranged for a band of guitars and a bass, one voice per player: 3,449 Guitar Pro files, with part PDFs for the organ works." />
+    <title>Bach Works Guitar Arranger · Leonid Elkin</title>
+    <meta name="description" content="Bach Works Guitar Arranger: 3,445 Bach pieces arranged for a band of guitars and bass, one voice per instrument, free to download as Guitar Pro files and part PDFs." />
     <meta name="theme-color" content="#22223b" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="FugueSplit library · Leonid Elkin" />
-    <meta property="og:description" content="Bach arranged for a band of guitars and a bass, one voice per player: 3,449 Guitar Pro files, with part PDFs for the organ works." />
+    <meta property="og:title" content="Bach Works Guitar Arranger · Leonid Elkin" />
+    <meta property="og:description" content="Bach Works Guitar Arranger: 3,445 Bach pieces arranged for a band of guitars and bass, one voice per instrument, free to download as Guitar Pro files and part PDFs." />
     <meta property="og:url" content="https://lelkyy.github.io/fuguesplit/" />
     <meta property="og:image" content="https://lelkyy.github.io/previews/share.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://lelkyy.github.io/fuguesplit/" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322223b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c9ada7'/%3E%3C/svg%3E" />
+    <link rel="icon" type="image/png" href="/previews/favicon.png" />
+    <link rel="apple-touch-icon" href="/previews/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
@@ -45,25 +46,56 @@
         <section class="photo page-hero">
             <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/msu-1200.jpg" /><img src="/previews/panoramas/msu.jpg" alt="" decoding="async" /></picture>
             <div class="wrap">
-                <a class="back" href="/case/?p=fuguesplit">&larr; How FugueSplit works</a>
-                <p class="eyebrow">FugueSplit library</p>
-                <h1>Bach for a guitar band</h1>
-                <p class="lede"><span data-stat="pieces">3,449</span> arrangements in <span data-stat="folders">29</span> folders, one voice per instrument. Pick a folder or search them all.</p>
-                <ul class="legend" aria-label="What the buttons download">
-                    <li><b>I</b><b>BASS</b>one player's part, PDF</li>
-                    <li><b>GP5</b>every part, Guitar Pro</li>
-                    <li><b>8VE</b>high parts an octave lower</li>
-                </ul>
+                <a class="back" href="/projects/">&larr; All projects</a>
+                <p class="eyebrow">Project &middot; live</p>
+                <h1>Bach Works Guitar Arranger</h1>
+                <p class="lede">A program that splits Bach's music into one-note-at-a-time parts for guitars and bass, one voice per instrument. The library below holds <span data-stat="pieces">3,445</span> arrangements in <span data-stat="folders">28</span> folders, all free to download.</p>
             </div>
         </section>
 
         <section class="page-body">
             <div class="wrap">
+                <div class="case-layout arranger-about">
+                    <div id="case-copy">
+                        <h2>How it works</h2>
+                        <p>A fugue is already written as independent lines, so the program never has to split chords. It
+                            walks the piece in time order and, at every new note, solves a small assignment problem to
+                            decide which part takes it. The cost favours parts that move by step, keeps Guitar I on top,
+                            avoids cutting off a held note and follows the source's own track layout where there is one.
+                            The pedal line goes straight to the bass.</p>
+                        <p>The band grows with the music. If a note arrives while every player is busy, a guitar is added
+                            and the piece is dealt out again. BWV 582 opens in three voices and later stacks five over the
+                            pedal.</p>
+                        <h2>Keeping it playable</h2>
+                        <p>Each part is moved into the instrument's range by whole octaves, phrase by phrase, so the
+                            melodic shape never changes. Across the 30 organ preludes and fugues, all 17,328 bass notes sit
+                            at or below the 12th fret. Prelude and fugue are separated automatically, by the change of
+                            metre between them or by the pedal falling silent as the subject enters.</p>
+                    </div>
+                    <dl class="fact-list">
+                        <div><dt>Role</dt><dd>Solo</dd></div>
+                        <div><dt>Stack</dt><dd>Python, PyGuitarPro, mido, MuseScore</dd></div>
+                        <div><dt>Library</dt><dd><span data-stat="pieces">3,445</span> arrangements</dd></div>
+                        <div><dt>Source</dt><dd><a href="https://github.com/Lelkyy/Lelkyy.github.io/tree/main/fuguesplit/src" target="_blank" rel="noopener">fuguesplit/src</a></dd></div>
+                    </dl>
+                </div>
+
+                <div class="sec-head lib-head" id="library">
+                    <div>
+                        <p class="eyebrow">Library</p>
+                        <h2>Download the arrangements</h2>
+                    </div>
+                    <p>Every piece is a Guitar Pro 5 file with all the parts. The 72 organ works also have a PDF for each
+                        player, notation over tablature, and many pieces have a second file with the highest parts an
+                        octave lower. Download single files, a whole folder or the full library as a zip.</p>
+                </div>
 <!-- shelves:begin (build_index.py) -->
 <div class="lib" id="lib">
 <div class="lib-bar">
 <label class="lib-search"><span class="sr-only">Search the library</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg><input id="lib-q" type="search" placeholder="Search by BWV number or title" autocomplete="off" spellcheck="false" /></label>
-<p class="lib-count" id="lib-count" aria-live="polite">3,449 pieces in 29 folders</p>
+<p class="lib-count" id="lib-count" aria-live="polite">3,445 pieces in 28 folders</p>
+<button class="btn primary small dl-all" type="button" id="lib-all">Download everything</button>
+<p class="lib-progress" id="lib-progress" aria-live="polite" hidden></p>
 </div>
 <div class="lib-body">
 <div class="lib-folders">
@@ -102,13 +134,11 @@
 <a class="folder" href="#deest" data-shelf="deest"><span>Works without a BWV number</span><span class="n">282</span></a>
 <a class="folder" href="#additions" data-shelf="additions"><span>Additions</span><span class="n">68</span></a>
 <a class="folder" href="#manuscripts" data-shelf="manuscripts"><span>Notebooks, prints and manuscripts</span><span class="n">125</span></a>
-<p class="folder-group">Vivaldi</p>
-<a class="folder" href="#vivaldi-arias" data-shelf="vivaldi-arias"><span>Vivaldi arias</span><span class="n">4</span></a>
 </nav>
 </div>
 <div class="lib-shelves" id="lib-shelves" tabindex="-1">
 <section class="shelf" id="preludes-and-fugues" aria-labelledby="h-preludes-and-fugues">
-<header class="shelf-head"><h2 id="h-preludes-and-fugues">Organ preludes and fugues</h2><p>BWV 531–552 · 56 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-preludes-and-fugues">Organ preludes and fugues</h2><p>BWV 531–552 · 56 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="preludes-and-fugues">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 531</span><span class="nm"></span><span class="mt">4 guitars + bass · 114 bars · 69 bpm</span><span class="dl"><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0531-bass.pdf" title="Bass part, PDF">BASS</a><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0531-guitar-i.pdf" title="Guitar I part, PDF">I</a><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0531-guitar-ii.pdf" title="Guitar II part, PDF">II</a><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0531-guitar-iii.pdf" title="Guitar III part, PDF">III</a><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0531-guitar-iv.pdf" title="Guitar IV part, PDF">IV</a><a class="gp" href="/fuguesplit/bach/preludes-and-fugues/gp/BWV_0531.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/preludes-and-fugues/8ve/BWV_0531.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
 <li><span class="id">BWV 532-1</span><span class="nm"></span><span class="mt">4 guitars + bass · 31 bars · 80 bpm</span><span class="dl"><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0532-1-bass.pdf" title="Bass part, PDF">BASS</a><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0532-1-guitar-i.pdf" title="Guitar I part, PDF">I</a><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0532-1-guitar-ii.pdf" title="Guitar II part, PDF">II</a><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0532-1-guitar-iii.pdf" title="Guitar III part, PDF">III</a><a href="/fuguesplit/bach/preludes-and-fugues/pdf/BWV_0532-1-guitar-iv.pdf" title="Guitar IV part, PDF">IV</a><a class="gp" href="/fuguesplit/bach/preludes-and-fugues/gp/BWV_0532-1.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/preludes-and-fugues/8ve/BWV_0532-1.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
@@ -169,7 +199,7 @@
 </ul>
 </section>
 <section class="shelf" id="art-of-fugue" aria-labelledby="h-art-of-fugue">
-<header class="shelf-head"><h2 id="h-art-of-fugue">The Art of Fugue</h2><p>BWV 1080 · 17 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-art-of-fugue">The Art of Fugue</h2><p>BWV 1080 · 17 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="art-of-fugue">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">Contrapunctus I</span><span class="nm"></span><span class="mt">3 guitars + bass · 78 bars · 120 bpm</span><span class="dl"><a href="/fuguesplit/bach/art-of-fugue/pdf/contrapunctusI-bass.pdf" title="Bass part, PDF">BASS</a><a href="/fuguesplit/bach/art-of-fugue/pdf/contrapunctusI-guitar-i.pdf" title="Guitar I part, PDF">I</a><a href="/fuguesplit/bach/art-of-fugue/pdf/contrapunctusI-guitar-ii.pdf" title="Guitar II part, PDF">II</a><a href="/fuguesplit/bach/art-of-fugue/pdf/contrapunctusI-guitar-iii.pdf" title="Guitar III part, PDF">III</a><a class="gp" href="/fuguesplit/bach/art-of-fugue/gp/contrapunctusI.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/art-of-fugue/8ve/contrapunctusI.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
 <li><span class="id">Contrapunctus II</span><span class="nm"></span><span class="mt">3 guitars + bass · 84 bars · 115 bpm</span><span class="dl"><a href="/fuguesplit/bach/art-of-fugue/pdf/contrapunctusII-bass.pdf" title="Bass part, PDF">BASS</a><a href="/fuguesplit/bach/art-of-fugue/pdf/contrapunctusII-guitar-i.pdf" title="Guitar I part, PDF">I</a><a href="/fuguesplit/bach/art-of-fugue/pdf/contrapunctusII-guitar-ii.pdf" title="Guitar II part, PDF">II</a><a href="/fuguesplit/bach/art-of-fugue/pdf/contrapunctusII-guitar-iii.pdf" title="Guitar III part, PDF">III</a><a class="gp" href="/fuguesplit/bach/art-of-fugue/gp/contrapunctusII.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/art-of-fugue/8ve/contrapunctusII.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
@@ -191,7 +221,7 @@
 </ul>
 </section>
 <section class="shelf" id="fugues" aria-labelledby="h-fugues">
-<header class="shelf-head"><h2 id="h-fugues">Fugues and other free works</h2><p>BWV 531–582 · 38 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-fugues">Fugues and other free works</h2><p>BWV 531–582 · 38 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="fugues">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 131a</span><span class="nm"></span><span class="mt">4 guitars + bass · 45 bars · 90 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/fugues/gp/BWV_0131a.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/fugues/8ve/BWV_0131a.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
 <li><span class="id">BWV 553-1</span><span class="nm"></span><span class="mt">4 guitars + bass · 57 bars · 84 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/fugues/gp/BWV_0553-1.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/fugues/8ve/BWV_0553-1.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
@@ -234,7 +264,7 @@
 </ul>
 </section>
 <section class="shelf" id="trio-sonatas" aria-labelledby="h-trio-sonatas">
-<header class="shelf-head"><h2 id="h-trio-sonatas">Trio sonatas</h2><p>BWV 525–530 · 22 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-trio-sonatas">Trio sonatas</h2><p>BWV 525–530 · 22 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="trio-sonatas">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 525</span><span class="nm">BWV 525, nos. 1–1</span><span class="mt">2 guitars + bass · 58 bars · 75 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/trio-sonatas/gp/BWV_0525_1_1.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/trio-sonatas/8ve/BWV_0525_1_1.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
 <li><span class="id">BWV 525</span><span class="nm">BWV 525, nos. 2–1</span><span class="mt">2 guitars + bass · 58 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/trio-sonatas/gp/BWV_0525_2_1.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/trio-sonatas/8ve/BWV_0525_2_1.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
@@ -261,7 +291,7 @@
 </ul>
 </section>
 <section class="shelf" id="chorales" aria-labelledby="h-chorales">
-<header class="shelf-head"><h2 id="h-chorales">Chorale settings</h2><p>BWV 599–771 · 224 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-chorales">Chorale settings</h2><p>BWV 599–771 · 224 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="chorales">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 599</span><span class="nm"></span><span class="mt">4 guitars + bass · 11 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/chorales/gp/BWV_0599.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/chorales/8ve/BWV_0599.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
 <li><span class="id">BWV 600</span><span class="nm"></span><span class="mt">3 guitars + bass · 26 bars · 140 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/chorales/gp/BWV_0600.gp5">GP5</a><a class="gp" href="/fuguesplit/bach/chorales/8ve/BWV_0600.gp5" title="Over-high parts dropped an octave">8VE</a></span></li>
@@ -490,7 +520,7 @@
 </ul>
 </section>
 <section class="shelf" id="organ-other" aria-labelledby="h-organ-other">
-<header class="shelf-head"><h2 id="h-organ-other">More organ works</h2><p>BWV 525–598 · 50 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-organ-other">More organ works</h2><p>BWV 525–598 · 50 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="organ-other">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 525</span><span class="nm">BWV 525, nos. 1–2</span><span class="mt">2 guitars + bass · 63 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/organ-other/gp/BWV_0525_1_2.gp5">GP5</a></span></li>
 <li><span class="id">BWV 525</span><span class="nm">BWV 525, nos. 2–2</span><span class="mt">2 guitars + bass · 30 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/organ-other/gp/BWV_0525_2_2.gp5">GP5</a></span></li>
@@ -545,7 +575,7 @@
 </ul>
 </section>
 <section class="shelf" id="well-tempered-clavier" aria-labelledby="h-well-tempered-clavier">
-<header class="shelf-head"><h2 id="h-well-tempered-clavier">The Well-Tempered Clavier</h2><p>BWV 846–893 · 58 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-well-tempered-clavier">The Well-Tempered Clavier</h2><p>BWV 846–893 · 58 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="well-tempered-clavier">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 846</span><span class="nm">Prelude and Fugue in C major (Book I, No. 1)</span><span class="mt">3 guitars + bass · 62 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/well-tempered-clavier/gp/BWV_0846.gp5">GP5</a></span></li>
 <li><span class="id">BWV 846a</span><span class="nm">Prelude and Fugue in C major (Book I, No. 1) (early version)</span><span class="mt">2 guitars + bass · 27 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/well-tempered-clavier/gp/BWV_0846a.gp5">GP5</a></span></li>
@@ -608,7 +638,7 @@
 </ul>
 </section>
 <section class="shelf" id="inventions-and-sinfonias" aria-labelledby="h-inventions-and-sinfonias">
-<header class="shelf-head"><h2 id="h-inventions-and-sinfonias">Inventions and sinfonias</h2><p>BWV 772–801 · 31 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-inventions-and-sinfonias">Inventions and sinfonias</h2><p>BWV 772–801 · 31 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="inventions-and-sinfonias">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 772</span><span class="nm">Invention No. 1 in C major</span><span class="mt">1 guitar + bass · 22 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/inventions-and-sinfonias/gp/BWV_0772.gp5">GP5</a></span></li>
 <li><span class="id">BWV 772a</span><span class="nm">Invention No. 1 in C major (early version)</span><span class="mt">1 guitar + bass · 22 bars · 75 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/inventions-and-sinfonias/gp/BWV_0772a.gp5">GP5</a></span></li>
@@ -644,7 +674,7 @@
 </ul>
 </section>
 <section class="shelf" id="keyboard-suites" aria-labelledby="h-keyboard-suites">
-<header class="shelf-head"><h2 id="h-keyboard-suites">Suites and partitas</h2><p>BWV 806–831 · 31 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-keyboard-suites">Suites and partitas</h2><p>BWV 806–831 · 31 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="keyboard-suites">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 806</span><span class="nm">English Suite No. 1 in A major</span><span class="mt">4 guitars + bass · 335 bars · 144 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-suites/gp/BWV_0806.gp5">GP5</a></span></li>
 <li><span class="id">BWV 807</span><span class="nm">English Suite No. 2 in A minor</span><span class="mt">3 guitars + bass · 436 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-suites/gp/BWV_0807.gp5">GP5</a></span></li>
@@ -680,7 +710,7 @@
 </ul>
 </section>
 <section class="shelf" id="toccatas-and-fantasias" aria-labelledby="h-toccatas-and-fantasias">
-<header class="shelf-head"><h2 id="h-toccatas-and-fantasias">Toccatas and fantasias</h2><p>BWV 894–923 · 24 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-toccatas-and-fantasias">Toccatas and fantasias</h2><p>BWV 894–923 · 24 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="toccatas-and-fantasias">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 903</span><span class="nm">Chromatic Fantasia and Fugue in D minor</span><span class="mt">3 guitars + bass · 243 bars · 90 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/toccatas-and-fantasias/gp/BWV_0903.gp5">GP5</a></span></li>
 <li><span class="id">BWV 903a</span><span class="nm">Chromatic Fantasia and Fugue in D minor (early version)</span><span class="mt">1 guitar + bass · 25 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/toccatas-and-fantasias/gp/BWV_0903a.gp5">GP5</a></span></li>
@@ -709,7 +739,7 @@
 </ul>
 </section>
 <section class="shelf" id="keyboard-fugues" aria-labelledby="h-keyboard-fugues">
-<header class="shelf-head"><h2 id="h-keyboard-fugues">Keyboard fugues</h2><p>BWV 944–962 · 31 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-keyboard-fugues">Keyboard fugues</h2><p>BWV 944–962 · 31 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="keyboard-fugues">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 894</span><span class="nm"></span><span class="mt">2 guitars + bass · 251 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-fugues/gp/BWV_0894.gp5">GP5</a></span></li>
 <li><span class="id">BWV 895</span><span class="nm"></span><span class="mt">3 guitars + bass · 47 bars · 52 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-fugues/gp/BWV_0895.gp5">GP5</a></span></li>
@@ -745,7 +775,7 @@
 </ul>
 </section>
 <section class="shelf" id="little-preludes" aria-labelledby="h-little-preludes">
-<header class="shelf-head"><h2 id="h-little-preludes">The little preludes</h2><p>BWV 924–943 · 21 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-little-preludes">The little preludes</h2><p>BWV 924–943 · 21 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="little-preludes">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 924</span><span class="nm"></span><span class="mt">1 guitar + bass · 18 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/little-preludes/gp/BWV_0924.gp5">GP5</a></span></li>
 <li><span class="id">BWV 924a</span><span class="nm"></span><span class="mt">3 guitars + bass · 14 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/little-preludes/gp/BWV_0924a.gp5">GP5</a></span></li>
@@ -771,7 +801,7 @@
 </ul>
 </section>
 <section class="shelf" id="keyboard-variations" aria-labelledby="h-keyboard-variations">
-<header class="shelf-head"><h2 id="h-keyboard-variations">Airs and variations</h2><p>BWV 988–994 · 7 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-keyboard-variations">Airs and variations</h2><p>BWV 988–994 · 7 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="keyboard-variations">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 988</span><span class="nm">Goldberg Variations</span><span class="mt">3 guitars + bass · 959 bars · 72 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-variations/gp/BWV_0988.gp5">GP5</a></span></li>
 <li><span class="id">BWV 989</span><span class="nm">Aria variata alla maniera italiana in A minor</span><span class="mt">3 guitars + bass · 152 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-variations/gp/BWV_0989.gp5">GP5</a></span></li>
@@ -783,7 +813,7 @@
 </ul>
 </section>
 <section class="shelf" id="keyboard-concertos" aria-labelledby="h-keyboard-concertos">
-<header class="shelf-head"><h2 id="h-keyboard-concertos">Concertos after other masters</h2><p>BWV 972–987 · 18 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-keyboard-concertos">Concertos after other masters</h2><p>BWV 972–987 · 18 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="keyboard-concertos">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 971</span><span class="nm">Italian Concerto in F major</span><span class="mt">4 guitars + bass · 451 bars · 85 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-concertos/gp/BWV_0971.gp5">GP5</a></span></li>
 <li><span class="id">BWV 972</span><span class="nm"></span><span class="mt">4 guitars + bass · 192 bars · 100 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-concertos/gp/BWV_0972.gp5">GP5</a></span></li>
@@ -806,7 +836,7 @@
 </ul>
 </section>
 <section class="shelf" id="keyboard-sonatas" aria-labelledby="h-keyboard-sonatas">
-<header class="shelf-head"><h2 id="h-keyboard-sonatas">Sonatas, duets and single pieces</h2><p>BWV 963–971 · 27 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-keyboard-sonatas">Sonatas, duets and single pieces</h2><p>BWV 963–971 · 27 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="keyboard-sonatas">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 802</span><span class="nm"></span><span class="mt">1 guitar + bass · 73 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-sonatas/gp/BWV_0802.gp5">GP5</a></span></li>
 <li><span class="id">BWV 803</span><span class="nm"></span><span class="mt">1 guitar + bass · 116 bars · 90 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/keyboard-sonatas/gp/BWV_0803.gp5">GP5</a></span></li>
@@ -838,7 +868,7 @@
 </ul>
 </section>
 <section class="shelf" id="lute-works" aria-labelledby="h-lute-works">
-<header class="shelf-head"><h2 id="h-lute-works">Lute works</h2><p>BWV 995–1000, 1006a · 11 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-lute-works">Lute works</h2><p>BWV 995–1000, 1006a · 11 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="lute-works">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 995</span><span class="nm"></span><span class="mt">1 guitar + bass · 443 bars · 72 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/lute-works/gp/BWV_0995.gp5">GP5</a></span></li>
 <li><span class="id">BWV 995</span><span class="nm">BWV 995, kl</span><span class="mt">2 guitars + bass · 450 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/lute-works/gp/BWV_0995_kl.gp5">GP5</a></span></li>
@@ -854,7 +884,7 @@
 </ul>
 </section>
 <section class="shelf" id="chamber-music" aria-labelledby="h-chamber-music">
-<header class="shelf-head"><h2 id="h-chamber-music">Chamber music</h2><p>BWV 1001–1040 · 71 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-chamber-music">Chamber music</h2><p>BWV 1001–1040 · 71 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="chamber-music">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 1001</span><span class="nm"></span><span class="mt">3 guitars · 273 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/chamber-music/gp/BWV_1001.gp5">GP5</a></span></li>
 <li><span class="id">BWV 1002</span><span class="nm"></span><span class="mt">1 guitar + bass · 424 bars · 90 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/chamber-music/gp/BWV_1002.gp5">GP5</a></span></li>
@@ -930,7 +960,7 @@
 </ul>
 </section>
 <section class="shelf" id="concertos" aria-labelledby="h-concertos">
-<header class="shelf-head"><h2 id="h-concertos">Concertos</h2><p>BWV 1041–1065 · 85 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-concertos">Concertos</h2><p>BWV 1041–1065 · 85 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="concertos">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 1041</span><span class="nm"></span><span class="mt">4 guitars + bass · 361 bars · 75 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/concertos/gp/BWV_1041.gp5">GP5</a></span></li>
 <li><span class="id">BWV 1042</span><span class="nm"></span><span class="mt">4 guitars + bass · 391 bars · 100 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/concertos/gp/BWV_1042.gp5">GP5</a></span></li>
@@ -1020,7 +1050,7 @@
 </ul>
 </section>
 <section class="shelf" id="orchestral" aria-labelledby="h-orchestral">
-<header class="shelf-head"><h2 id="h-orchestral">Overtures and sinfonias</h2><p>BWV 1066–1071 · 36 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-orchestral">Overtures and sinfonias</h2><p>BWV 1066–1071 · 36 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="orchestral">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 1066</span><span class="nm">BWV 1066, no. 1</span><span class="mt">6 guitars + bass · 124 bars · 48 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/orchestral/gp/BWV_1066_01.gp5">GP5</a></span></li>
 <li><span class="id">BWV 1066</span><span class="nm">BWV 1066, no. 2</span><span class="mt">6 guitars + bass · 30 bars · 160 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/orchestral/gp/BWV_1066_02.gp5">GP5</a></span></li>
@@ -1061,7 +1091,7 @@
 </ul>
 </section>
 <section class="shelf" id="musical-offering" aria-labelledby="h-musical-offering">
-<header class="shelf-head"><h2 id="h-musical-offering">The Musical Offering</h2><p>BWV 1079 · 19 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-musical-offering">The Musical Offering</h2><p>BWV 1079 · 19 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="musical-offering">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 1079</span><span class="nm">BWV 1079, no. 1</span><span class="mt">2 guitars + bass · 185 bars · 120 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/musical-offering/gp/BWV_1079_01.gp5">GP5</a></span></li>
 <li><span class="id">BWV 1079</span><span class="nm">BWV 1079, no. 2</span><span class="mt">5 guitars + bass · 103 bars · 120 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/musical-offering/gp/BWV_1079_02.gp5">GP5</a></span></li>
@@ -1085,7 +1115,7 @@
 </ul>
 </section>
 <section class="shelf" id="canons" aria-labelledby="h-canons">
-<header class="shelf-head"><h2 id="h-canons">Canons</h2><p>BWV 1072–1078, 1086–1087 · 8 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-canons">Canons</h2><p>BWV 1072–1078, 1086–1087 · 8 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="canons">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 1072</span><span class="nm"></span><span class="mt">7 guitars + bass · 7 bars · 100 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/canons/gp/BWV_1072.gp5">GP5</a></span></li>
 <li><span class="id">BWV 1073</span><span class="nm"></span><span class="mt">3 guitars + bass · 29 bars · 100 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/canons/gp/BWV_1073.gp5">GP5</a></span></li>
@@ -1098,7 +1128,7 @@
 </ul>
 </section>
 <section class="shelf" id="cantatas" aria-labelledby="h-cantatas">
-<header class="shelf-head"><h2 id="h-cantatas">Cantatas</h2><p>BWV 1–224 · 1,337 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-cantatas">Cantatas</h2><p>BWV 1–224 · 1,337 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="cantatas">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 1</span><span class="nm">BWV 1, no. 1</span><span class="mt">7 guitars + bass · 119 bars · 100 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/cantatas/gp/BWV_0001_1.gp5">GP5</a></span></li>
 <li><span class="id">BWV 1</span><span class="nm">BWV 1, no. 2</span><span class="mt">1 guitar + bass · 13 bars · 65 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/cantatas/gp/BWV_0001_2.gp5">GP5</a></span></li>
@@ -2440,7 +2470,7 @@
 </ul>
 </section>
 <section class="shelf" id="passions-and-masses" aria-labelledby="h-passions-and-masses">
-<header class="shelf-head"><h2 id="h-passions-and-masses">Passions, masses and oratorios</h2><p>BWV 225–249 · 298 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-passions-and-masses">Passions, masses and oratorios</h2><p>BWV 225–249 · 298 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="passions-and-masses">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 225</span><span class="nm"></span><span class="mt">7 guitars + bass · 373 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/passions-and-masses/gp/BWV_0225.gp5">GP5</a></span></li>
 <li><span class="id">BWV 226</span><span class="nm"></span><span class="mt">7 guitars + bass · 272 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/passions-and-masses/gp/BWV_0226.gp5">GP5</a></span></li>
@@ -2743,7 +2773,7 @@
 </ul>
 </section>
 <section class="shelf" id="chorales-and-songs" aria-labelledby="h-chorales-and-songs">
-<header class="shelf-head"><h2 id="h-chorales-and-songs">Four-part chorales and songs</h2><p>BWV 250–524 · 277 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-chorales-and-songs">Four-part chorales and songs</h2><p>BWV 250–524 · 277 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="chorales-and-songs">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 250</span><span class="nm"></span><span class="mt">3 guitars + bass · 12 bars · 120 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/chorales-and-songs/gp/BWV_0250.gp5">GP5</a></span></li>
 <li><span class="id">BWV 251</span><span class="nm"></span><span class="mt">3 guitars + bass · 12 bars · 110 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/chorales-and-songs/gp/BWV_0251.gp5">GP5</a></span></li>
@@ -3025,7 +3055,7 @@
 </ul>
 </section>
 <section class="shelf" id="appendix" aria-labelledby="h-appendix">
-<header class="shelf-head"><h2 id="h-appendix">Appendix and doubtful works</h2><p>BWV Anh. · 173 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-appendix">Appendix and doubtful works</h2><p>BWV Anh. · 173 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="appendix">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV Anh. 2</span><span class="nm"></span><span class="mt">3 guitars + bass · 8 bars · 64 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/appendix/gp/BWV_Anh_002.gp5">GP5</a></span></li>
 <li><span class="id">BWV Anh. 22</span><span class="nm"></span><span class="mt">1 guitar · 3 bars · 120 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/appendix/gp/BWV_Anh_022.gp5">GP5</a></span></li>
@@ -3204,7 +3234,7 @@ BWV Anh. 34</span><span class="mt">1 guitar + bass · 12 bars · 120 bpm</span><
 </ul>
 </section>
 <section class="shelf" id="deest" aria-labelledby="h-deest">
-<header class="shelf-head"><h2 id="h-deest">Works without a BWV number</h2><p>BWV deest · 282 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-deest">Works without a BWV number</h2><p>BWV deest · 282 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="deest">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">100 Prael 008 Bach JS AllesistanGottesSegen</span><span class="nm">100 Prael 008 Bach JS AllesistanGottesSegen</span><span class="mt">3 guitars + bass · 28 bars · 84 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/deest/gp/100_Prael_008_Bach_JS_AllesistanGottesSegen.gp5">GP5</a></span></li>
 <li><span class="id">BWV 655b</span><span class="nm"></span><span class="mt">2 guitars + bass · 29 bars · 60 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/deest/gp/BWV_0655b.gp5">GP5</a></span></li>
@@ -3491,7 +3521,7 @@ BWV Anh. 34</span><span class="mt">1 guitar + bass · 12 bars · 120 bpm</span><
 </ul>
 </section>
 <section class="shelf" id="additions" aria-labelledby="h-additions">
-<header class="shelf-head"><h2 id="h-additions">Additions</h2><p>Ergänzungen · 68 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-additions">Additions</h2><p>Ergänzungen · 68 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="additions">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">BWV 1081</span><span class="nm"></span><span class="mt">4 guitars + bass · 33 bars · 64 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/additions/gp/BWV_1081.gp5">GP5</a></span></li>
 <li><span class="id">BWV 1082</span><span class="nm"></span><span class="mt">6 guitars + bass · 59 bars · 64 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/additions/gp/BWV_1082.gp5">GP5</a></span></li>
@@ -3564,7 +3594,7 @@ BWV Anh. 34</span><span class="mt">1 guitar + bass · 12 bars · 120 bpm</span><
 </ul>
 </section>
 <section class="shelf" id="manuscripts" aria-labelledby="h-manuscripts">
-<header class="shelf-head"><h2 id="h-manuscripts">Notebooks, prints and manuscripts</h2><p>125 pieces</p></header>
+<header class="shelf-head"><div><h2 id="h-manuscripts">Notebooks, prints and manuscripts</h2><p>125 pieces</p></div><button class="btn small dl-folder" type="button" data-folder="manuscripts">Download folder</button></header>
 <ul class="pieces">
 <li><span class="id">01</span><span class="nm"></span><span class="mt">3 guitars + bass · 356 bars · 94 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/manuscripts/gp/01.gp5">GP5</a></span></li>
 <li><span class="id">02</span><span class="nm"></span><span class="mt">2 guitars + bass · 416 bars · 90 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/manuscripts/gp/02.gp5">GP5</a></span></li>
@@ -3693,26 +3723,15 @@ BWV Anh. 34</span><span class="mt">1 guitar + bass · 12 bars · 120 bpm</span><
 <li><span class="id">schluessel</span><span class="nm"></span><span class="mt">1 guitar · 9 bars · 120 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/bach/manuscripts/gp/schluessel.gp5">GP5</a></span></li>
 </ul>
 </section>
-<section class="shelf" id="vivaldi-arias" aria-labelledby="h-vivaldi-arias">
-<header class="shelf-head"><h2 id="h-vivaldi-arias">Vivaldi arias</h2><p>RV 690, RV 725 · 4 pieces</p></header>
-<ul class="pieces">
-<li><span class="id">RV 690</span><span class="nm">Dell Alma Superba</span><span class="mt">2 guitars + bass · 139 bars · 90 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/vivaldi/vivaldi-arias/gp/rv690-DellAlmaSuperba.gp5">GP5</a></span></li>
-<li><span class="id">RV 725</span><span class="nm">Del Destin</span><span class="mt">3 guitars + bass · 111 bars · 90 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/vivaldi/vivaldi-arias/gp/rv725-DelDestin.gp5">GP5</a></span></li>
-<li><span class="id">RV 725</span><span class="nm">Mentre Dormi</span><span class="mt">5 guitars + bass · 41 bars · 40 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/vivaldi/vivaldi-arias/gp/rv725-MentreDormi.gp5">GP5</a></span></li>
-<li><span class="id">RV 725</span><span class="nm">Siam Navi</span><span class="mt">5 guitars + bass · 68 bars · 80 bpm</span><span class="dl"><a class="gp" href="/fuguesplit/vivaldi/vivaldi-arias/gp/rv725-SiamNavi.gp5">GP5</a></span></li>
-</ul>
-</section>
 <p class="lib-empty" id="lib-empty" hidden>Nothing in the library matches that search.</p>
 </div>
 </div>
 </div>
 <!-- shelves:end -->
-                <p class="credit">Engravings from <a href="https://tobis-notenarchiv.de/" target="_blank" rel="noopener">Tobis
-                        Notenarchiv</a>, Quelle: www.tobis-notenarchiv.de, under <a
-                        href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA
-                        4.0</a>; the arrangements carry the same licence. The converter is <a
-                        href="https://github.com/Lelkyy/Lelkyy.github.io/tree/main/fuguesplit/src" target="_blank"
-                        rel="noopener">on GitHub</a>.</p>
+                <p class="credit">Bach's music is in the public domain. The engravings come from <a
+                        href="https://tobis-notenarchiv.de/" target="_blank" rel="noopener">Tobis Notenarchiv</a>, Quelle:
+                    www.tobis-notenarchiv.de, under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                        target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>, and the arrangements carry the same licence.</p>
             </div>
         </section>
     </main>
@@ -3724,7 +3743,7 @@ BWV Anh. 34</span><span class="mt">1 guitar + bass · 12 bars · 120 bpm</span><
                 <li><a href="/projects/">Projects</a></li>
                 <li><a href="/papers/">Papers</a></li>
                 <li><a href="/live/">Live</a></li>
-                <li><a href="/fuguesplit/">FugueSplit</a></li>
+                <li><a href="/fuguesplit/">Bach arranger</a></li>
                 <li><a href="/practice/euler/">Project Euler</a></li>
                 <li><a href="https://www.linkedin.com/in/leonid-elkin-b0b58843b/" target="_blank" rel="noopener">LinkedIn</a></li>
                 <li><a href="https://github.com/Lelkyy" target="_blank" rel="noopener">GitHub</a></li>
@@ -3740,7 +3759,7 @@ BWV Anh. 34</span><span class="mt">1 guitar + bass · 12 bars · 120 bpm</span><
         </div>
     </footer>
 
-    <script src="/fuguesplit/library.js?v=3"></script>
+    <script src="/fuguesplit/library.js?v=4"></script>
     <script src="/shared/nav.js?v=40"></script>
 </body>
 

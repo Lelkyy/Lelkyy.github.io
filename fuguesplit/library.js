@@ -192,4 +192,97 @@
   /* A browser that restores the search box on back or reload gets its
      results back too. */
   if (input.value) search(input.value);
+
+  /* ---------- downloads: a folder, or everything, as one zip ----------
+
+     The zip is built here in the browser from the files the page already
+     links, so the site never stores a second copy of the library. JSZip
+     loads the first time someone asks for a zip. */
+
+  const progress = document.getElementById("lib-progress");
+  const allBtn = document.getElementById("lib-all");
+  let busy = false;
+
+  function loadZip() {
+    if (window.JSZip) return Promise.resolve(window.JSZip);
+    return new Promise((done, fail) => {
+      const s = document.createElement("script");
+      s.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+      s.onload = () => done(window.JSZip);
+      s.onerror = fail;
+      document.head.appendChild(s);
+    });
+  }
+
+  /* every file a set of shelves links to, as [path inside the zip, url] */
+  function filesIn(list) {
+    const out = [];
+    list.forEach((shelf) => {
+      shelf.querySelectorAll(".pieces .dl a[href]").forEach((a) => {
+        const url = a.getAttribute("href");
+        const parts = url.split("/");
+        const file = decodeURIComponent(parts[parts.length - 1]);
+        const kind = parts[parts.length - 2];
+        const sub = kind === "gp" ? "" : kind + "/";
+        out.push([shelf.id + "/" + sub + file, url]);
+      });
+    });
+    return out;
+  }
+
+  function say(text) {
+    progress.hidden = !text;
+    progress.textContent = text || "";
+  }
+
+  async function download(list, name, button) {
+    if (busy) return;
+    busy = true;
+    const label = button.textContent;
+    button.disabled = true;
+    try {
+      const JSZip = await loadZip();
+      const zip = new JSZip();
+      const files = filesIn(list);
+      let done = 0;
+      let next = 0;
+      async function worker() {
+        while (next < files.length) {
+          const [path, url] = files[next++];
+          const res = await fetch(url);
+          if (res.ok) zip.file(path, await res.arrayBuffer());
+          done++;
+          if (done % 25 === 0 || done === files.length) {
+            say("Fetching " + done.toLocaleString("en-GB") + " of " + files.length.toLocaleString("en-GB") + " files");
+          }
+        }
+      }
+      await Promise.all(Array.from({ length: 8 }, worker));
+      say("Packing the zip");
+      const blob = await zip.generateAsync({ type: "blob", compression: "STORE" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = name;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 60000);
+      say("");
+    } catch (err) {
+      say("The download stopped. Please try again.");
+    } finally {
+      busy = false;
+      button.disabled = false;
+      button.textContent = label;
+    }
+  }
+
+  lib.querySelectorAll(".dl-folder").forEach((b) => {
+    b.addEventListener("click", () => {
+      const shelf = document.getElementById(b.dataset.folder);
+      if (shelf) download([shelf], "bach-guitar-" + shelf.id + ".zip", b);
+    });
+  });
+
+  if (allBtn) allBtn.addEventListener("click", () => download(shelves, "bach-guitar-library.zip", allBtn));
 })();

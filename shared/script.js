@@ -14,7 +14,7 @@
 /* ---------- projects ---------- */
 
 const projects = [
-  /* ---------- software ---------- */
+  /* strongest first; the index and the case pages number them in this order */
   {
     title: "Drone Strike Map",
     cat: "software",
@@ -45,25 +45,38 @@ const projects = [
     ],
   },
   {
-    title: "FugueSplit",
+    title: "Bach Works Guitar Arranger",
     cat: "software",
     status: "live",
     caption:
-      "Arranges Bach for a band of guitars and a bass, one voice per player and one note at a time. 3,449 arrangements are published as Guitar Pro files, and 72 organ movements also come as a PDF per player, notation over tablature.",
+      "Arranges Bach for a band of guitars and a bass, one voice per player and one note at a time. 3,445 arrangements are published as Guitar Pro files, and 72 organ movements also come as a PDF per player, notation over tablature.",
     summary:
-      "FugueSplit reads a score, works out which melodic line is which, and gives each line to a different player. Every part plays one note at a time. The library holds 3,449 arrangements as Guitar Pro files, and 72 of the organ works also come as a PDF for each player.",
+      "The arranger reads a score, works out which melodic line is which, and gives each line to a different player. Every part plays one note at a time. The library holds 3,445 arrangements as Guitar Pro files, and 72 of the organ works also come as a PDF for each player.",
     tags: ["Python", "PyGuitarPro", "mido", "MuseScore"],
     links: [
-      { name: "the tabs", url: "/fuguesplit/" },
+      { name: "the library", url: "/fuguesplit/" },
       { name: "source", url: "https://github.com/Lelkyy/Lelkyy.github.io/tree/main/fuguesplit/src" },
     ],
   },
   {
-    title: "SHELLFALL",
+    title: "Neural scaling laws",
+    cat: "research",
+    caption:
+      "Multilayer perceptrons written from scratch in NumPy, trained at many sizes, learning rates and epoch counts to see how performance scales. The library is on PyPI as elkwork; the paper is 57 pages.",
+    tags: ["Python", "NumPy", "LaTeX"],
+    links: [
+      { name: "the paper", url: "/Documentation/Investigating_neural_scaling_laws.pdf", title: "Investigating Neural Scaling Laws in a Multilayer Perceptron" },
+      { name: "elkwork on PyPI", url: "https://pypi.org/project/elkwork/" },
+      { name: "source", url: "https://github.com/Lelkyy/Scratch-MLP-implementation" },
+      { name: "code and models", url: "/MLP all documents (2).zip" },
+    ],
+  },
+  {
+    title: "Penumbra",
     cat: "software",
     status: "live",
     caption:
-      "Hold a coastal fortress against a campaign of named capital ships. You lay the guns yourself and mark what to hit while the enemy keeps sailing. Released as Penumbra.",
+      "Hold a coastal fortress against a campaign of named capital ships. You lay the guns yourself and mark what to hit while the enemy keeps sailing. Released on itch.io.",
     tags: ["Python", "pygame"],
     links: [
       { name: "play on itch.io", url: "https://elkyy.itch.io/penumbra" },
@@ -71,17 +84,39 @@ const projects = [
     ],
   },
   {
-    title: "Durak",
-    cat: "software",
-    status: "live",
+    title: "Open clusters",
+    cat: "research",
     caption:
-      "The Russian card game, with transfers. Play the machine right here on this page, or open a table and play a friend browser to browser. No server and no account.",
-    tags: ["JavaScript", "WebRTC"],
+      "Do primordial binary stars change how long an open cluster survives? A 2D N-body simulation run at four binary fractions, a paper and a poster.",
+    tags: ["Python", "NumPy"],
     links: [
-      { name: "play here", url: "#durak" },
-      { name: "play online", url: "/durak-online/" },
-      { name: "source", url: "https://github.com/Lelkyy/Lelkyy.github.io/blob/main/durak-online/durak-online.js" },
+      { name: "the paper", url: "/Documentation/Physics_investigation (2).pdf", title: "How Does the Primordial Binary Fraction Affect the Survival Time of an Open Cluster in the Galactic Disk?" },
+      { name: "the poster", url: "/Documentation/Physics_investigation_poster.pdf", title: "Primordial binaries and open cluster survival, poster" },
+      { name: "source", url: "https://github.com/Lelkyy/N-body-simulation" },
     ],
+  },
+  {
+    title: "CanSat 2025",
+    cat: "hardware",
+    caption:
+      "A can-sized satellite for the UK CanSat competition, built by Team Re-LAACS, seven of us at Tonbridge School. My part was the payload and the radio.",
+    tags: ["RF", "telemetry", "payload"],
+    links: [
+      {
+        name: "critical design review",
+        url: "/Documentation/Tonbridge CanSat_ReLAACS_ 2024-25 CDR .pdf",
+        title: "Team Re-LAACS Critical Design Review",
+      },
+    ],
+  },
+  {
+    title: "Yagi-Uda radar",
+    cat: "hardware",
+    status: "wip",
+    caption:
+      "A 14.5 dBi Yagi-Uda feeding RF transceivers off a Raspberry Pi 3 to range a target. The antenna works and the ranging doesn't yet.",
+    tags: ["Raspberry Pi", "RF", "antenna"],
+    links: [{ name: "source", url: "https://github.com/Lelkyy/Yagi-rifle-code" }],
   },
   {
     title: "Chess Vision Bot",
@@ -102,13 +137,17 @@ const projects = [
     links: [{ name: "example output", url: "/Documentation/sheet2tab_example.pdf", title: "Sheet2Tab example output" }],
   },
   {
-    title: "YT Grab",
+    title: "Durak",
     cat: "software",
     status: "live",
     caption:
-      "A Windows app that downloads YouTube videos and playlists as mp3 or mp4, merges a playlist into one file, and can play the songs into a virtual microphone for a voice call. One PowerShell file and a WPF window.",
-    tags: ["PowerShell", "WPF", "yt-dlp", "NAudio"],
-    links: [{ name: "source", url: "/YTGrab_source.zip" }],
+      "The Russian card game, with transfers. Play the machine right here on this page, or open a table and play a friend browser to browser. No server and no account.",
+    tags: ["JavaScript", "WebRTC"],
+    links: [
+      { name: "play here", url: "#durak" },
+      { name: "play online", url: "/durak-online/" },
+      { name: "source", url: "https://github.com/Lelkyy/Lelkyy.github.io/blob/main/durak-online/durak-online.js" },
+    ],
   },
   {
     title: "Yavalath & Pentalath",
@@ -119,6 +158,27 @@ const projects = [
     links: [
       { name: "source", url: "https://github.com/Lelkyy/Computer-science-NEA-Yavalath-" },
       { name: "the rules", url: "https://boardgamegeek.com/boardgame/33767/yavalath" },
+    ],
+  },
+  {
+    title: "YT Grab",
+    cat: "software",
+    status: "live",
+    caption:
+      "A Windows app that downloads YouTube videos and playlists as mp3 or mp4, merges a playlist into one file, and can play the songs into a virtual microphone for a voice call. One PowerShell file and a WPF window.",
+    tags: ["PowerShell", "WPF", "yt-dlp", "NAudio"],
+    links: [{ name: "source", url: "/YTGrab_source.zip" }],
+  },
+  {
+    title: "Drawer",
+    cat: "research",
+    caption:
+      "A companion to the MLP work: draw a digit and watch the trained network read it back, one layer at a time.",
+    tags: ["Python", "NumPy"],
+    links: [
+      { name: "source", url: "https://github.com/Lelkyy/Elkwork-live-demo" },
+      { name: "training example", url: "https://github.com/Lelkyy/Elkwork-training-example" },
+      { name: "zip", url: "/Drawer_source.zip" },
     ],
   },
   {
@@ -162,68 +222,6 @@ const projects = [
       { name: "zip", url: "/Aimtrainer_source/Aimtrainer.zip" },
     ],
   },
-  /* ---------- hardware ---------- */
-  {
-    title: "CanSat 2025",
-    cat: "hardware",
-    caption:
-      "A can-sized satellite for the UK CanSat competition, built by Team Re-LAACS, seven of us at Tonbridge School. My part was the payload and the radio.",
-    tags: ["RF", "telemetry", "payload"],
-    links: [
-      {
-        name: "critical design review",
-        url: "/Documentation/Tonbridge CanSat_ReLAACS_ 2024-25 CDR .pdf",
-        title: "Team Re-LAACS Critical Design Review",
-      },
-    ],
-  },
-  {
-    title: "Yagi-Uda radar",
-    cat: "hardware",
-    status: "wip",
-    caption:
-      "A 14.5 dBi Yagi-Uda feeding RF transceivers off a Raspberry Pi 3 to range a target. The antenna works and the ranging doesn't yet.",
-    tags: ["Raspberry Pi", "RF", "antenna"],
-    links: [{ name: "source", url: "https://github.com/Lelkyy/Yagi-rifle-code" }],
-  },
-  /* ---------- research ---------- */
-  {
-    title: "Neural scaling laws",
-    cat: "research",
-    caption:
-      "Multilayer perceptrons written from scratch in NumPy, trained at many sizes, learning rates and epoch counts to see how performance scales. The library is on PyPI as elkwork; the paper is 57 pages.",
-    tags: ["Python", "NumPy", "LaTeX"],
-    links: [
-      { name: "the paper", url: "/Documentation/Investigating_neural_scaling_laws.pdf", title: "Investigating Neural Scaling Laws in a Multilayer Perceptron" },
-      { name: "elkwork on PyPI", url: "https://pypi.org/project/elkwork/" },
-      { name: "source", url: "https://github.com/Lelkyy/Scratch-MLP-implementation" },
-      { name: "code and models", url: "/MLP all documents (2).zip" },
-    ],
-  },
-  {
-    title: "Open clusters",
-    cat: "research",
-    caption:
-      "Do primordial binary stars change how long an open cluster survives? A 2D N-body simulation run at four binary fractions, a paper and a poster.",
-    tags: ["Python", "NumPy"],
-    links: [
-      { name: "the paper", url: "/Documentation/Physics_investigation (2).pdf", title: "How Does the Primordial Binary Fraction Affect the Survival Time of an Open Cluster in the Galactic Disk?" },
-      { name: "the poster", url: "/Documentation/Physics_investigation_poster.pdf", title: "Primordial binaries and open cluster survival, poster" },
-      { name: "source", url: "https://github.com/Lelkyy/N-body-simulation" },
-    ],
-  },
-  {
-    title: "Drawer",
-    cat: "research",
-    caption:
-      "A companion to the MLP work: draw a digit and watch the trained network read it back, one layer at a time.",
-    tags: ["Python", "NumPy"],
-    links: [
-      { name: "source", url: "https://github.com/Lelkyy/Elkwork-live-demo" },
-      { name: "training example", url: "https://github.com/Lelkyy/Elkwork-training-example" },
-      { name: "zip", url: "/Drawer_source.zip" },
-    ],
-  },
 ];
 
 /* ---------- skills ---------- */
@@ -245,7 +243,7 @@ const skills = [
   {
     head: "Frameworks & tools",
     items: [
-      { name: "pygame", via: "SHELLFALL, Aimtrainer" },
+      { name: "pygame", via: "Penumbra, Aimtrainer" },
       { name: "PyQt5", via: "Chess Vision Bot" },
       { name: "WPF, NAudio", via: "YT Grab" },
       { name: "Chrome extensions (MV3), WebAssembly", via: "MoveGrade" },
@@ -354,6 +352,7 @@ function previewEl(p) {
    of their own. The slug is the title, lower-cased, non-letters to hyphens. */
 const PAGE = {
   "Drone Strike Map": "/project/",
+  "Bach Works Guitar Arranger": "/fuguesplit/",
   "Project Euler": "/practice/euler/",
 };
 
@@ -469,7 +468,7 @@ function initProjects() {
    The home page carries five entries, not the index. These five because each
    one answers a different question: is it real (live and public), was it
    written up (a paper), does anyone use it (installed), does the physics hold
-   (an N-body simulation), and does it ship at scale (3,449 arrangements). Everything else is one click away on the projects index. Titles, so
+   (an N-body simulation), and does it ship at scale (3,445 arrangements). Everything else is one click away on the projects index. Titles, so
    the picks track the entries above rather than their positions.
 
    They are numbered from one in the order listed here: a shortlist counts
@@ -477,9 +476,9 @@ function initProjects() {
 
 const HOME_PICKS = [
   "MoveGrade",
-  "FugueSplit",
+  "Bach Works Guitar Arranger",
+  "Penumbra",
   "CanSat 2025",
-  "SHELLFALL",
 ];
 
 /* The home page shows its picks as rows of picture and text, alternating

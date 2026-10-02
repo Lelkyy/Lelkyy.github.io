@@ -27,18 +27,18 @@ const CASES = {
       ["How it works", "A fugue is already written as independent lines, so the program never has to split chords. It walks the piece in time order and, at every new note, solves a small assignment problem to decide which part takes it. The cost favours parts that move by step, keeps Guitar I on top, avoids cutting off a held note and follows the source's own track layout where there is one. The pedal line goes straight to the bass."],
       ["As many players as it takes", "The band grows with the music. If a note arrives while every player is busy, a guitar is added and the piece is dealt out again. BWV 582 opens in three voices and later stacks five over the pedal."],
       ["Keeping it playable", "Each part is moved into the instrument's range by whole octaves, phrase by phrase, so the melodic shape never changes. The bass is kept in a comfortable span: across the 30 organ preludes and fugues, all 17,328 bass notes sit at or below the 12th fret. Prelude and fugue are separated automatically, by the change of metre between them or by the pedal falling silent as the subject enters."],
-      ["The library", "3,449 arrangements in 29 folders, from the organ works to the cantatas, plus four Vivaldi arias. The engravings come from Tobis Notenarchiv under CC BY-NC-SA 4.0, and the arrangements carry the same licence."],
+      ["The library", "3,445 arrangements in 28 folders, from the organ works to the cantatas. The engravings come from Tobis Notenarchiv under CC BY-NC-SA 4.0, and the arrangements carry the same licence."],
     ],
-    facts: [["Role", "Solo"], ["Stack", "Python, PyGuitarPro, mido, MuseScore"], ["Library", "3,449 arrangements"]],
+    facts: [["Role", "Solo"], ["Stack", "Python, PyGuitarPro, mido, MuseScore"], ["Library", "3,445 arrangements"]],
   },
-  "shellfall": {
+  "penumbra": {
     picture: "Day one of the campaign: the guns are laid, the first flotilla is in range.",
     sections: [
-      ["What it is", "A coastal-defence game. You hold a fortress against a campaign of named capital ships; you place the guns yourself, mark what to hit, and the enemy keeps sailing. Released on itch.io under the name Penumbra."],
+      ["What it is", "A coastal-defence game. You hold a fortress against a campaign of named capital ships; you place the guns yourself, mark what to hit, and the enemy keeps sailing. Released on itch.io."],
       ["How it is built", "Python and pygame, with the ships, the fortress and the sea drawn as sprites and the campaign scripted as a sequence of named engagements. A field manual inside the game explains the guns; a field-commands screen lets you give orders between salvos."],
       ["What it taught", "Pacing. The first builds let you fire as fast as you could click, and every battle turned into noise. Reload timers and named ships are what made it play like a game."],
     ],
-    facts: [["Role", "Solo"], ["Stack", "Python, pygame"], ["Released", "itch.io, as Penumbra"]],
+    facts: [["Role", "Solo"], ["Stack", "Python, pygame"], ["Released", "itch.io"]],
   },
   "durak": {
     picture: "A table open, a bout in progress.",
@@ -153,7 +153,7 @@ const CASES = {
 };
 
 /* Projects that were renamed keep their old addresses working. */
-const CASE_ALIASES = { "globular-clusters": "open-clusters" };
+const CASE_ALIASES = { "globular-clusters": "open-clusters", "shellfall": "penumbra", "fuguesplit": "bach-works-guitar-arranger" };
 
 /* ---------- render ---------- */
 
@@ -172,6 +172,12 @@ const CASE_ALIASES = { "globular-clusters": "open-clusters" };
   if (!p) {
     document.getElementById("case-title").textContent = "No such project";
     document.getElementById("case-setup").textContent = "Nothing in the index answers to “" + slug + "”.";
+    return;
+  }
+
+  /* a project with a page of its own lives there, not here */
+  if (PAGE[p.title]) {
+    location.replace(PAGE[p.title]);
     return;
   }
 

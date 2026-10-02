@@ -76,9 +76,6 @@ GROUPS = [
         "additions",
         "manuscripts",
     ]),
-    ("Vivaldi", [
-        "vivaldi-arias",
-    ]),
 ]
 
 # Anything not listed above still appears, filed here at the end.
@@ -173,8 +170,9 @@ def shelf_html(meta: dict) -> str:
         sub = f"{html.escape(span)} · {sub}"
     rows = "\n".join(piece_html(meta["composer"], shelf, p) for p in meta["pieces"])
     return (f'<section class="shelf" id="{shelf}" aria-labelledby="h-{shelf}">\n'
-            f'<header class="shelf-head"><h2 id="h-{shelf}">{html.escape(heading(meta))}</h2>'
-            f'<p>{sub}</p></header>\n'
+            f'<header class="shelf-head"><div><h2 id="h-{shelf}">{html.escape(heading(meta))}</h2>'
+            f'<p>{sub}</p></div><button class="btn small dl-folder" type="button" data-folder="{shelf}">'
+            f'Download folder</button></header>\n'
             f'<ul class="pieces">\n{rows}\n</ul>\n'
             f'</section>\n')
 
@@ -198,6 +196,8 @@ def library_html(grouped: list[tuple[str, list[dict]]], stats: dict) -> str:
 <div class="lib-bar">
 <label class="lib-search"><span class="sr-only">Search the library</span>{SEARCH_ICON}<input id="lib-q" type="search" placeholder="Search by BWV number or title" autocomplete="off" spellcheck="false" /></label>
 <p class="lib-count" id="lib-count" aria-live="polite">{stats['pieces']:,} pieces in {stats['folders']} folders</p>
+<button class="btn primary small dl-all" type="button" id="lib-all">Download everything</button>
+<p class="lib-progress" id="lib-progress" aria-live="polite" hidden></p>
 </div>
 <div class="lib-body">
 <div class="lib-folders">
@@ -230,7 +230,7 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
 
     metas = {}
-    # One tree per composer: bach/<shelf>/, vivaldi/<shelf>/, ...
+    # One tree per composer: bach/<shelf>/, ...
     for path in sorted(glob.glob(os.path.join(ROOT, "*", "*", "shelf.json"))):
         with io.open(path, encoding="utf-8") as fh:
             meta = json.load(fh)
