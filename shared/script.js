@@ -49,9 +49,9 @@ const projects = [
     cat: "software",
     status: "live",
     caption:
-      "Arranges Bach for a band of guitars and a bass, one voice per player and one note at a time. 3,445 arrangements are published as Guitar Pro files, and 72 organ movements also come as a PDF per player, notation over tablature.",
+      "Arranges Bach for a band of guitars and a bass, one voice per player and one note at a time. 3,445 arrangements are published as Guitar Pro files, each with sheet music for every player, notation over tablature.",
     summary:
-      "The arranger reads a score, works out which melodic line is which, and gives each line to a different player. Every part plays one note at a time. The library holds 3,445 arrangements as Guitar Pro files, and 72 of the organ works also come as a PDF for each player.",
+      "The arranger reads a score, works out which melodic line is which, and gives each line to a different player. Every part plays one note at a time. The library holds 3,445 arrangements as Guitar Pro files, and every one can be opened as sheet music for each player and saved as a PDF.",
     tags: ["Python", "PyGuitarPro", "mido", "MuseScore"],
     links: [
       { name: "the library", url: "/fuguesplit/" },

@@ -25,6 +25,7 @@ import io
 import json
 import os
 import re
+import urllib.parse
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -141,6 +142,17 @@ def piece_html(composer: str, shelf: str, piece: dict) -> str:
         label = suffix.replace("guitar-", "").upper()
         links.append(f'<a href="{url}/pdf/{html.escape(file)}" '
                      f'title="{part_title(suffix)}">{label}</a>')
+
+    # Everything else is engraved on request, in the browser, by the
+    # sheet-music page, which also saves it as a PDF.
+    if not links:
+        name = display_label(piece["label"])
+        extra = clean_title(piece)
+        if extra and extra != name:
+            name += ", " + extra
+        q = urllib.parse.urlencode({"f": f"{composer}/{shelf}/gp/{piece['stem']}.gp5", "t": name})
+        links.append(f'<a class="sheet" href="/fuguesplit/score/?{html.escape(q)}" '
+                     f'title="Notation and tablature, to read or save as a PDF">PDF</a>')
 
     links.append(f'<a class="gp" href="{url}/gp/{html.escape(piece["stem"])}.gp5">GP5</a>')
 

@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Project Euler · Leonid Elkin</title>
-    <meta name="description" content="Leonid Elkin's Project Euler solutions in Python. Read each one and run it in your browser." />
+    <title>Sheet music · Bach Works Guitar Arranger</title>
+    <meta name="description" content="A piece from the Bach Works Guitar Arranger library, engraved as notation and tablature, to read or save as a PDF." />
+    <meta name="robots" content="noindex" />
     <meta name="theme-color" content="#22223b" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Project Euler · Leonid Elkin" />
-    <meta property="og:description" content="Leonid Elkin's Project Euler solutions in Python. Read each one and run it in your browser." />
-    <meta property="og:url" content="https://lelkyy.github.io/practice/euler/" />
+    <meta property="og:title" content="Sheet music · Bach Works Guitar Arranger" />
+    <meta property="og:description" content="A piece from the Bach Works Guitar Arranger library, engraved as notation and tablature, to read or save as a PDF." />
+    <meta property="og:url" content="https://lelkyy.github.io/fuguesplit/score/" />
     <meta property="og:image" content="https://lelkyy.github.io/previews/share.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://lelkyy.github.io/practice/euler/" />
     <link rel="icon" type="image/png" href="/previews/favicon.png" />
     <link rel="apple-touch-icon" href="/previews/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,38 +44,25 @@
 
     <main id="main">
         <section class="photo page-hero">
-            <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/moscow-city-1200.jpg" /><img src="/previews/panoramas/moscow-city.jpg" alt="" decoding="async" /></picture>
+            <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/msu-1200.jpg" /><img src="/previews/panoramas/msu.jpg" alt="" decoding="async" /></picture>
             <div class="wrap">
-                <a class="back" href="/projects/">&larr; All projects</a>
-                <p class="eyebrow">Practice</p>
-                <h1>Project Euler</h1>
-                <p class="lede"><span id="euler-count">69 problems</span> solved in Python. Run any of them here. Answers aren't printed, as Project Euler asks.</p>
+                <a class="back" href="/fuguesplit/">&larr; The library</a>
+                <p class="eyebrow">Sheet music</p>
+                <h1 id="score-title">Sheet music</h1>
+                <div class="score-parts" id="score-parts" aria-label="Parts"></div>
+                <p class="doc-actions">
+                    <button class="btn primary" type="button" id="score-save" disabled>Save as PDF</button>
+                    <a class="btn" id="score-gp" href="/fuguesplit/" download>Guitar Pro file</a>
+                </p>
             </div>
         </section>
 
         <section class="page-body">
-            <div class="wrap euler-layout">
-                <div class="euler-pick" id="euler-pick" role="listbox" aria-label="Problems"></div>
-                <div class="euler-view">
-                    <div class="euler-head">
-                        <div>
-                            <span class="idx" id="euler-num"></span>
-                            <h2 id="euler-title"></h2>
-                        </div>
-                        <div class="euler-nav">
-                            <button class="btn small" id="euler-prev" type="button">&larr; Prev</button>
-                            <button class="btn small" id="euler-next" type="button">Next &rarr;</button>
-                        </div>
-                    </div>
-                    <div class="euler-langs" id="euler-langs" role="tablist" aria-label="Language" hidden></div>
-                    <dl class="fact-list euler-facts" id="euler-facts"></dl>
-                    <pre class="code" id="euler-code"><code></code></pre>
-                    <div class="euler-run">
-                        <button class="btn small primary" id="euler-run" type="button">&#9654; Run it here</button>
-                        <button class="btn small" id="euler-stop" type="button" hidden>&#9632; Stop</button>
-                        <span class="euler-run-status" id="euler-run-status"></span>
-                    </div>
-                    <pre class="code out" id="euler-out" hidden></pre>
+            <div class="wrap">
+                <div class="score-sheet">
+                    <h2 class="score-print-title" id="score-print-title"></h2>
+                    <p class="score-status" id="score-status" aria-live="polite" hidden></p>
+                    <div id="score"></div>
                 </div>
             </div>
         </section>
@@ -96,8 +83,8 @@
         </div>
     </footer>
 
-    <script src="/data/euler-solutions.js"></script>
-    <script src="/shared/solutions.js"></script>
+    <script src="/fuguesplit/score/alphaTab.min.js?v=1.8.4"></script>
+    <script src="/fuguesplit/score/score.js?v=3"></script>
     <script src="/shared/nav.js?v=41"></script>
 </body>
 

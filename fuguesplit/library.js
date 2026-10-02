@@ -218,7 +218,7 @@
   function filesIn(list) {
     const out = [];
     list.forEach((shelf) => {
-      shelf.querySelectorAll(".pieces .dl a[href]").forEach((a) => {
+      shelf.querySelectorAll(".pieces .dl a[href]:not(.sheet)").forEach((a) => {
         const url = a.getAttribute("href");
         const parts = url.split("/");
         const file = decodeURIComponent(parts[parts.length - 1]);
