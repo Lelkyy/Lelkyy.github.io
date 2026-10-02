@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Document · Leonid Elkin</title>
     <meta name="description" content="A paper or report by Leonid Elkin, read in the page." />
-    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#121213" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#0a0a0a" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Document · Leonid Elkin" />
     <meta property="og:description" content="A paper or report by Leonid Elkin, read in the page." />
@@ -20,8 +19,8 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=20" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=30" />
 </head>
 
 <body>
@@ -29,12 +28,16 @@
     <header class="site-head">
         <div class="wrap">
             <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <nav class="site-nav" aria-label="Main">
+            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span
+                    class="bars" aria-hidden="true"></span>Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
                 <ul>
-                <li><a href="/projects/" aria-current="page">Work</a></li>
-                <li><a href="/fuguesplit/">FugueSplit</a></li>
-                <li><a href="/about/">About</a></li>
-                <li class="nav-contact"><a href="#contact">Contact</a></li>
+                    <li><a href="/projects/">Work</a></li>
+                    <li><a href="/papers/" aria-current="page">Papers</a></li>
+                    <li><a href="/live/">Live</a></li>
+                    <li><a href="/fuguesplit/">FugueSplit</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -43,15 +46,14 @@
     <main id="main">
 
         <div class="wrap">
-            <a class="back" id="doc-back" href="/projects/">&larr; All work</a>
-            <header class="page-head" style="padding-top: 8px; padding-bottom: 0;">
-                <h1 id="doc-title">Document</h1>
-                <div class="actions" style="margin-top: 18px;">
-                    <a class="btn primary ext" id="doc-open" href="" target="_blank" rel="noopener">Open in a new tab</a>
-                    <a class="btn" id="doc-download" href="" download>Download</a>
+            <a class="back" id="doc-back" href="/papers/">&larr; Papers</a>
+            <header class="page-head" style="padding-top: 12px; padding-bottom: 0;">
+                <h1 class="display" id="doc-title" style="font-size: clamp(1.8rem, 4.5vw, 3.6rem);">Document</h1>
+                <div class="gos actions" style="margin-top: 18px;">
+                    <a class="go ext" id="doc-open" href="" target="_blank" rel="noopener">Open in a new tab</a>
+                    <a class="go down" id="doc-download" href="" download>Download</a>
                 </div>
             </header>
-
             <div class="doc-frame">
                 <object id="doc-object" type="application/pdf" data="" aria-label="PDF document">
                     <div class="doc-fallback">
@@ -66,27 +68,29 @@
     <footer class="site-foot" id="contact">
         <div class="wrap foot-main">
             <div>
-                <h2>Get in touch</h2>
-                <p>Email is the quickest way to reach me.</p>
+                <p class="label">Contact</p>
+                <h2 class="display">Get in touch</h2>
                 <div class="email-row">
                     <a class="email" href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a>
                     <button class="btn small" type="button" data-copy="lnd.elkn@gmail.com">Copy</button>
                 </div>
             </div>
-            <ul class="foot-links">
-                <li><a class="ext" href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a class="ext" href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
-                <li><a class="ext" href="https://pypi.org/project/elkwork/" target="_blank" rel="noopener">PyPI</a></li>
-            </ul>
+            <div>
+                <ul class="foot-links">
+                    <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                    <li><a href="https://pypi.org/project/elkwork/" target="_blank" rel="noopener">PyPI</a></li>
+                </ul>
+            </div>
         </div>
         <div class="wrap foot-base">
             <span>Leonid Elkin, 2026</span>
-            <a href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io" target="_blank" rel="noopener">Source for this site</a>
+            <a href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io" target="_blank" rel="noopener">Source for this site &#8599;</a>
         </div>
     </footer>
 
-    <script src="/doc/doc.js?v=20"></script>
-    <script src="/shared/site.js?v=20"></script>
+    <script src="/doc/doc.js?v=30"></script>
+    <script src="/shared/site.js?v=30"></script>
 </body>
 
 </html>

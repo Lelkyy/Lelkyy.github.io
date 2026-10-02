@@ -5,12 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Work · Leonid Elkin</title>
-    <meta name="description" content="Every project by Leonid Elkin: software, radio hardware, research papers and practice sets, each with its source or the running thing." />
-    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#121213" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="Every project by Leonid Elkin: software, radio hardware, research and practice, each with a write-up and its links." />
+    <meta name="theme-color" content="#0a0a0a" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Work · Leonid Elkin" />
-    <meta property="og:description" content="Every project by Leonid Elkin: software, radio hardware, research papers and practice sets, each with its source or the running thing." />
+    <meta property="og:description" content="Every project by Leonid Elkin: software, radio hardware, research and practice, each with a write-up and its links." />
     <meta property="og:url" content="https://leonid-elkin.github.io/projects/" />
     <meta property="og:site_name" content="Leonid Elkin" />
     <meta property="og:image" content="https://leonid-elkin.github.io/previews/share.jpg" />
@@ -21,8 +20,9 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=20" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=30" />
+    <link rel="stylesheet" href="/shared/durak.css?v=30" />
 </head>
 
 <body>
@@ -30,12 +30,16 @@
     <header class="site-head">
         <div class="wrap">
             <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <nav class="site-nav" aria-label="Main">
+            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span
+                    class="bars" aria-hidden="true"></span>Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
                 <ul>
-                <li><a href="/projects/" aria-current="page">Work</a></li>
-                <li><a href="/fuguesplit/">FugueSplit</a></li>
-                <li><a href="/about/">About</a></li>
-                <li class="nav-contact"><a href="#contact">Contact</a></li>
+                    <li><a href="/projects/" aria-current="page">Work</a></li>
+                    <li><a href="/papers/">Papers</a></li>
+                    <li><a href="/live/">Live</a></li>
+                    <li><a href="/fuguesplit/">FugueSplit</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -45,18 +49,17 @@
 
         <div class="wrap">
             <header class="page-head">
-                <h1>Work</h1>
-                <p class="lede"><span data-count>18</span> projects, the strongest first. Each one has its own
-                    page with a write-up and links to the running thing, the paper or the source.</p>
+                <p class="label"><b>01</b>Index</p>
+                <h1 class="display">Work</h1>
+                <p class="lede"><span data-count>17</span> projects, the strongest first. Each one opens to a write-up
+                    with links to the running thing, the paper or the source.</p>
             </header>
-
-            <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
-            <ul class="cards" id="work-cards"></ul>
-
-            <h2 class="subhead" id="smaller-head">Smaller projects</h2>
-            <ul class="rows" id="work-rows"></ul>
-
-            <noscript><p class="empty-note">The project list needs JavaScript. The code is on
+            <div class="tabs" id="filters" role="group" aria-label="Filter by type"></div>
+            <div class="ix">
+                <ol class="ix-list" id="work-list"></ol>
+                <aside id="work-monitor"></aside>
+            </div>
+            <noscript><p class="lede">The index needs JavaScript. The code is on
                 <a class="text-link" href="https://github.com/Leonid-Elkin">GitHub</a>.</p></noscript>
         </div>
     </main>
@@ -64,27 +67,47 @@
     <footer class="site-foot" id="contact">
         <div class="wrap foot-main">
             <div>
-                <h2>Get in touch</h2>
-                <p>Email is the quickest way to reach me.</p>
+                <p class="label">Contact</p>
+                <h2 class="display">Get in touch</h2>
                 <div class="email-row">
                     <a class="email" href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a>
                     <button class="btn small" type="button" data-copy="lnd.elkn@gmail.com">Copy</button>
                 </div>
             </div>
-            <ul class="foot-links">
-                <li><a class="ext" href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a class="ext" href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
-                <li><a class="ext" href="https://pypi.org/project/elkwork/" target="_blank" rel="noopener">PyPI</a></li>
-            </ul>
+            <div>
+                <button class="egg" id="egg" type="button" aria-label="A stack of cards. Deal them.">
+                    <span class="egg-hint" aria-hidden="true">deal?</span>
+                    <span class="egg-stack" aria-hidden="true"></span>
+                </button>
+                <ul class="foot-links">
+                    <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                    <li><a href="https://pypi.org/project/elkwork/" target="_blank" rel="noopener">PyPI</a></li>
+                </ul>
+            </div>
         </div>
         <div class="wrap foot-base">
             <span>Leonid Elkin, 2026</span>
-            <a href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io" target="_blank" rel="noopener">Source for this site</a>
+            <a href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io" target="_blank" rel="noopener">Source for this site &#8599;</a>
         </div>
     </footer>
 
-    <script src="/shared/data.js?v=20"></script>
-    <script src="/shared/site.js?v=20"></script>
+    <div class="durak-panel" id="durak-panel" role="dialog" aria-modal="true" aria-label="Durak" hidden>
+        <div class="panel-inner">
+            <div class="panel-head">
+                <h2 class="display">Durak</h2>
+                <a class="panel-link" href="/durak-online/">Play a friend online &rarr;</a>
+                <button class="panel-close" type="button">Close &times;</button>
+            </div>
+            <div class="durak" id="durak" data-deferred></div>
+        </div>
+    </div>
+
+    <script src="/shared/data.js?v=30"></script>
+    <script src="/shared/site.js?v=30"></script>
+    <script src="/shared/durak-sfx.js"></script>
+    <script src="/shared/durak.js?v=30"></script>
+    <script src="/shared/egg.js?v=30"></script>
 </body>
 
 </html>

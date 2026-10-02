@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://leonid-elkin.github.io/</loc></url>
   <url><loc>https://leonid-elkin.github.io/projects/</loc></url>
+  <url><loc>https://leonid-elkin.github.io/papers/</loc></url>
+  <url><loc>https://leonid-elkin.github.io/live/</loc></url>
   <url><loc>https://leonid-elkin.github.io/about/</loc></url>
   <url><loc>https://leonid-elkin.github.io/fuguesplit/</loc></url>
   <url><loc>https://leonid-elkin.github.io/practice/euler/</loc></url>
@@ -10,7 +12,6 @@
   <url><loc>https://leonid-elkin.github.io/case/?p=movegrade</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=fuguesplit</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=shellfall</loc></url>
-  <url><loc>https://leonid-elkin.github.io/case/?p=durak</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=chess-vision-bot</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=sheet2tab</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=yavalath-pentalath</loc></url>
@@ -20,7 +21,7 @@
   <url><loc>https://leonid-elkin.github.io/case/?p=cansat-2025</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=yagi-uda-radar</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=neural-scaling-laws</loc></url>
-  <url><loc>https://leonid-elkin.github.io/case/?p=globular-clusters</loc></url>
+  <url><loc>https://leonid-elkin.github.io/case/?p=open-clusters</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=drawer</loc></url>
   <url><loc>https://leonid-elkin.github.io/case/?p=advent-of-code-2025</loc></url>
 </urlset>

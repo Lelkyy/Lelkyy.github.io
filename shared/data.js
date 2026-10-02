@@ -4,10 +4,11 @@
  *
  *   slug      the address of its page, /case/?p=<slug>, unless `page` is set
  *   cat       software | hardware | research | practice
- *   tier      1 shows as a card on the work page, 2 in the smaller list
+ *   tier      1 in the main run of the index, 2 among the smaller ones
+ *   aliases   older slugs that should still find this project
  *   featured  on the home page, in the order of FEATURED below
  *   status    "live", "wip", or left out
- *   blurb     one or two lines for the card
+ *   blurb     one or two lines for the index and its viewer
  *   summary   the opening paragraph of its page
  *   image     a real screenshot or photo from previews/, with `fit` set to
  *             "contain" for wide scores on white and "small" for tiny ones
@@ -35,6 +36,7 @@ window.SITE = (function () {
       tags: ["Python", "SQLite", "systemd", "Leaflet"],
       image: { src: "/previews/drone-strike-map.jpg", alt: "The Drone Strike Map: Ukraine and western Russia with one day's reported strikes, and the sources for each figure in the side panel", caption: "One day on the map. The side panel lists every outlet behind each figure." },
       links: [
+        { label: "See it live", url: "/live/#map" },
         { label: "Open the map", url: "https://dronestrikemap.com/" },
         { label: "Public API", url: "https://dronestrikemap.com/api/strikes" },
       ],
@@ -57,6 +59,7 @@ window.SITE = (function () {
       tags: ["JavaScript", "Chrome MV3", "Stockfish WASM", "chess.js"],
       image: { src: "/previews/movegrade.jpg", alt: "The MoveGrade panel showing a mistake, the evaluation before and after, and the engine's preferred line", caption: "The panel after 5...Nxd5 in the Fried Liver: a mistake, the eval before and after, and the line the engine preferred." },
       links: [
+        { label: "Try it live", url: "/live/#movegrade" },
         { label: "Download", url: GH + "MoveGrade/releases/latest/download/MoveGrade.zip" },
         { label: "Source", url: GH + "MoveGrade" },
       ],
@@ -71,7 +74,6 @@ window.SITE = (function () {
         ["Next", "Live-game detection on chess.com still needs testing in a real logged-in game. The 40 MB net should be downloaded once and cached. A puzzle mode would hide the grade until you've chosen your own move."],
       ],
       facts: [["Role", "Solo"], ["Stack", "JavaScript, Chrome MV3, Stockfish 16 WASM, chess.js"]],
-      demo: "movegrade",
     },
     {
       slug: "fuguesplit",
@@ -113,28 +115,6 @@ window.SITE = (function () {
         ["What it taught me", "Pacing. The first builds let you fire as fast as you could click, and every battle turned into noise. Reload timers and named ships are what made it play like a game."],
       ],
       facts: [["Role", "Solo"], ["Stack", "Python, pygame"], ["Released", "itch.io, as Penumbra"]],
-    },
-    {
-      slug: "durak",
-      title: "Durak",
-      cat: "software",
-      tier: 1,
-      status: "live",
-      blurb: "The Russian card game with transfers. Play the computer here, or a friend browser to browser with no server.",
-      summary: "Durak with 36 cards and transfers. You can play the computer on this page, or open a table and play a friend browser to browser. There's no server and no account.",
-      tags: ["JavaScript", "WebRTC"],
-      image: { src: "/previews/durak.jpg", alt: "A game of Durak in progress", caption: "A table open, a bout in progress." },
-      links: [
-        { label: "Play a friend online", url: "/durak-online/" },
-        { label: "Source", url: GH + "Leonid-Elkin.github.io/blob/main/durak-online/durak-online.js" },
-      ],
-      sections: [
-        ["The rules", "Thirty-six cards, with trumps taken from the bottom of the deck. The last player holding cards loses. Both games play perevodnoy durak: a defender who hasn't beaten anything yet can lay a card of the same rank and pass the whole attack on. That only works while everything on the table is unbeaten, the other player has enough cards to answer and there are fewer than six cards down."],
-        ["How the online game works", "One player hosts and reads out a six-letter code, and the other joins with it. The two browsers then talk directly over WebRTC, with PeerJS handling the introduction. The host owns the game: every move from either side goes through the same rules function on the host, which sends the whole state to both players."],
-        ["What broke", "WebRTC with STUN alone works between two homes and fails behind anything that rewrites addresses, like a corporate proxy or some VPNs. A TURN relay would fix it, but it needs a metered key on a server, and the game has none. The computer also plays every transfer it can, which a person wouldn't."],
-      ],
-      facts: [["Role", "Solo"], ["Stack", "JavaScript, WebRTC, PeerJS"]],
-      demo: "durak",
     },
     {
       slug: "chess-vision-bot",
@@ -180,13 +160,11 @@ window.SITE = (function () {
       tags: ["Python"],
       image: { src: "/previews/yavalath.jpg", alt: "A game of Yavalath in progress on a hex board", caption: "Yavalath in play. Four in a row wins and three in a row loses." },
       links: [
-        { label: "Documentation", url: "/Documentation/Yavalath_NEA_documentation.pdf", title: "Yavalath and Pentalath documentation" },
         { label: "Source", url: GH + "Computer-science-NEA-Yavalath-" },
         { label: "The rules", url: "https://boardgamegeek.com/boardgame/33767/yavalath" },
       ],
       sections: [
         ["The rules", "Four in a row wins, but three in a row loses, and that one rule makes a naive opponent throw the game. The computer searches a few plies with it in mind and prefers moves that force the other side into a losing three."],
-        ["Documentation", "Written to the exam board's format: analysis, design, technical solution, testing and evaluation."],
       ],
       facts: [["Role", "Solo"], ["Stack", "Python"], ["For", "A-Level NEA"]],
     },
@@ -247,16 +225,16 @@ window.SITE = (function () {
       title: "CanSat 2025",
       cat: "hardware",
       tier: 1,
-      blurb: "A can-sized satellite built by a team of seven for the CanSat competition. I built the payload radio and the antenna.",
-      summary: "A can-sized satellite for the CanSat competition, built by a team of seven at Tonbridge School and taken through to a full critical design report. My part was the payload and the radio: the telemetry link and the antenna.",
+      blurb: "A can-sized satellite built by a team of seven for the UK CanSat competition. I built the payload radio and the antenna.",
+      summary: "A can-sized satellite for the UK CanSat competition, built by Team Re-LAACS, seven of us at Tonbridge School. The mission was remote low-altitude atmospheric composition sensing. My part was the payload and the radio: the telemetry link and the antenna.",
       tags: ["RF", "Telemetry", "Payload"],
       image: { src: "/previews/cansat-2025.jpg", alt: "The CanSat team at the launch site with the rocket and two hand-held Yagi-Uda antennas", caption: "The team at the launch site, with the rocket and two hand-held Yagi-Uda antennas." },
-      links: [{ label: "Critical design report", url: "/Documentation/Tonbridge CanSat_ReLAACS_ 2024-25 CDR .pdf", title: "CanSat 2025 critical design report" }],
+      links: [{ label: "Critical Design Review", url: "/Documentation/Tonbridge CanSat_ReLAACS_ 2024-25 CDR .pdf", title: "Team Re-LAACS Critical Design Review" }],
       sections: [
-        ["The report", "The critical design report covers the mission, the payload, the ground station and the test campaign."],
+        ["The review", "The Critical Design Review, submitted on 31 January 2025, runs to 36 pages. It covers the mission, the payload, the ground station and the test campaign."],
         ["What came next", "The telemetry link was the first antenna I built. The Yagi-Uda radar is the one I built afterwards to do it properly."],
       ],
-      facts: [["Role", "Payload and radio"], ["Team", "Seven"], ["Year", "2024–25"]],
+      facts: [["Role", "Payload and radio"], ["Team", "Re-LAACS, seven people"], ["Year", "2024–25"]],
     },
     {
       slug: "yagi-uda-radar",
@@ -282,39 +260,43 @@ window.SITE = (function () {
       cat: "research",
       tier: 1,
       blurb: "MLPs written from scratch in NumPy and trained at many sizes to measure how loss falls with parameters. A 57-page paper.",
-      summary: "Multilayer perceptrons written from scratch in NumPy, with no framework, trained at a range of sizes to measure how test loss falls with parameter count. The library is on PyPI as elkwork, and the write-up is a 57-page paper.",
+      summary: "Multilayer perceptrons written from scratch in NumPy, with no framework, trained at a range of sizes, learning rates and epoch counts to see how performance scales. The library is on PyPI as elkwork, and the write-up is a 57-page paper.",
       tags: ["Python", "NumPy", "LaTeX"],
       image: { src: "/previews/neural-scaling-laws.jpg", alt: "The efficiency frontier: test loss against parameter count, one point per model", caption: "The efficiency frontier: test loss against parameter count, one point per model." },
       links: [
-        { label: "Read the paper", url: "/Documentation/Investigating_neural_scaling_laws.pdf", title: "Investigating neural scaling laws" },
+        { label: "Read the paper", url: "/papers/#neural-scaling-laws" },
         { label: "elkwork on PyPI", url: "https://pypi.org/project/elkwork/" },
         { label: "Source", url: GH + "Scratch-MLP-implementation" },
         { label: "Code and models, zip", url: "/MLP all documents (2).zip" },
       ],
       sections: [
-        ["Results", "98.52% on MNIST and 93.35% on FashionMNIST, and a clean power-law frontier once the models were trained to convergence. Much of what first looked like scaling turned out to depend on the optimiser."],
+        ["Results", "Bigger models scored better, with diminishing returns past a certain size. More epochs raised accuracy but made the larger models overfit. Higher learning rates converged faster and went unstable when pushed: the highest stable rate was 0.1 with sigmoid and 0.01 with ReLU. Cross-entropy beat mean squared error in every run."],
+        ["The best model", "Built from those findings, it reached 98.51% on MNIST. That is 9.4% fewer errors than the best comparable result I could find: 1.49% against 1.63%."],
         ["Companion", "Drawer is the same network reading a digit you draw, one layer at a time."],
       ],
-      facts: [["Role", "Solo"], ["Stack", "Python, NumPy, LaTeX"], ["Output", "57-page paper, PyPI package"], ["Dates", "2024 to April 2025"]],
+      facts: [["Role", "Solo"], ["Stack", "Python, NumPy, LaTeX"], ["Output", "57-page paper, PyPI package"], ["Paper", "April 2025"]],
     },
     {
-      slug: "globular-clusters",
-      title: "Globular clusters",
+      slug: "open-clusters",
+      aliases: ["globular-clusters"],
+      title: "Open clusters",
       cat: "research",
       tier: 1,
-      blurb: "Do primordial binaries change how fast a globular cluster evaporates? An N-body simulation, a paper and a poster.",
-      summary: "Does a population of primordial binaries change how fast a globular cluster evaporates? An N-body simulation to test it, written up as a paper and presented as a poster.",
+      blurb: "Do primordial binary stars change how long an open cluster survives? A 2D N-body simulation, a paper and a poster.",
+      summary: "How does the fraction of primordial binary stars affect how long an open cluster in the galactic disk survives? A 2D N-body simulation written for the question, run at four binary fractions and written up as a paper and a poster.",
       tags: ["Python", "NumPy"],
-      image: { src: "/previews/globular-clusters.jpg", alt: "The N-body simulation of a globular cluster, a few thousand steps in", caption: "The N-body simulation, a few thousand steps in." },
+      image: { src: "/previews/globular-clusters.jpg", alt: "The N-body simulation of a star cluster, a few thousand steps in", caption: "The N-body simulation, a few thousand steps in." },
       links: [
-        { label: "Read the paper", url: "/Documentation/Physics_investigation (2).pdf", title: "Globular cluster evaporation" },
-        { label: "See the poster", url: "/Documentation/Physics_investigation_poster.pdf", title: "Globular cluster evaporation, poster" },
+        { label: "Read the paper", url: "/papers/#open-clusters" },
+        { label: "See the poster", url: "/Documentation/Physics_investigation_poster.pdf", title: "Primordial binaries and open cluster survival, poster" },
         { label: "Source", url: GH + "N-body-simulation" },
       ],
       sections: [
-        ["How it's built", "NumPy, direct summation with softening and a leapfrog integrator. Runs were repeated with and without a binary population and the evaporation rates compared."],
+        ["How it's built", "Python and NumPy, in two dimensions to keep the cost down. Forces are summed directly, using Newton's third law to halve the work, with no gravitational softening so close encounters resolve properly. Time steps were tuned to keep the total energy error below 10\u207B\u2076 %."],
+        ["The runs", "Clusters started from identical conditions with 0%, 8%, 16% and 24% of stars paired into binaries. Each was run 10 times with different seeds, and a cluster counted as dissolved once half its mass was unbound."],
+        ["Result", "More binaries meant longer survival. The 24% clusters lasted nearly 30,000 simulation time units longer than the clusters with none, because binaries feed energy back into the core and delay its collapse."],
       ],
-      facts: [["Role", "Solo"], ["Stack", "Python, NumPy"], ["Output", "Paper and poster"], ["Year", "2024"]],
+      facts: [["Role", "Solo"], ["Stack", "Python, NumPy"], ["Output", "Paper and poster"], ["Paper", "June 2025"]],
     },
     {
       slug: "drawer",
@@ -377,7 +359,7 @@ window.SITE = (function () {
     "movegrade",
     "fuguesplit",
     "neural-scaling-laws",
-    "globular-clusters",
+    "open-clusters",
     "cansat-2025",
   ];
 
@@ -409,21 +391,22 @@ window.SITE = (function () {
     {
       when: "2024 to Apr 2025",
       title: "Investigating neural scaling laws",
-      org: "Independent research, 57-page paper",
+      org: "Extended Project Qualification, 57-page paper",
       points: [
         "Wrote multilayer perceptrons from scratch in NumPy and published the library on PyPI as elkwork.",
-        "Trained a range of model sizes to measure how test loss falls with parameter count. Reached 98.52% on MNIST and 93.35% on FashionMNIST.",
+        "Trained a range of model sizes, learning rates and epoch counts to see how performance scales. The best model reached 98.51% on MNIST, 9.4% fewer errors than the best comparable result I found.",
       ],
       slug: "neural-scaling-laws",
     },
     {
-      when: "2024",
-      title: "Globular cluster evaporation",
+      when: "Jun 2025",
+      title: "Primordial binaries and open cluster survival",
       org: "Physics investigation, paper and poster",
       points: [
-        "Built an N-body simulation to test whether primordial binaries change how fast a globular cluster evaporates.",
+        "Built a 2D N-body simulation to test whether primordial binary stars change how long an open cluster survives.",
+        "Ran four binary fractions, 10 seeds each. The 24% clusters outlived the binary-free ones by nearly 30,000 time units.",
       ],
-      slug: "globular-clusters",
+      slug: "open-clusters",
     },
   ];
 
@@ -463,12 +446,67 @@ window.SITE = (function () {
       head: "Machine learning",
       items: [
         ["MLPs from scratch", "elkwork, on PyPI"],
-        ["Training and evaluation", "98.5% MNIST, 93.4% FashionMNIST"],
+        ["Training and evaluation", "98.51% on MNIST"],
         ["Computer vision", "Chess Vision Bot"],
         ["Optical music recognition", "Sheet2Tab"],
       ],
     },
   ];
 
-  return { projects, FEATURED, CATS, education, research, skills };
+  /* the Papers tab */
+
+  const papers = [
+    {
+      id: "neural-scaling-laws",
+      title: "Investigating Neural Scaling Laws in a Multilayer Perceptron",
+      kind: "Extended Project Qualification",
+      date: "April 2025",
+      pages: 57,
+      pdf: "/Documentation/Investigating_neural_scaling_laws.pdf",
+      abstract: [
+        "How do model size, learning rate and the number of training epochs change what a multilayer perceptron can do? I built an MLP from scratch in NumPy, trained it in many configurations and measured each one on MNIST.",
+        "Bigger models scored better, with diminishing returns past a certain size. More epochs raised accuracy and made the larger models overfit. Higher learning rates converged faster and went unstable when pushed, and the best rate depended on the size of the model. A model built from those findings reached 98.51% on MNIST.",
+      ],
+      stats: [["98.51%", "MNIST accuracy"], ["9.4%", "Fewer errors than the best comparable result"], ["57", "Pages"]],
+      figure: { src: "/previews/neural-scaling-laws.jpg", alt: "The compute efficiency frontier: test loss against parameter count", caption: "The compute efficiency frontier from the paper: loss against compute, one curve per model." },
+      links: [
+        { label: "Source", url: GH + "Scratch-MLP-implementation" },
+        { label: "elkwork on PyPI", url: "https://pypi.org/project/elkwork/" },
+        { label: "Code and models, zip", url: "/MLP all documents (2).zip" },
+      ],
+      project: "neural-scaling-laws",
+    },
+    {
+      id: "open-clusters",
+      title: "How Does the Primordial Binary Fraction Affect the Survival Time of an Open Cluster in the Galactic Disk?",
+      kind: "Physics investigation",
+      date: "June 2025",
+      pages: 5,
+      pdf: "/Documentation/Physics_investigation (2).pdf",
+      abstract: [
+        "A 2D N-body simulation, written for the question, ran clusters from identical starting conditions with 0%, 8%, 16% and 24% of their stars in primordial binaries, 10 seeds each.",
+        "Clusters with more binaries kept more of their mass and their cores contracted more slowly, which supports binaries acting as an internal energy source that delays core collapse. The effect grew steadily with the binary fraction, with no point where binaries started to hurt.",
+      ],
+      stats: [["~30,000", "Extra time units survived at 24% binaries"], ["4 × 10", "Binary fractions × seeds"], ["5", "Pages, plus a poster"]],
+      figure: { cluster: true, caption: "A star cluster running live in your browser. A toy version: it softens gravity to stay smooth, and the paper's code did not." },
+      links: [
+        { label: "Poster", url: "/Documentation/Physics_investigation_poster.pdf", title: "Primordial binaries and open cluster survival, poster" },
+        { label: "Source", url: GH + "N-body-simulation" },
+      ],
+      project: "open-clusters",
+    },
+  ];
+
+  const reports = [
+    {
+      title: "Team Re-LAACS: Critical Design Review",
+      by: "UK CanSat competition, team of seven",
+      date: "January 2025",
+      pages: 36,
+      pdf: "/Documentation/Tonbridge CanSat_ReLAACS_ 2024-25 CDR .pdf",
+      project: "cansat-2025",
+    },
+  ];
+
+  return { projects, FEATURED, CATS, education, research, skills, papers, reports };
 })();
