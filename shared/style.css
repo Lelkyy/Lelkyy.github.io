@@ -327,8 +327,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .cluster-band { position: relative; height: 0; overflow: hidden; background: var(--night); }
 .cluster-band.is-live { height: clamp(240px, 26vw, 340px); }
 .cluster-band canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.cluster-readout { position: absolute; left: 14px; right: 14px; bottom: 10px; display: flex; justify-content: space-between; font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-dark-3); pointer-events: none; }
-.cluster-readout b { font-weight: 500; color: var(--rose); }
 
 .report { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 40px; padding: 24px 28px; border-radius: var(--radius); background: var(--dusk); color: var(--on-dark); }
 .report h3 { font-size: 1.4rem; margin-top: 6px; }
