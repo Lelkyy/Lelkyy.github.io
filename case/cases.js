@@ -56,6 +56,7 @@ const CASES = {
       ["What it is", "Watches a chessboard on your screen, rebuilds the position, and says what to play. It draws the suggested move over the board and keeps an opening book for the first moves."],
       ["How it works", "A screen reader calibrated to the board's corners samples each square and matches it against the piece set. The position goes to an engine written in Python, and PyQt5 draws the suggested move over the screen."],
       ["What is next", "The Python engine was fine to depth four and too slow past it, so it is being ported to C++ and checked against the Python one move for move. The detector stays in Python. MoveGrade grew out of the same detector, reading the move list in the browser instead of the screen."],
+      ["The evaluation function", "A plain-language walk through how the engine scores a position will go here."],
     ],
     facts: [["Role", "Solo"], ["Stack", "Python, PyQt5, python-chess, C++"], ["Source", "private until it is finished"]],
   },
