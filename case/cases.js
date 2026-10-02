@@ -27,7 +27,7 @@ const CASES = {
       ["How it works", "A fugue is already written as independent lines, so the program never has to split chords. It walks the piece in time order and, at every new note, solves a small assignment problem to decide which part takes it. The cost favours parts that move by step, keeps Guitar I on top, avoids cutting off a held note and follows the source's own track layout where there is one. The pedal line goes straight to the bass."],
       ["As many players as it takes", "The band grows with the music. If a note arrives while every player is busy, a guitar is added and the piece is dealt out again. BWV 582 opens in three voices and later stacks five over the pedal."],
       ["Keeping it playable", "Each part is moved into the instrument's range by whole octaves, phrase by phrase, so the melodic shape never changes. The bass is kept in a comfortable span: across the 30 organ preludes and fugues, all 17,328 bass notes sit at or below the 12th fret. Prelude and fugue are separated automatically, by the change of metre between them or by the pedal falling silent as the subject enters."],
-      ["The library", "3,445 arrangements in 28 folders, from the organ works to the cantatas. The engravings come from Tobis Notenarchiv under CC BY-NC-SA 4.0, and the arrangements carry the same licence."],
+      ["The library", "3,445 arrangements in 28 folders, from the organ works to the cantatas."],
     ],
     facts: [["Role", "Solo"], ["Stack", "Python, PyGuitarPro, mido, MuseScore"], ["Library", "3,445 arrangements"]],
   },

@@ -426,8 +426,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .lib.ready .lib-body { height: clamp(520px, calc(100vh - 150px), 880px); grid-template-rows: minmax(0, 1fr); }
 .lib.ready .shelf { display: none; }
 .lib.ready .shelf.on { display: block; }
-.credit { max-width: 72ch; margin-top: 28px; font-size: 0.9rem; color: var(--text-3); }
-.credit a { color: var(--text-2); }
 
 /* ---------- solutions: Project Euler, LeetCode ---------- */
 
