@@ -496,7 +496,7 @@ pre.code.out { margin-top: 10px; padding: 14px 18px; max-height: 40vh; min-heigh
 /* ---------- 404, with Ramiel over the city ---------- */
 
 .lost { min-height: calc(100svh - var(--head-h)); display: flex; align-items: center; padding: 60px 0; }
-.lost::after { background: linear-gradient(180deg, rgba(34, 34, 59, 0.72), rgba(34, 34, 59, 0.88)); }
+.lost::after { display: none; }
 .lost h1 { font-size: clamp(3rem, 9vw, 6rem); font-weight: 400; }
 .lost p { max-width: 44ch; margin-top: 14px; font-size: 1.15rem; color: var(--on-dark-2); }
 .lost .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
