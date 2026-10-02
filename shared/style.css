@@ -233,7 +233,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .site-foot a { color: var(--on-dark-2); }
 .site-foot a:hover { color: var(--linen); }
 .foot-links { display: flex; flex-wrap: wrap; gap: 6px 20px; list-style: none; }
-.credits { flex-basis: 100%; font-size: 0.78rem; color: var(--on-dark-3); }
 
 /* ---------- inner pages: a photographic header ---------- */
 
