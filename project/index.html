@@ -64,6 +64,17 @@
                         extraction. Each claim is stored in SQLite by day, and a Leaflet map steps through the days.</p>
                     <p>Claims are never merged. When two outlets give two figures for the same strike, both stay, each
                         with its source.</p>
+                    <h2>What went wrong</h2>
+                    <p>The two sides do not publish the same kind of number. Ukraine reports launches, while Moscow
+                        reports interceptions, often for a whole region and several nights at once. Where a Russian
+                        figure can't be split into single nights it is shown as a range, because the sources don't
+                        support anything more precise.</p>
+                    <p>Feeds stop answering without saying so, and the record can look complete while one source adds
+                        nothing. A feed that fails to answer is now marked silent. Nothing already stored changes, and
+                        that feed simply stops adding to the record until it comes back.</p>
+                    <p>An empty map reads as peace. Small, local events arrive late or not at all, so blank space means
+                        nothing was read there, not that nothing happened. A day without a published tally is the same
+                        trap. The page now says both, and the record never fills a gap with an estimate.</p>
                     <h2>Result</h2>
                     <p>Live at dronestrikemap.com with 2,000+ monthly users, and a public REST API of 13 endpoints,
                         served from a Linux server behind nginx with TLS and rate limiting.</p>
