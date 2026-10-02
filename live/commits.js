@@ -20,7 +20,7 @@
 
 /* SET THIS. Your GitHub username - the feed reads public repos only,
    no token needed. Left empty the section explains itself instead of 404ing. */
-const GH_USER = "Leonid-Elkin";
+const GH_USER = "Lelkyy";
 const GRAPH_REPOS = 10; // repos folded into the year graph
 const LIST_REPOS = 5; // repos read for the commit list
 const PER_REPO = 5; // commits to pull from each

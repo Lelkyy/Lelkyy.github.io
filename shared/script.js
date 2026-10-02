@@ -40,8 +40,8 @@ const projects = [
     tags: ["JavaScript", "Chrome extension", "Stockfish WASM", "chess.js"],
     links: [
       { name: "try it live", url: "/live/#movegrade" },
-      { name: "download", url: "https://github.com/Leonid-Elkin/MoveGrade/releases/latest/download/MoveGrade.zip" },
-      { name: "source", url: "https://github.com/Leonid-Elkin/MoveGrade" },
+      { name: "download", url: "https://github.com/Lelkyy/MoveGrade/archive/refs/heads/main.zip" },
+      { name: "source", url: "https://github.com/Lelkyy/MoveGrade" },
     ],
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     tags: ["Python", "PyGuitarPro", "mido", "MuseScore"],
     links: [
       { name: "the tabs", url: "/fuguesplit/" },
-      { name: "source", url: "https://github.com/Leonid-Elkin/Leonid-Elkin.github.io/tree/main/fuguesplit/src" },
+      { name: "source", url: "https://github.com/Lelkyy/Lelkyy.github.io/tree/main/fuguesplit/src" },
     ],
   },
   {
@@ -67,7 +67,7 @@ const projects = [
     tags: ["Python", "pygame"],
     links: [
       { name: "play on itch.io", url: "https://elkyy.itch.io/penumbra" },
-      { name: "source", url: "https://github.com/Leonid-Elkin/Penumbra" },
+      { name: "source", url: "https://github.com/Lelkyy/Penumbra" },
     ],
   },
   {
@@ -80,7 +80,7 @@ const projects = [
     links: [
       { name: "play here", url: "#durak" },
       { name: "play online", url: "/durak-online/" },
-      { name: "source", url: "https://github.com/Leonid-Elkin/Leonid-Elkin.github.io/blob/main/durak-online/durak-online.js" },
+      { name: "source", url: "https://github.com/Lelkyy/Lelkyy.github.io/blob/main/durak-online/durak-online.js" },
     ],
   },
   {
@@ -117,7 +117,7 @@ const projects = [
       "A-Level coursework: both hex board games in full, with sound and a computer opponent. Yavalath was itself designed by a program.",
     tags: ["Python"],
     links: [
-      { name: "source", url: "https://github.com/Leonid-Elkin/Computer-science-NEA-Yavalath-" },
+      { name: "source", url: "https://github.com/Lelkyy/Computer-science-NEA-Yavalath-" },
       { name: "the rules", url: "https://boardgamegeek.com/boardgame/33767/yavalath" },
     ],
   },
@@ -127,7 +127,7 @@ const projects = [
     caption: "Sixty-nine solved, each solution as it was written. The Python runs in your browser.",
     tags: ["Python", "Pyodide"],
     links: [
-      { name: "source", url: "https://github.com/Leonid-Elkin/Project-Euler" },
+      { name: "source", url: "https://github.com/Lelkyy/Project-Euler" },
       { name: "the archive", url: "https://projecteuler.net/archives" },
     ],
   },
@@ -137,7 +137,7 @@ const projects = [
     caption: "The December puzzles, one file a day.",
     tags: ["Python"],
     links: [
-      { name: "source", url: "https://github.com/Leonid-Elkin/Advent-of-Code-2025" },
+      { name: "source", url: "https://github.com/Lelkyy/Advent-of-Code-2025" },
       { name: "the puzzles", url: "https://adventofcode.com/2025" },
     ],
   },
@@ -147,7 +147,7 @@ const projects = [
     caption: "Plots a season of club scores so you can see whether practice is working.",
     tags: ["Python"],
     links: [
-      { name: "source", url: "https://github.com/Leonid-Elkin/Shooting-score-visualiser" },
+      { name: "source", url: "https://github.com/Lelkyy/Shooting-score-visualiser" },
       { name: "zip", url: "/Shooting score visualiser.zip" },
     ],
   },
@@ -158,7 +158,7 @@ const projects = [
     caption: "The first thing made in PyGame. Click the circles before they go.",
     tags: ["Python", "pygame"],
     links: [
-      { name: "source", url: "https://github.com/Leonid-Elkin/AimTrainer" },
+      { name: "source", url: "https://github.com/Lelkyy/AimTrainer" },
       { name: "zip", url: "/Aimtrainer_source/Aimtrainer.zip" },
     ],
   },
@@ -184,7 +184,7 @@ const projects = [
     caption:
       "A 14.5 dBi Yagi-Uda feeding RF transceivers off a Raspberry Pi 3 to range a target. The antenna works and the ranging doesn't yet.",
     tags: ["Raspberry Pi", "RF", "antenna"],
-    links: [{ name: "source", url: "https://github.com/Leonid-Elkin/Yagi-rifle-code" }],
+    links: [{ name: "source", url: "https://github.com/Lelkyy/Yagi-rifle-code" }],
   },
   /* ---------- research ---------- */
   {
@@ -196,7 +196,7 @@ const projects = [
     links: [
       { name: "the paper", url: "/Documentation/Investigating_neural_scaling_laws.pdf", title: "Investigating Neural Scaling Laws in a Multilayer Perceptron" },
       { name: "elkwork on PyPI", url: "https://pypi.org/project/elkwork/" },
-      { name: "source", url: "https://github.com/Leonid-Elkin/Scratch-MLP-implementation" },
+      { name: "source", url: "https://github.com/Lelkyy/Scratch-MLP-implementation" },
       { name: "code and models", url: "/MLP all documents (2).zip" },
     ],
   },
@@ -209,7 +209,7 @@ const projects = [
     links: [
       { name: "the paper", url: "/Documentation/Physics_investigation (2).pdf", title: "How Does the Primordial Binary Fraction Affect the Survival Time of an Open Cluster in the Galactic Disk?" },
       { name: "the poster", url: "/Documentation/Physics_investigation_poster.pdf", title: "Primordial binaries and open cluster survival, poster" },
-      { name: "source", url: "https://github.com/Leonid-Elkin/N-body-simulation" },
+      { name: "source", url: "https://github.com/Lelkyy/N-body-simulation" },
     ],
   },
   {
@@ -219,8 +219,8 @@ const projects = [
       "A companion to the MLP work: draw a digit and watch the trained network read it back, one layer at a time.",
     tags: ["Python", "NumPy"],
     links: [
-      { name: "source", url: "https://github.com/Leonid-Elkin/Elkwork-live-demo" },
-      { name: "training example", url: "https://github.com/Leonid-Elkin/Elkwork-training-example" },
+      { name: "source", url: "https://github.com/Lelkyy/Elkwork-live-demo" },
+      { name: "training example", url: "https://github.com/Lelkyy/Elkwork-training-example" },
       { name: "zip", url: "/Drawer_source.zip" },
     ],
   },
@@ -591,7 +591,9 @@ function initHeroSkills() {
  * stands, which is also what a visitor without scripting sees. Better a
  * picture that loads than a frame the browser refuses and leaves blank.
  */
-const FRAME_ALLOWED = ["https://leonid-elkin.github.io"];
+/* Empty until the map's server names this site in its frame-ancestors
+   header; add "https://lelkyy.github.io" here once it does. */
+const FRAME_ALLOWED = [];
 
 function initLiveFrame() {
   const box = document.querySelector(".live-embed");

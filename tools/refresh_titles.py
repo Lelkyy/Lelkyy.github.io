@@ -30,7 +30,7 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-UA = "Mozilla/5.0 (portfolio build script; https://leonid-elkin.github.io)"
+UA = "Mozilla/5.0 (portfolio build script; https://lelkyy.github.io)"
 
 DIFFICULTY = {"Easy": 1, "Medium": 2, "Hard": 3}
 
