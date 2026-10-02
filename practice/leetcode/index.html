@@ -4,120 +4,103 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>LeetCode &middot; Leonid Elkin</title>
-    <meta name="description" content="The LeetCode problems I have solved, with the solution as it was written - in whichever language I wrote it in." />
-    <meta name="theme-color" content="#0a0a0a" />
+    <title>LeetCode · Leonid Elkin</title>
+    <meta name="description" content="Leonid Elkin's LeetCode solutions, each runnable in the browser where the language allows." />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121213" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="LeetCode · Leonid Elkin" />
-    <meta property="og:description" content="The LeetCode problems I have solved, in whichever language I wrote them in." />
-    <meta property="og:image" content="https://leonid-elkin.github.io/previews/leetcode.jpg" />
+    <meta property="og:description" content="Leonid Elkin's LeetCode solutions, each runnable in the browser where the language allows." />
+    <meta property="og:url" content="https://leonid-elkin.github.io/practice/leetcode/" />
+    <meta property="og:site_name" content="Leonid Elkin" />
+    <meta property="og:image" content="https://leonid-elkin.github.io/previews/this-website.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
+    <link rel="canonical" href="https://leonid-elkin.github.io/practice/leetcode/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=18" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=20" />
 </head>
 
 <body>
-    <div class="progress" aria-hidden="true"></div>
-    <nav class="nav" aria-label="Main">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-head">
         <div class="wrap">
-            <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/research/">Research</a></li>
-                <li><a href="/practice/" aria-current="page">Practice</a></li>
-                <li><a href="/fuguesplit/">Fugue</a></li>
+            <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Leonid Elkin</a>
+            <nav class="site-nav" aria-label="Main">
+                <ul>
+                <li><a href="/projects/" aria-current="page">Work</a></li>
+                <li><a href="/fuguesplit/">FugueSplit</a></li>
                 <li><a href="/about/">About</a></li>
-                <li><a href="/live/">Live</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+                <li class="nav-contact"><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <div class="facet-band slim" data-terrain aria-hidden="true">
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
-            <rect width="1440" height="100" fill="#0a0a0a" />
-            <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
-            <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
-            <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
-            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
-            <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
-        </svg>
-    </div>
+    <main id="main">
 
-    <main>
-        <section class="section">
-            <div class="wrap">
-                <div class="section-head">
-                    <span class="idx">Practice</span>
-                    <h1 class="display overprint" data-text="LeetCode">LeetCode</h1>
-                    <div class="track-switch mono">
-                        <a href="/practice/leetcode/" aria-current="page">LeetCode</a>
-                        <a href="/practice/euler/">Project Euler</a>
-                    </div>
-                </div>
+        <div class="wrap">
+            <a class="back" href="/projects/">&larr; All work</a>
+            <header class="page-head" style="padding-top: 8px;">
+                <h1>LeetCode</h1>
+                <p class="lede">LeetCode solutions, <span id="euler-count"></span> so far. Pick a number to read the code. Python and JavaScript run in your browser, and compiled languages are shown but not run.</p>
+            </header>
 
-                <!-- An index to LeetCode/, not an editor. Same page as euler.html,
-                     with one difference that matters: a problem can be solved more
-                     than once, so a solution with several files gets a tab per
-                     language. A GitHub Action regenerates the data whenever the
-                     folder changes, so dropping 1.cpp beside 1.py is the whole of
-                     publishing it. -->
-                <p class="setup">Pick a problem number and the solution appears beside it: the file as it was
-                    written, not tidied for display. <span id="euler-count"></span> solved. The number links to the
-                    problem on leetcode.com. Where I have solved one more than once, each language gets a tab;
-                    Python and JavaScript can be run in your browser, the compiled languages are shown but not run.</p>
-
-                <div class="euler-layout">
-                    <div class="euler-pick" id="euler-pick" role="listbox" aria-label="Problems"></div>
-
-                    <div class="euler-view">
-                        <div class="euler-head">
-                            <div>
-                                <span class="idx mono" id="euler-num"></span>
-                                <h2 class="display" id="euler-title"></h2>
-                            </div>
-                            <div class="euler-nav">
-                                <button class="filter" id="euler-prev" type="button">&larr; prev</button>
-                                <button class="filter" id="euler-next" type="button">next &rarr;</button>
-                            </div>
+            <div class="euler-layout">
+                <div class="euler-pick" id="euler-pick" role="listbox" aria-label="Problems"></div>
+                <div class="euler-view">
+                    <div class="euler-head">
+                        <div>
+                            <span class="label idx" id="euler-num"></span>
+                            <h2 id="euler-title"></h2>
                         </div>
-                        <div class="euler-langs" id="euler-langs" role="tablist" aria-label="Language" hidden></div>
-                        <dl class="fact-list euler-facts" id="euler-facts"></dl>
-                        <pre class="code" id="euler-code"><code></code></pre>
-                        <div class="euler-run">
-                            <button class="filter" id="euler-run" type="button">&#9654; run it here</button>
-                            <button class="filter" id="euler-stop" type="button" hidden>&#9632; stop</button>
-                            <span class="mono euler-run-status" id="euler-run-status"></span>
+                        <div class="euler-nav">
+                            <button class="btn small" id="euler-prev" type="button">&larr; Previous</button>
+                            <button class="btn small" id="euler-next" type="button">Next &rarr;</button>
                         </div>
-                        <pre class="code out" id="euler-out" hidden></pre>
                     </div>
+                    <div class="euler-langs" id="euler-langs" role="tablist" aria-label="Language" hidden></div>
+                    <dl class="facts euler-facts" id="euler-facts"></dl>
+                    <pre class="code" id="euler-code"><code></code></pre>
+                    <div class="euler-run">
+                        <button class="btn small" id="euler-run" type="button">&#9654; Run it here</button>
+                        <button class="btn small" id="euler-stop" type="button" hidden>&#9632; Stop</button>
+                        <span class="euler-run-status" id="euler-run-status"></span>
+                    </div>
+                    <pre class="code out" id="euler-out" hidden></pre>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer id="contact">
-        <div class="wrap">
-            <p class="col-label">Contact</p>
+    <footer class="site-foot" id="contact">
+        <div class="wrap foot-main">
+            <div>
+                <h2>Get in touch</h2>
+                <p>Email is the quickest way to reach me.</p>
+                <div class="email-row">
+                    <a class="email" href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a>
+                    <button class="btn small" type="button" data-copy="lnd.elkn@gmail.com">Copy</button>
+                </div>
+            </div>
             <ul class="foot-links">
-                <li><a href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a></li>
-                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                <li><a class="ext" href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a class="ext" href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                <li><a class="ext" href="https://pypi.org/project/elkwork/" target="_blank" rel="noopener">PyPI</a></li>
             </ul>
+        </div>
+        <div class="wrap foot-base">
+            <span>Leonid Elkin, 2026</span>
+            <a href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io" target="_blank" rel="noopener">Source for this site</a>
         </div>
     </footer>
 
     <script src="/data/leetcode-solutions.js"></script>
-    <script src="/shared/solutions.js"></script>
-    <script src="/shared/extras.js?v=2"></script>
-    <script src="/shared/motion.js"></script>
-    <script src="/shared/terrain.js"></script>
+    <script src="/shared/solutions.js?v=20"></script>
+    <script src="/shared/site.js?v=20"></script>
 </body>
 
 </html>

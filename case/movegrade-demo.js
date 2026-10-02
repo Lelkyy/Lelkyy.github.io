@@ -39,8 +39,8 @@
     const box = document.createElement("div");
     box.className = "mg-demo";
     box.innerHTML = `
-      <h2 class="display case-h">Try it here</h2>
-      <p>The panel below is the extension's own panel and the engine is the extension's own Stockfish, running in this page. Pick a game or paste a PGN, then step through it: each move is graded at depth four the moment it appears and re-graded as the search deepens.</p>
+      <h2>Try it here</h2>
+      <p>This is the extension's own panel, with its own Stockfish running in this page. Pick a game or paste a PGN, then step through it. Each move is graded at depth four as soon as it appears and re-graded as the search goes deeper.</p>
       <div class="mg-controls">
         <select class="mg-game" aria-label="Game"></select>
         <button class="mg-btn" data-act="start" title="Start of game">|&larr;</button>
@@ -48,7 +48,7 @@
         <button class="mg-btn" data-act="next" title="Next move">&rarr;</button>
         <button class="mg-btn" data-act="end" title="End of game">&rarr;|</button>
         <button class="mg-btn" data-act="play" title="Play through">play</button>
-        <span class="mono mg-pos"></span>
+        <span class="mg-pos"></span>
       </div>
       <textarea class="mg-pgn mono" rows="3" spellcheck="false" aria-label="PGN"></textarea>
       <div class="mg-frame"><iframe src="/movegrade-demo/overlay/overlay.html?nonnue&v=4" title="MoveGrade panel"></iframe></div>

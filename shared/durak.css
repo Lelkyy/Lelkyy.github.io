@@ -1,18 +1,19 @@
-/* Durak - symbols only, no copy anywhere in the UI.
-   Restyled for the Swiss editorial black stock: card faces are printed
-   off-white paper, black suits in the text ink and red suits in the one
-   accent. Backs are solid red with a hairline keyline. No shadows, no
-   gradients, no rounded corners - the cards are rectangles of paper. */
+/* Durak: symbols only, no copy anywhere in the board.
+   Card faces are paper in both themes, black suits in ink and red suits in
+   the site's red. Backs are solid red with a thin keyline. */
 
 .durak {
   --card-w: 76px;
   --card-h: 108px;
-  border: 1px solid var(--rule);
-  border-top: 2px solid var(--red);
-  background: var(--paper-2);
-  padding: 20px;
+  --card-face: #fdfcf9;
+  --card-ink: #17171a;
+  --card-red: #c8261a;
   position: relative;
   overflow: hidden;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
 }
 
 .durak-board {
@@ -45,22 +46,25 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  border: 1px dashed var(--rule-hot);
+  border: 1px dashed var(--line-strong);
+  border-radius: 8px;
 }
 
 /* --- the card --- */
 
 .card {
-  width: var(--card-w);
-  height: var(--card-h);
-  background: var(--ink);
-  color: var(--paper);
+  position: relative;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: var(--card-w);
+  height: var(--card-h);
   padding: 7px 8px;
-  position: relative;
-  flex-shrink: 0;
+  background: var(--card-face);
+  color: var(--card-ink);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 6px;
   -webkit-user-select: none;
   user-select: none;
   transition: transform 0.18s ease, opacity 0.18s;
@@ -73,11 +77,11 @@
 }
 
 .card .pip {
-  font-family: var(--f-display);
-  font-weight: 800;
+  font-family: var(--f-sans);
+  font-weight: 600;
   font-size: 1.05rem;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .card .suit-lg {
@@ -91,24 +95,24 @@
   transform: rotate(180deg);
 }
 
-.card.red { color: var(--red); }
-.card.black { color: var(--paper); }
+.card.red { color: var(--card-red); }
+.card.black { color: var(--card-ink); }
 
-/* face-down: solid accent with a keyline, so a fanned row of backs still
-   reads as separate cards. */
+/* face down: solid red with a keyline, so a fanned row of backs still reads
+   as separate cards */
 .card.back {
-  background: var(--red);
-  color: var(--ink);
-  box-shadow: inset 0 0 0 4px var(--red), inset 0 0 0 5px rgba(242, 240, 236, 0.55);
-  outline: 1px solid var(--paper);
+  background: var(--card-red);
+  border-color: var(--card-red);
+  box-shadow: inset 0 0 0 4px var(--card-red), inset 0 0 0 5px rgba(255, 255, 255, 0.55);
 }
 
-/* trump marker: a hairline box inset in the card */
+/* trump marker: a thin box inset in the card */
 .card.trump::after {
   content: "";
   position: absolute;
   inset: 3px;
   border: 1px solid currentColor;
+  border-radius: 4px;
   opacity: 0.4;
   pointer-events: none;
 }
@@ -117,9 +121,9 @@
 
 .card.playable:hover,
 .card.playable:focus-visible {
-  transform: translateY(-14px) rotate(0deg);
   z-index: 3;
-  outline: 2px solid var(--red);
+  transform: translateY(-14px) rotate(0deg);
+  outline: 2px solid var(--accent);
   outline-offset: 0;
 }
 
@@ -168,25 +172,24 @@
   to   { opacity: 1; }
 }
 
-/* the pair the player must answer gets the accent ring */
+/* the pair the player has to answer gets the red ring */
 .pair.target .card.attack {
-  outline: 3px solid var(--red);
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
 }
 
-/* --- deck + trump + discard --- */
+/* --- deck, trump and discard --- */
 
 .durak-side {
   display: flex;
-  align-items: center;
-  gap: 22px;
-  justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
 }
 
-/* Deck with the trump lying across underneath it, half sticking out - the
-   way it sits on a real table. A rotated card occupies card-h across, so the
-   stack has to be that wide plus the deck's own offset. */
+/* The deck with the trump tucked under it at a slant, the way it sits on a
+   real table. */
 .deck-stack {
   position: relative;
   width: calc(var(--card-w) * 1.75);
@@ -198,14 +201,12 @@
   animation: none;
 }
 
-/* Tucked at a slant rather than square-on: a 90deg rotation leaves only the
-   card's upside-down foot showing past the deck, which reads as a mistake. */
 .deck-stack .trump-under {
-  left: calc(var(--card-w) * 0.60);
+  left: calc(var(--card-w) * 0.6);
   top: 8px;
+  z-index: 1;
   transform: rotate(11deg);
   transform-origin: bottom left;
-  z-index: 1;
 }
 
 .deck-stack .deck-top {
@@ -219,19 +220,20 @@
   left: 0;
   bottom: -11px;
   z-index: 3;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--f-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
   padding: 1px 8px;
+  border-radius: 4px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
 }
 
 .discard-pile {
+  position: relative;
   width: var(--card-w);
   height: var(--card-h);
-  border: 1px dashed var(--rule-hot);
-  position: relative;
+  border: 1px dashed var(--line-strong);
+  border-radius: 6px;
 }
 
 .discard-pile .card {
@@ -242,53 +244,53 @@
 
 /* --- controls: icons only --- */
 
-/* Clear of the fanned hand, which lifts 14px on hover. */
 .durak-controls {
   display: flex;
-  gap: 10px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
   margin-top: 22px;
   padding-top: 18px;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--line);
 }
 
 .durak-btn {
-  width: 50px;
-  height: 50px;
-  background: none;
-  border: 1px solid var(--rule-hot);
-  cursor: pointer;
   display: grid;
   place-items: center;
-  color: var(--ink);
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
   transition: background 0.14s, color 0.14s, border-color 0.14s;
 }
 
 .durak-btn:hover:not(:disabled) {
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
 }
 
 .durak-btn:disabled {
-  opacity: 0.28;
+  opacity: 0.3;
   cursor: default;
 }
 
 .durak-btn.primary {
-  background: var(--red);
-  border-color: var(--red);
-  color: var(--ink);
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
 }
 
 .durak-btn.primary:hover:not(:disabled) {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
 }
 
-/* --- end-of-game stamp, still wordless --- */
+/* --- end of game: a stamp, still wordless --- */
 
 @keyframes rise {
   from { opacity: 0; transform: translateY(6px); }
@@ -298,32 +300,32 @@
 .durak-stamp {
   position: absolute;
   inset: 0;
+  z-index: 8;
   display: grid;
   place-items: center;
-  background: color-mix(in srgb, var(--paper) 88%, transparent);
-  z-index: 8;
+  background: color-mix(in srgb, var(--surface-2) 88%, transparent);
   animation: rise 0.3s ease both;
 }
 
 .durak-stamp .mark {
-  border: 4px solid var(--red);
-  color: var(--red);
-  background: var(--paper);
-  padding: 16px 32px;
-  transform: rotate(-6deg);
-  font-family: var(--f-display);
-  font-weight: 800;
-  font-size: 3.4rem;
-  line-height: 1;
-  letter-spacing: -0.04em;
   display: flex;
   align-items: center;
   gap: 14px;
+  padding: 16px 32px;
+  border: 4px solid var(--accent);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--accent);
+  transform: rotate(-6deg);
+  font-family: var(--f-sans);
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 1;
 }
 
 .durak-stamp .mark.win {
-  border-color: var(--ink);
-  color: var(--ink);
+  border-color: var(--text);
+  color: var(--text);
 }
 
 @media (max-width: 640px) {
