@@ -21,7 +21,7 @@ const projects = [
     status: "live",
     featured: true,
     caption:
-      "Every reported drone and missile strike in the Russia-Ukraine war, day by day, with the outlet behind each figure. Reads a few dozen sources every morning and runs on its own server.",
+      "Every reported drone and missile strike in the Russia-Ukraine war, day by day, with the outlet behind each figure. 51 sources in 3 languages, read every 30 minutes, and a public API.",
     tags: ["Python", "SQLite", "systemd", "Leaflet"],
     links: [
       { name: "see it live", url: "/live/#map" },
@@ -476,27 +476,61 @@ function initProjects() {
    itself, rather than quoting its members' places in the full index. */
 
 const HOME_PICKS = [
-  "Drone Strike Map",
-  "Neural scaling laws",
   "MoveGrade",
-  "Open clusters",
   "FugueSplit",
+  "CanSat 2025",
+  "SHELLFALL",
 ];
+
+/* The home page shows its picks as rows of picture and text, alternating
+   sides, rather than the index's numbered list. */
+function featureRow(p) {
+  const row = el("article", "feature");
+  const shot = el("a", "feature-shot");
+  shot.href = pageFor(p);
+  shot.setAttribute("aria-hidden", "true");
+  shot.tabIndex = -1;
+  const src = window.projectPreviewSrc && window.projectPreviewSrc(p.title);
+  if (src) {
+    const img = el("img");
+    img.src = src;
+    img.alt = "";
+    img.loading = "lazy";
+    img.decoding = "async";
+    shot.appendChild(img);
+  }
+  row.appendChild(shot);
+
+  const text = el("div", "feature-text");
+  const eyebrow = el("p", "eyebrow");
+  eyebrow.textContent = (p.cat || "") + (p.status === "live" ? " \u00b7 live" : p.status === "wip" ? " \u00b7 in progress" : "");
+  text.appendChild(eyebrow);
+  const h = el("h3");
+  const a = el("a", null, p.title);
+  a.href = pageFor(p);
+  h.appendChild(a);
+  text.appendChild(h);
+  text.appendChild(el("p", "feature-caption", p.caption));
+  if (p.tags && p.tags.length) {
+    const ul = el("ul", "tags");
+    p.tags.forEach((t) => ul.appendChild(el("li", null, t)));
+    text.appendChild(ul);
+  }
+  const links = el("p", "feature-links");
+  allLinks(p).filter((l) => l.url && l.url !== "#durak").slice(0, 3).forEach((l) => links.appendChild(linkEl(l)));
+  text.appendChild(links);
+  row.appendChild(text);
+  return row;
+}
 
 function initFeatured() {
   const grid = document.getElementById("featured-grid");
   if (!grid) return;
-
-  const frag = document.createDocumentFragment();
-  let n = 0;
   HOME_PICKS.forEach((title) => {
     const p = projects.find((q) => q.title === title);
-    if (!p) return; /* a pick that no longer names an entry is simply dropped */
-    frag.appendChild(projectCard(p, n++, { plainPlate: true }));
+    if (p) grid.appendChild(featureRow(p));
   });
-  grid.appendChild(frag);
 }
-
 
 /* ---------- skills ---------- */
 

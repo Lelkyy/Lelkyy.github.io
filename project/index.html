@@ -4,119 +4,105 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Drone Strike Map &middot; Leonid Elkin</title>
-    <meta name="description"
-        content="Case study: the Drone Strike Map, a live record of every reported drone and missile strike in the Russia-Ukraine war, with the outlet behind each figure." />
-    <meta name="theme-color" content="#0a0a0a" />
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
+    <title>Drone Strike Map · Leonid Elkin</title>
+    <meta name="description" content="The Drone Strike Map: every reported drone and missile strike in the Russia-Ukraine war, with its source, from 51 outlets every 30 minutes." />
+    <meta name="theme-color" content="#22223b" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Drone Strike Map · Leonid Elkin" />
+    <meta property="og:description" content="The Drone Strike Map: every reported drone and missile strike in the Russia-Ukraine war, with its source, from 51 outlets every 30 minutes." />
+    <meta property="og:url" content="https://leonid-elkin.github.io/project/" />
+    <meta property="og:image" content="https://leonid-elkin.github.io/previews/share.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://leonid-elkin.github.io/project/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322223b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c9ada7'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=19" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=40" />
 </head>
 
 <body>
-    <div class="progress" aria-hidden="true"></div>
-    <nav class="nav" aria-label="Main">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-head">
         <div class="wrap">
-            <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects/" aria-current="page">Projects</a></li>
-                <li><a href="/papers/">Papers</a></li>
-                <li><a href="/live/">Live</a></li>
-                <li><a href="/fuguesplit/">Fugue</a></li>
-                <li><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a class="brand" href="/"><img src="/previews/leonid.jpg" alt="" width="34" height="34" /><span>Leonid Elkin</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="/#work">Work</a></li>
+                    <li><a href="/#live">Live</a></li>
+                    <li><a href="/#research">Research</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li class="nav-resume"><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-
-    <div class="facet-band slim" data-terrain aria-hidden="true">
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
-            <rect width="1440" height="100" fill="#0a0a0a" />
-            <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
-            <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
-            <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
-            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
-            <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
-        </svg>
-    </div>
-
-    <main>
-        <section class="section">
+    <main id="main">
+        <section class="photo page-hero">
+            <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/moscow-city-1200.jpg" /><img src="/previews/panoramas/moscow-city.jpg" alt="" decoding="async" /></picture>
             <div class="wrap">
-                <div class="section-head">
-                    <span class="idx">01</span>
-                    <h1 class="display overprint" data-text="Drone Strike Map">Drone Strike Map</h1>
-                    <a class="mono" href="/projects/">&larr; all projects</a>
+                <a class="back" href="/projects/">&larr; All projects</a>
+                <p class="eyebrow">Project 01 &middot; live</p>
+                <h1>Drone Strike Map</h1>
+                <p class="lede">Every reported drone and missile strike in the Russia-Ukraine war, day by day, with the outlet behind each figure.</p>
+            </div>
+        </section>
+
+        <section class="page-body">
+            <div class="wrap case-layout">
+                <div id="case-copy">
+                    <h2>The problem</h2>
+                    <p>Strike reports are spread across dozens of outlets, in several languages, with different
+                        counting rules. A week later most are hard to find, and aggregators drop the sourcing.</p>
+                    <h2>What I built</h2>
+                    <p>Scrapers for 51 sources in 3 languages run every 30 minutes, with rule-based and LLM
+                        extraction. Each claim is stored in SQLite by day, and a Leaflet map steps through the days.</p>
+                    <p>Claims are never merged. When two outlets give two figures for the same strike, both stay, each
+                        with its source.</p>
+                    <h2>Result</h2>
+                    <p>Live at dronestrikemap.com with 2,000+ monthly users, and a public REST API of 13 endpoints,
+                        served from a Linux server behind nginx with TLS and rate limiting.</p>
+                    <p style="margin-top: 22px;"><a class="arrow" href="/#live">See it running</a></p>
                 </div>
-
-                <p class="setup">Every reported drone and missile strike in the Russia-Ukraine war, day by
-                    day. Every figure is a claim, and each one names the outlet that made it. It reads a few dozen
-                    sources every morning and has run on its own server since launch.</p>
-
-                <div class="about-body">
-                    <p class="col-label">Write-up</p>
-                    <div class="about-copy">
-                        <h2 class="display" style="font-size: clamp(1.2rem, 2.2vw, 1.6rem); margin-bottom: 8px;">The
-                            problem</h2>
-                        <p>Strike reporting is scattered across dozens of outlets, in different languages, with
-                            different counting rules, and none of it stays findable a week later. There was no
-                            single place where a day's claims sat next to their sources: only aggregates
-                            with the sourcing stripped out.</p>
-
-                        <h2 class="display"
-                            style="font-size: clamp(1.2rem, 2.2vw, 1.6rem); margin: 22px 0 8px;">What I built</h2>
-                        <p>A scraper that reads a few dozen sources every morning, a SQLite store keyed by day and
-                            claim, and a Leaflet map that walks the days. It runs under systemd on its own server
-                            and serves a public JSON API as well as the site. The core decision: never merge
-                            claims. Two outlets giving two figures for the same strike stay two rows, each with
-                            its byline. The map reports reporting, it does not adjudicate it.</p>
-
-                        <h2 class="display"
-                            style="font-size: clamp(1.2rem, 2.2vw, 1.6rem); margin: 22px 0 8px;">Result</h2>
-                        <p>Live and public at <a href="https://dronestrikemap.com/" target="_blank"
-                                rel="noopener">dronestrikemap.com</a>, with the full dataset available through the
-                            <a href="https://dronestrikemap.com/api/strikes" target="_blank" rel="noopener">open
-                                API</a>. It updates itself every morning without being touched.</p>
-                    </div>
-
-                    <dl class="fact-list">
-                        <div><dt class="k">Role</dt><dd>Solo, everything</dd></div>
-                        <div><dt class="k">Status</dt><dd><span class="status live">live</span></dd></div>
-                        <div><dt class="k">Stack</dt><dd>Python, SQLite, systemd, Leaflet</dd></div>
-                        <div><dt class="k">Live</dt><dd><a href="/live/#map">on the Live page</a></dd></div>
-                        <div><dt class="k">Map</dt><dd><a href="https://dronestrikemap.com/" target="_blank"
-                                    rel="noopener">dronestrikemap.com</a></dd></div>
-                        <div><dt class="k">API</dt><dd><a href="https://dronestrikemap.com/api/strikes"
-                                    target="_blank" rel="noopener">/api/strikes</a></dd></div>
-                    </dl>
-                </div>
+                <dl class="fact-list">
+                    <div><dt>Role</dt><dd>Solo</dd></div>
+                    <div><dt>Status</dt><dd><span class="status live">live</span></dd></div>
+                    <div><dt>Stack</dt><dd>Python, Flask, SQLite, Leaflet, nginx, systemd, Claude API</dd></div>
+                    <div><dt>Map</dt><dd><a href="https://dronestrikemap.com/" target="_blank" rel="noopener">dronestrikemap.com</a></dd></div>
+                    <div><dt>API</dt><dd><a href="https://dronestrikemap.com/api/strikes" target="_blank" rel="noopener">/api/strikes</a></dd></div>
+                </dl>
             </div>
         </section>
     </main>
 
-    <footer id="contact">
+    <footer class="site-foot">
         <div class="wrap">
-            <p class="col-label">Contact</p>
+            <span>Leonid Elkin, 2026</span>
             <ul class="foot-links">
-                <li><a href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a></li>
-                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/papers/">Papers</a></li>
+                <li><a href="/live/">Live</a></li>
+                <li><a href="/fuguesplit/">FugueSplit</a></li>
+                <li><a href="/practice/euler/">Project Euler</a></li>
                 <li><a href="https://www.linkedin.com/in/leonid-elkin-b0b58843b/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
+            <p class="credits">Photographs via Wikimedia Commons: <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_skyline.jpg" target="_blank" rel="noopener">Moscow
+                    City from Sparrow Hills</a> by Quintin Soloviev, <a href="https://creativecommons.org/licenses/by/4.0/"
+                    target="_blank" rel="noopener">CC BY 4.0</a>, and <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_State_University_crop.jpg" target="_blank"
+                    rel="noopener">Moscow State University</a> by Dmitry A. Mottl, <a
+                    href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.
+                Avatar: Porco Rosso, &copy; Studio Ghibli.</p>
         </div>
     </footer>
-    <script src="/shared/extras.js?v=2"></script>
-    <script src="/shared/motion.js?v=2"></script>
-    <script src="/shared/terrain.js"></script>
-    <script src="/shared/nav.js"></script>
+
+    <script src="/shared/nav.js?v=40"></script>
 </body>
 
 </html>

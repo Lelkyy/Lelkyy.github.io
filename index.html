@@ -5,181 +5,249 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Leonid Elkin</title>
-    <meta name="description"
-        content="Leonid Elkin builds software and hardware: a live strike record, naval simulation, sheet music to tablature, radar on a Yagi-Uda antenna." />
-    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="description" content="Leonid Elkin, AI student at UC San Diego. A live drone strike map with 2,000+ monthly users, a chess extension, two research papers and a CanSat that flew." />
+    <meta name="theme-color" content="#22223b" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Leonid Elkin" />
-    <meta property="og:description"
-        content="Software and hardware, mostly in Python, some in C++: a live strike record, naval simulation, sheet music to tablature, radar on a Yagi-Uda antenna." />
+    <meta property="og:description" content="Leonid Elkin, AI student at UC San Diego. A live drone strike map with 2,000+ monthly users, a chess extension, two research papers and a CanSat that flew." />
     <meta property="og:url" content="https://leonid-elkin.github.io/" />
-    <meta property="og:site_name" content="Leonid Elkin" />
-    <meta property="og:image" content="https://leonid-elkin.github.io/previews/this-website.jpg" />
+    <meta property="og:image" content="https://leonid-elkin.github.io/previews/share.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <!-- The favicon is a red square drawn inline. -->
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
+    <link rel="canonical" href="https://leonid-elkin.github.io/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322223b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c9ada7'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=19" />
-    <link rel="stylesheet" href="/shared/durak.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=40" />
+    <link rel="stylesheet" href="/shared/durak.css?v=40" />
 </head>
 
-<body>
-    <div class="progress" aria-hidden="true"></div>
-    <nav class="nav" aria-label="Main">
+<body class="home">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-head">
         <div class="wrap">
-            <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="/" aria-current="page">Home</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/papers/">Papers</a></li>
-                <li><a href="/live/">Live</a></li>
-                <li><a href="/fuguesplit/">Fugue</a></li>
-                <li><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a class="brand" href="/"><img src="/previews/leonid.jpg" alt="" width="34" height="34" /><span>Leonid Elkin</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="/#work">Work</a></li>
+                    <li><a href="/#live">Live</a></li>
+                    <li><a href="/#research">Research</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li class="nav-resume"><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <main>
-
-        <section class="hero">
-            <div class="wrap">
-                <p class="eyebrow">
-                    <time class="red" data-today="dm">28 August</time>
-                    <span class="sep" aria-hidden="true">&#9670;</span>
-                    <span data-today="y">2026</span>
-                </p>
-
-                <div class="hero-head">
-                    <h1 class="display overprint" data-text="Leonid Elkin">Leonid Elkin</h1>
-
-                    <!-- The one fact worth carrying up here: the research already
-                         has its own tab in the nav. No rules; the label carries it. -->
-                    <dl class="fact-list hero-facts">
-                        <div><dt class="k">GitHub</dt><dd><a href="https://github.com/Leonid-Elkin" target="_blank"
-                                    rel="noopener">Leonid-Elkin</a></dd></div>
-                    </dl>
+    <main id="main">
+        <section class="photo hero">
+            <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/moscow-city-1200.jpg" /><img src="/previews/panoramas/moscow-city.jpg" alt="" decoding="async" /></picture>
+            <div class="wrap hero-inner">
+                <div>
+                    <img class="avatar" src="/previews/leonid.jpg" alt="Leonid Elkin's avatar: Porco Rosso giving a thumbs up" width="96" height="96" />
+                    <p class="eyebrow">AI student &middot; UC San Diego</p>
+                    <h1>Leonid Elkin</h1>
+                    <p class="lede">I build software and radio hardware, mostly in Python. My strike map has
+                        <em>2,000+ users a month</em>.</p>
+                    <div class="actions">
+                        <a class="btn primary" href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a>
+                        <a class="btn" href="#contact">Get in touch</a>
+                    </div>
                 </div>
+                <ul class="socials">
+                    <li><a href="https://www.linkedin.com/in/leonid-elkin-b0b58843b/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                </ul>
+            </div>
+        </section>
 
-                <div class="hero-deck bare">
-                    <div class="hero-body">
-                        <p class="tagline">Software and hardware, mostly in Python, some in C++.</p>
-                        <div>
-                            <p class="hero-note">A live public service with its own API, two research papers, and
-                                a satellite that flew, plus a dozen smaller things, each linked to its
-                                evidence below.</p>
-                            <div class="cta-row">
-                                <a class="btn primary" href="/projects/">See all <span
-                                        data-project-count>14</span> projects</a>
-                                <a class="btn" href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a>
-                                <a class="btn" href="#contact">Get in touch</a>
-                            </div>
+        <section class="stats" aria-label="In numbers">
+            <div class="wrap">
+                <ul>
+                    <li><b>2,000+</b><span>monthly users on the strike map</span></li>
+                    <li><b>A*A*A*A</b><span>A Levels, plus an A* EPQ</span></li>
+                    <li><b>3,449</b><span>Bach pieces arranged for guitar</span></li>
+                    <li><b>2</b><span>research papers</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section dark" id="live" aria-labelledby="live-title">
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <p class="eyebrow live-dot">Live now</p>
+                        <h2 id="live-title">Drone Strike Map</h2>
+                    </div>
+                    <p>Every reported drone and missile strike in the Russia-Ukraine war, with the source behind each
+                        figure.</p>
+                </div>
+                <div class="live-grid">
+                    <div class="live-embed" data-live-src="https://dronestrikemap.com/">
+                        <a class="live-still" href="https://dronestrikemap.com/" target="_blank" rel="noopener">
+                            <img src="/previews/drone-strike-map.jpg" alt="The Drone Strike Map: one day's reported strikes and their sources" loading="lazy" decoding="async" />
+                            <span>Open the live map &#8599;</span>
+                        </a>
+                    </div>
+                    <div class="live-side">
+                        <ul class="live-facts">
+                            <li><b>51</b><span>sources in 3 languages</span></li>
+                            <li><b>30 min</b><span>between scrapes</span></li>
+                            <li><b>13</b><span>public API endpoints</span></li>
+                        </ul>
+                        <div class="actions">
+                            <a class="btn primary" href="https://dronestrikemap.com/" target="_blank" rel="noopener">Open the map</a>
+                            <a class="btn" href="/project/">How it works</a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Every skill, names only - script.js fills it from the same
-                     list about.html uses, where each one also carries the work
-                     that proves it. A box per group, under the statement, so
-                     the range reads as four blocks rather than four more rules. -->
-                <dl class="hero-skills" id="hero-skills"></dl>
             </div>
         </section>
 
-        <!-- The ridgeline. Drawn, not loaded: flat-shaded polygons in the two
-             greys with the one red facet. The site's only landscape. -->
-        <div class="facet-band" data-terrain aria-hidden="true">
-            <svg viewBox="0 0 1440 360" preserveAspectRatio="none" shape-rendering="crispEdges">
-                <rect width="1440" height="360" fill="#0a0a0a" />
-
-                <!-- far range: palest, hazed by distance -->
-                <polygon points="0,238 92,168 158,212 262,138 344,204 434,160 522,222 642,148 734,202 834,170 924,224 1032,156 1122,208 1232,176 1322,220 1440,166 1440,360 0,360" fill="#1a1b1f" />
-                <polygon points="262,138 344,204 300,224 240,196" fill="#1f2025" />
-                <polygon points="642,148 734,202 676,222 622,192" fill="#1f2025" />
-                <polygon points="1032,156 1122,208 1068,226 1014,198" fill="#1f2025" />
-                <polygon points="92,168 158,212 118,224" fill="#15161a" />
-                <polygon points="834,170 924,224 872,236" fill="#15161a" />
-
-                <!-- mid range -->
-                <polygon points="0,306 118,224 212,278 332,204 452,286 562,230 682,296 802,220 902,282 1012,238 1132,300 1252,244 1362,296 1440,260 1440,360 0,360" fill="#121316" />
-                <polygon points="332,204 452,286 384,306 300,262" fill="#16171b" />
-                <polygon points="802,220 902,282 846,304 774,258" fill="#16171b" />
-                <polygon points="1252,244 1362,296 1300,312" fill="#16171b" />
-                <polygon points="118,224 212,278 158,300" fill="#0e0f12" />
-                <polygon points="562,230 682,296 614,312" fill="#0e0f12" />
-
-                <!-- near range: darkest, biggest facets -->
-                <polygon points="0,360 0,318 148,258 282,328 424,266 572,342 722,282 882,344 1042,286 1202,348 1332,302 1440,340 1440,360" fill="#0c0c0e" />
-                <polygon points="148,258 282,328 196,360 60,360" fill="#101114" />
-                <polygon points="722,282 882,344 792,360 668,360" fill="#101114" />
-                <polygon points="1332,302 1440,340 1440,360 1272,360" fill="#101114" />
-            </svg>
-            <span class="ramiel" data-size="120" aria-hidden="true"></span>
-        </div>
-
-        <!-- Five entries, unheaded: the cards say what they are, and the button
-             under them is the way through to the rest. -->
-        <section class="section" id="selected">
+        <section class="section" id="work" aria-labelledby="work-title">
             <div class="wrap">
-                <div id="featured-grid" class="project-grid dense"></div>
-                <p class="more-row"><a class="btn primary" href="/projects/">Every project</a>
-                    <a class="btn" href="/papers/">The papers</a>
-                    <a class="btn" href="/live/">Live</a></p>
+                <div class="sec-head">
+                    <div>
+                        <p class="eyebrow">Selected work</p>
+                        <h2 id="work-title">Things I've built</h2>
+                    </div>
+                </div>
+                <div class="features" id="featured-grid"></div>
+                <p class="more-row"><a class="btn primary" href="/projects/">All <span data-project-count>18</span> projects</a></p>
             </div>
         </section>
 
+        <section class="photo research" id="research" aria-labelledby="research-title">
+            <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/msu-1200.jpg" /><img src="/previews/panoramas/msu.jpg" alt="" decoding="async" /></picture>
+            <div class="wrap">
+                <div class="sec-head">
+                    <div>
+                        <p class="eyebrow">Research</p>
+                        <h2 id="research-title">Two papers</h2>
+                    </div>
+                    <p>Written up in LaTeX, with the code public. Both open on the site.</p>
+                </div>
+                <div class="paper-cards">
+                    <a class="paper-card" href="/papers/#neural-scaling-laws">
+                        <p class="eyebrow">EPQ &middot; A* &middot; April 2025</p>
+                        <h3>Investigating Neural Scaling Laws in a Multilayer Perceptron</h3>
+                        <p>A neural network library written from scratch in NumPy, trained at many sizes to see how
+                            performance scales.</p>
+                        <div class="big"><div><b>98.51%</b><span>on MNIST</span></div><div><b>57</b><span>pages</span></div></div>
+                    </a>
+                    <a class="paper-card" href="/papers/#open-clusters">
+                        <p class="eyebrow">Physics &middot; June 2025</p>
+                        <h3>How Does the Primordial Binary Fraction Affect the Survival Time of an Open Cluster?</h3>
+                        <p>A 2D N-body simulation run at four binary fractions, ten seeds each, with a paper and a
+                            poster.</p>
+                        <div class="big"><div><b>~30,000</b><span>extra time units survived</span></div></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="about" aria-labelledby="about-title">
+            <div class="wrap about-grid">
+                <div class="bio">
+                    <p class="eyebrow">About</p>
+                    <h2 id="about-title" class="sr-only">About</h2>
+                    <p class="lead" style="margin-top: 12px;">I like building things that have to be right about the
+                        real world.</p>
+                    <p>A public strike record that reads the news every half hour, the radio for a CanSat that flew, a
+                        chess engine that grades every move. Mostly Python, with JavaScript when it has to run in a
+                        browser.</p>
+                    <p>Away from the keyboard I play chess and classical guitar, and shoot for the UK national U21
+                        rifle team.</p>
+                    <ul class="skill-lines">
+                        <li><b>Languages</b>Python, JavaScript, Java, HTML and CSS, SQL, PowerShell</li>
+                        <li><b>Machine learning</b>NumPy, neural networks from scratch, computer vision, LLM APIs</li>
+                        <li><b>Web and systems</b>Flask, REST APIs, SQLite, Linux, nginx, systemd, Chrome extensions, WebAssembly</li>
+                        <li><b>Hardware</b>Raspberry Pi, RF and antenna design</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="eyebrow timeline-title">Education</h3>
+                    <ul class="timeline">
+                        <li><span class="when">to 2030</span><div><h3>UC San Diego</h3><p>BS Artificial Intelligence</p></div></li>
+                        <li><span class="when">2026</span><div><h3>Tonbridge School</h3><p>A Levels A*A*A*A in Maths, Further Maths,
+                                    Computer Science and Physics. EPQ A*. Honorary Scholar.</p></div></li>
+                    </ul>
+                    <h3 class="eyebrow timeline-title">Leadership</h3>
+                    <ul class="timeline">
+                        <li><span class="when">2025&ndash;26</span><div><h3>Head of Programming Society</h3><p>Lectured 40+ students on
+                                    machine learning architectures.</p></div></li>
+                        <li><span class="when">2025&ndash;26</span><div><h3>Founder, 3D Printing Society</h3><p>Tonbridge School</p></div></li>
+                        <li><span class="when">2024&ndash;26</span><div><h3>.22 Rifle Shooting</h3><p>UK National U21 Team, Division One
+                                    Junior Team</p></div></li>
+                        <li><span class="when">2024&ndash;25</span><div><h3>CanSat 2025, team lead</h3><p>Payload and radio link for a
+                                    satellite that flew.</p></div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dark contact" id="contact" aria-labelledby="contact-title">
+            <div class="wrap">
+                <p class="eyebrow">Contact</p>
+                <h2 id="contact-title">Get in touch</h2>
+                <p>Email is the quickest way to reach me.</p>
+                <a class="email" href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a>
+                <div class="actions">
+                    <a class="btn" href="https://www.linkedin.com/in/leonid-elkin-b0b58843b/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a class="btn" href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer id="contact">
+    <footer class="site-foot">
         <div class="wrap">
-            <p class="col-label">Contact</p>
+            <span>Leonid Elkin, 2026</span>
             <ul class="foot-links">
-                <li><a href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a></li>
-                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/papers/">Papers</a></li>
+                <li><a href="/live/">Live</a></li>
+                <li><a href="/fuguesplit/">FugueSplit</a></li>
+                <li><a href="/practice/euler/">Project Euler</a></li>
                 <li><a href="https://www.linkedin.com/in/leonid-elkin-b0b58843b/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
+            <p class="credits">Photographs via Wikimedia Commons: <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_skyline.jpg" target="_blank" rel="noopener">Moscow
+                    City from Sparrow Hills</a> by Quintin Soloviev, <a href="https://creativecommons.org/licenses/by/4.0/"
+                    target="_blank" rel="noopener">CC BY 4.0</a>, and <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_State_University_crop.jpg" target="_blank"
+                    rel="noopener">Moscow State University</a> by Dmitry A. Mottl, <a
+                    href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.
+                Avatar: Porco Rosso, &copy; Studio Ghibli.</p>
         </div>
     </footer>
 
-    <!-- ===== the card stack =====
-         Deliberately unlabelled and out of the navigation. See egg.js. -->
     <button class="egg" id="egg" type="button" aria-label="A stack of cards. Deal them.">
         <span class="egg-hint" aria-hidden="true">deal?</span>
         <span class="egg-stack" aria-hidden="true"></span>
     </button>
-
     <div class="durak-panel" id="durak-panel" role="dialog" aria-modal="true" aria-label="Durak" hidden>
         <div class="panel-inner">
             <div class="panel-head">
                 <h2>Durak</h2>
-                <a class="mono panel-link" href="/durak-online/">play a friend online &rarr;</a>
-                <button class="panel-close" type="button">Close &times;</button>
+                <a class="panel-link" href="/durak-online/">Play a friend online &rarr;</a>
+                <button class="panel-close" type="button">Close</button>
             </div>
-            <!-- data-deferred keeps durak.js from dealing until the panel opens -->
             <div class="durak" id="durak" data-deferred></div>
         </div>
     </div>
 
     <script src="/shared/previews.js"></script>
-    <script src="/shared/script.js?v=14"></script>
+    <script src="/shared/script.js?v=40"></script>
     <script src="/shared/durak-sfx.js"></script>
-    <script src="/shared/durak.js"></script>
-    <script src="/shared/egg.js?v=2"></script>
-    <script src="/shared/extras.js?v=2"></script>
-    <script src="/shared/motion.js?v=2"></script>
-    <script src="/shared/ramiel.js?v=2"></script>
-    <script src="/shared/terrain.js"></script>
-    <script src="/shared/meteors.js"></script>
-    <script src="/home/arcade.js"></script>
-    <script src="/home/proof.js"></script>
-    <script src="/shared/nav.js"></script>
+    <script src="/shared/durak.js?v=40"></script>
+    <script src="/shared/egg.js?v=40"></script>
+    <script src="/shared/nav.js?v=40"></script>
 </body>
 
 </html>

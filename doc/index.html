@@ -4,63 +4,63 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Document &middot; Leonid Elkin</title>
-    <meta name="description" content="A paper, poster or report from the index, read in place." />
-    <meta name="robots" content="noindex" />
-    <meta name="theme-color" content="#0a0a0a" />
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
+    <title>Document · Leonid Elkin</title>
+    <meta name="description" content="A paper, report or resume by Leonid Elkin, read on the site." />
+    <meta name="theme-color" content="#22223b" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Document · Leonid Elkin" />
+    <meta property="og:description" content="A paper, report or resume by Leonid Elkin, read on the site." />
+    <meta property="og:url" content="https://leonid-elkin.github.io/doc/" />
+    <meta property="og:image" content="https://leonid-elkin.github.io/previews/share.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322223b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c9ada7'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=19" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=40" />
 </head>
 
 <body>
-    <div class="progress" aria-hidden="true"></div>
-    <nav class="nav" aria-label="Main">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-head">
         <div class="wrap">
-            <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/papers/" aria-current="page">Papers</a></li>
-                <li><a href="/live/">Live</a></li>
-                <li><a href="/fuguesplit/">Fugue</a></li>
-                <li><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a class="brand" href="/"><img src="/previews/leonid.jpg" alt="" width="34" height="34" /><span>Leonid Elkin</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="/#work">Work</a></li>
+                    <li><a href="/#live">Live</a></li>
+                    <li><a href="/#research">Research</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li class="nav-resume"><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <main>
-        <section class="section doc-section">
+    <main id="main">
+        <section class="photo page-hero">
+            <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/msu-1200.jpg" /><img src="/previews/panoramas/msu.jpg" alt="" decoding="async" /></picture>
             <div class="wrap">
-                <div class="section-head">
-                    <span class="idx">&nbsp;</span>
-                    <h1 class="display overprint" id="doc-title" data-text="Document">Document</h1>
-                    <a class="mono" id="doc-back" href="/projects/">&larr; all projects</a>
-                </div>
-
-                <!-- Above the reader, not below it: the frame is as tall as the
-                     window allows, so anything under it starts off screen. -->
-                <p class="doc-actions mono">
-                    <a id="doc-open" href="" target="_blank" rel="noopener">open in its own tab &rarr;</a>
-                    <a id="doc-download" href="" download>download a copy &rarr;</a>
+                <a class="back" id="doc-back" href="/papers/">&larr; Papers</a>
+                <p class="eyebrow">Document</p>
+                <h1 id="doc-title">Document</h1>
+                <p class="doc-actions">
+                    <a class="btn primary" id="doc-download" href="" download>Download</a>
+                    <a class="btn" id="doc-open" href="" target="_blank" rel="noopener">Open in a new tab</a>
                 </p>
+            </div>
+        </section>
 
-                <!-- The reader itself. An <object> renders the PDF with the browser's
-                     own viewer, so there is no library to ship and no worker to load;
-                     the fallback inside it is what a phone or an old browser gets. -->
+        <section class="page-body">
+            <div class="wrap">
                 <div class="doc-frame">
                     <object id="doc-object" type="application/pdf" data="" aria-label="PDF document">
                         <div class="doc-fallback">
-                            <p>This browser will not display the PDF in the page.</p>
-                            <p class="mono"><a id="doc-open-fallback" href="" target="_blank" rel="noopener">open it in
-                                    a new tab &rarr;</a></p>
+                            <p>This browser won't show the PDF inside the page.</p>
+                            <p><a class="btn primary" id="doc-open-fallback" href="" target="_blank" rel="noopener">Open it</a></p>
                         </div>
                     </object>
                 </div>
@@ -68,21 +68,31 @@
         </section>
     </main>
 
-    <footer id="contact">
+    <footer class="site-foot">
         <div class="wrap">
-            <p class="col-label">Contact</p>
+            <span>Leonid Elkin, 2026</span>
             <ul class="foot-links">
-                <li><a href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a></li>
-                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/papers/">Papers</a></li>
+                <li><a href="/live/">Live</a></li>
+                <li><a href="/fuguesplit/">FugueSplit</a></li>
+                <li><a href="/practice/euler/">Project Euler</a></li>
                 <li><a href="https://www.linkedin.com/in/leonid-elkin-b0b58843b/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
+            <p class="credits">Photographs via Wikimedia Commons: <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_skyline.jpg" target="_blank" rel="noopener">Moscow
+                    City from Sparrow Hills</a> by Quintin Soloviev, <a href="https://creativecommons.org/licenses/by/4.0/"
+                    target="_blank" rel="noopener">CC BY 4.0</a>, and <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_State_University_crop.jpg" target="_blank"
+                    rel="noopener">Moscow State University</a> by Dmitry A. Mottl, <a
+                    href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.
+                Avatar: Porco Rosso, &copy; Studio Ghibli.</p>
         </div>
     </footer>
 
-    <script src="/doc/doc.js"></script>
-    <script src="/shared/extras.js?v=2"></script>
-    <script src="/shared/nav.js"></script>
+    <script src="/doc/doc.js?v=3"></script>
+    <script src="/shared/nav.js?v=40"></script>
 </body>
 
 </html>

@@ -4,72 +4,62 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fugue &middot; Leonid Elkin</title>
-    <meta name="description"
-        content="FugueSplit turns organ fugues into one-note-at-a-time guitar and bass parts. 356 of Bach's fugues arranged for a band, as Guitar Pro files and printable tablature." />
-    <meta name="theme-color" content="#0a0a0a" />
+    <title>FugueSplit library · Leonid Elkin</title>
+    <meta name="description" content="Bach arranged for a band of guitars and a bass, one voice per player: 3,449 Guitar Pro files, with part PDFs for the organ works." />
+    <meta name="theme-color" content="#22223b" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Fugue &middot; Leonid Elkin" />
-    <meta property="og:description"
-        content="356 of Bach's fugues arranged for three guitars and a bass, one voice per instrument." />
+    <meta property="og:title" content="FugueSplit library · Leonid Elkin" />
+    <meta property="og:description" content="Bach arranged for a band of guitars and a bass, one voice per player: 3,449 Guitar Pro files, with part PDFs for the organ works." />
     <meta property="og:url" content="https://leonid-elkin.github.io/fuguesplit/" />
+    <meta property="og:image" content="https://leonid-elkin.github.io/previews/share.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://leonid-elkin.github.io/fuguesplit/" />
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322223b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c9ada7'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=19" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=40" />
 </head>
 
 <body>
-    <div class="progress" aria-hidden="true"></div>
-    <nav class="nav" aria-label="Main">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-head">
         <div class="wrap">
-            <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/papers/">Papers</a></li>
-                <li><a href="/live/">Live</a></li>
-                <li><a href="/fuguesplit/" aria-current="page">Fugue</a></li>
-                <li><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a class="brand" href="/"><img src="/previews/leonid.jpg" alt="" width="34" height="34" /><span>Leonid Elkin</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="/#work">Work</a></li>
+                    <li><a href="/#live">Live</a></li>
+                    <li><a href="/#research">Research</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li class="nav-resume"><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <div class="facet-band slim" data-terrain aria-hidden="true">
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
-            <rect width="1440" height="100" fill="#0a0a0a" />
-            <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
-            <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
-            <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
-            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
-            <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
-        </svg>
-    </div>
-
-    <main>
-        <section class="section" id="fugue">
+    <main id="main">
+        <section class="photo page-hero">
+            <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/msu-1200.jpg" /><img src="/previews/panoramas/msu.jpg" alt="" decoding="async" /></picture>
             <div class="wrap">
-                <div class="section-head">
-                    <span class="idx">Tablature</span>
-                    <h1 class="display overprint" data-text="Fugue">Fugue</h1>
-                    <span class="aside mono"><span data-stat="pieces">3,449</span> arrangements</span>
-                </div>
-                <p class="setup">Bach for a band of guitars and a bass, one voice per instrument and one note at a
-                    time: <span data-stat="pieces">3,449</span> arrangements in <span data-stat="folders">29</span>
-                    folders. Pick a folder on the left and scroll it, or search every folder at once. <b>GP5</b> is
-                    every part together for Guitar Pro, which can print any single part; <b>8VE</b> is the same file
-                    with the highest parts an octave lower; and on the <span data-stat="pdf-pieces">72</span> organ works
-                    each numeral is that player's own PDF, notation over tablature.</p>
+                <a class="back" href="/case/?p=fuguesplit">&larr; How FugueSplit works</a>
+                <p class="eyebrow">FugueSplit library</p>
+                <h1>Bach for a guitar band</h1>
+                <p class="lede"><span data-stat="pieces">3,449</span> arrangements in <span data-stat="folders">29</span> folders, one voice per instrument. Pick a folder or search them all.</p>
+                <ul class="legend" aria-label="What the buttons download">
+                    <li><b>I</b><b>BASS</b>one player's part, PDF</li>
+                    <li><b>GP5</b>every part, Guitar Pro</li>
+                    <li><b>8VE</b>high parts an octave lower</li>
+                </ul>
+            </div>
+        </section>
 
-                <!-- shelves:begin (build_index.py) -->
+        <section class="page-body">
+            <div class="wrap">
+<!-- shelves:begin (build_index.py) -->
 <div class="lib" id="lib">
 <div class="lib-bar">
 <label class="lib-search"><span class="sr-only">Search the library</span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="m11 11 3.5 3.5"/></svg><input id="lib-q" type="search" placeholder="Search by BWV number or title" autocomplete="off" spellcheck="false" /></label>
@@ -3717,37 +3707,41 @@ BWV Anh. 34</span><span class="mt">1 guitar + bass · 12 bars · 120 bpm</span><
 </div>
 </div>
 <!-- shelves:end -->
-
-                <p class="setup">Bach's music is public domain. The engravings these are read
-                    from come from <a href="https://tobis-notenarchiv.de/" target="_blank" rel="noopener">Tobis
-                    Notenarchiv</a> (Quelle: www.tobis-notenarchiv.de) and are published there under
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC
-                    BY-NC-SA 4.0</a>, so these arrangements carry the same licence: credit the source, keep it
-                    non-commercial, share it alike. The converter is in
-                    <a href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io/tree/main/fuguesplit/src">fuguesplit/src</a>
-                    if you would like to run it over something of your own.</p>
+                <p class="credit">Engravings from <a href="https://tobis-notenarchiv.de/" target="_blank" rel="noopener">Tobis
+                        Notenarchiv</a>, Quelle: www.tobis-notenarchiv.de, under <a
+                        href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA
+                        4.0</a>; the arrangements carry the same licence. The converter is <a
+                        href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io/tree/main/fuguesplit/src" target="_blank"
+                        rel="noopener">on GitHub</a>.</p>
             </div>
         </section>
     </main>
 
-    <footer id="contact">
+    <footer class="site-foot">
         <div class="wrap">
-            <p class="col-label">Contact</p>
+            <span>Leonid Elkin, 2026</span>
             <ul class="foot-links">
-                <li><a href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a></li>
-                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/papers/">Papers</a></li>
+                <li><a href="/live/">Live</a></li>
+                <li><a href="/fuguesplit/">FugueSplit</a></li>
+                <li><a href="/practice/euler/">Project Euler</a></li>
                 <li><a href="https://www.linkedin.com/in/leonid-elkin-b0b58843b/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
+            <p class="credits">Photographs via Wikimedia Commons: <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_skyline.jpg" target="_blank" rel="noopener">Moscow
+                    City from Sparrow Hills</a> by Quintin Soloviev, <a href="https://creativecommons.org/licenses/by/4.0/"
+                    target="_blank" rel="noopener">CC BY 4.0</a>, and <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_State_University_crop.jpg" target="_blank"
+                    rel="noopener">Moscow State University</a> by Dmitry A. Mottl, <a
+                    href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.
+                Avatar: Porco Rosso, &copy; Studio Ghibli.</p>
         </div>
     </footer>
 
-    <script src="/shared/script.js?v=14"></script>
-    <script src="/fuguesplit/library.js?v=2"></script>
-    <script src="/shared/extras.js?v=2"></script>
-    <script src="/shared/motion.js?v=2"></script>
-    <script src="/shared/terrain.js"></script>
-    <script src="/shared/nav.js"></script>
+    <script src="/fuguesplit/library.js?v=3"></script>
+    <script src="/shared/nav.js?v=40"></script>
 </body>
 
 </html>

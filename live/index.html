@@ -4,113 +4,76 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Live &middot; Leonid Elkin</title>
-    <meta name="description"
-        content="Running now: the Drone Strike Map, MoveGrade grading a game in the page, Durak against the computer, and a year of commits." />
-    <meta name="theme-color" content="#0a0a0a" />
+    <title>Live · Leonid Elkin</title>
+    <meta name="description" content="Running now: the Drone Strike Map, MoveGrade grading a chess game in the page, and a year of commits." />
+    <meta name="theme-color" content="#22223b" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Live · Leonid Elkin" />
-    <meta property="og:description"
-        content="The Drone Strike Map, and a year of commits pulled live from the GitHub API." />
-    <meta property="og:url" content="https://leonid-elkin.github.io/live.html" />
-    <meta property="og:image" content="https://leonid-elkin.github.io/previews/drone-strike-map.jpg" />
+    <meta property="og:description" content="Running now: the Drone Strike Map, MoveGrade grading a chess game in the page, and a year of commits." />
+    <meta property="og:url" content="https://leonid-elkin.github.io/live/" />
+    <meta property="og:image" content="https://leonid-elkin.github.io/previews/share.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://leonid-elkin.github.io/live.html" />
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
+    <link rel="canonical" href="https://leonid-elkin.github.io/live/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2322223b'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c9ada7'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=19" />
-    <link rel="stylesheet" href="/shared/durak.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=40" />
 </head>
 
 <body>
-    <div class="progress" aria-hidden="true"></div>
-    <nav class="nav" aria-label="Main">
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-head">
         <div class="wrap">
-            <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/papers/">Papers</a></li>
-                <li><a href="/live/" aria-current="page">Live</a></li>
-                <li><a href="/fuguesplit/">Fugue</a></li>
-                <li><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <a class="brand" href="/"><img src="/previews/leonid.jpg" alt="" width="34" height="34" /><span>Leonid Elkin</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="/#work">Work</a></li>
+                    <li><a href="/#live">Live</a></li>
+                    <li><a href="/#research">Research</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li class="nav-resume"><a href="/doc/?f=Documentation%2FLeonid_Elkin_Resume.pdf&amp;t=Leonid%20Elkin%20Resume">Resume</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <div class="facet-band slim" data-terrain aria-hidden="true">
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
-            <rect width="1440" height="100" fill="#0a0a0a" />
-            <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
-            <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
-            <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
-            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
-            <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
-        </svg>
-    </div>
-
-    <main>
-        <section class="section" id="live">
+    <main id="main">
+        <section class="photo page-hero">
+            <picture><source media="(max-width: 900px)" srcset="/previews/panoramas/moscow-city-1200.jpg" /><img src="/previews/panoramas/moscow-city.jpg" alt="" decoding="async" /></picture>
             <div class="wrap">
-                <div class="section-head">
-                    <span class="idx">Live</span>
-                    <h1 class="display overprint" data-text="Live fire">Live fire</h1>
-                    <span class="aside mono">running, not pictured</span>
-                </div>
-                <p class="setup">Everything on this page is running. The strike map updates itself every morning on
-                    its own server; MoveGrade, Durak and the commit log run in your browser.</p>
+                
+                <p class="eyebrow"><span class="live-dot">Live</span></p>
+                <h1>Running right now</h1>
+                <p class="lede">The strike map updates itself on its own server. MoveGrade and the commit log run in your browser.</p>
+            </div>
+        </section>
 
+        <section class="page-body">
+            <div class="wrap">
                 <div class="filter-row live-tabs" id="live-tabs" role="tablist" aria-label="What is running">
-                    <button class="filter" type="button" role="tab" id="tab-map" aria-controls="panel-map"
-                        data-panel="map">Strike map</button>
-                    <button class="filter" type="button" role="tab" id="tab-movegrade"
-                        aria-controls="panel-movegrade" data-panel="movegrade">MoveGrade</button>
-                    <button class="filter" type="button" role="tab" id="tab-durak" aria-controls="panel-durak"
-                        data-panel="durak">Durak</button>
-                    <button class="filter" type="button" role="tab" id="tab-commits" aria-controls="panel-commits"
-                        data-panel="commits">Commits</button>
+                    <button class="filter" type="button" role="tab" id="tab-map" aria-controls="panel-map" data-panel="map">Strike map</button>
+                    <button class="filter" type="button" role="tab" id="tab-movegrade" aria-controls="panel-movegrade" data-panel="movegrade">MoveGrade</button>
+                    <button class="filter" type="button" role="tab" id="tab-commits" aria-controls="panel-commits" data-panel="commits">Commits</button>
                 </div>
-
                 <div class="live-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map">
-                    <p class="setup">The Drone Strike Map, served from its own box. Every figure is a claim, and each
-                        one names the outlet that made it; the arrows walk the days. Its server admits one origin to
-                        frame it, so the map runs right here on leonid-elkin.github.io and opens in its own tab
-                        anywhere else. <a href="/project/">How it is built</a>.</p>
+                    <p>Every reported strike, with the outlet behind each figure. Use the arrows to walk the days.</p>
                     <div class="live-embed" data-live-src="https://dronestrikemap.com/">
                         <a class="live-still" href="https://dronestrikemap.com/" target="_blank" rel="noopener">
-                            <img src="/previews/drone-strike-map.jpg" alt="The Drone Strike Map: a map of Ukraine with the day's reported strikes, and the sources behind them" loading="lazy" decoding="async" />
-                            <span class="mono">dronestrikemap.com &rarr;</span>
+                            <img src="/previews/drone-strike-map.jpg" alt="The Drone Strike Map" loading="lazy" decoding="async" />
+                            <span>Open the live map &#8599;</span>
                         </a>
                     </div>
                 </div>
-
                 <div class="live-panel" id="panel-movegrade" role="tabpanel" aria-labelledby="tab-movegrade" hidden>
-                    <p class="setup">The extension's own panel and its own Stockfish, running in this page. Pick a
-                        famous game or paste a PGN, then step through it; each move is graded as it appears.
-                        <a href="/case/?p=movegrade">How it works</a>.</p>
+                    <p>The extension's own panel and Stockfish, in this page. Pick a game and step through it.</p>
                     <div id="mg-root"></div>
                 </div>
-
-                <div class="live-panel" id="panel-durak" role="tabpanel" aria-labelledby="tab-durak" hidden>
-                    <p class="setup">Thirty-six cards, transfers on, the lowest trump leads. Click a card to play it;
-                        the buttons under the table take the cards or end your turn. To play a friend instead,
-                        <a href="/durak-online/">open a table online</a>.</p>
-                    <div class="durak" id="durak" data-deferred></div>
-                </div>
-
                 <div class="live-panel" id="panel-commits" role="tabpanel" aria-labelledby="tab-commits" hidden>
-                    <p class="setup">A year of work, one square a day, then the newest of it in longhand, both pulled
-                        live from the GitHub API in your browser, across the ten repositories pushed to most
-                        recently. Each line is what was edited, and when.
-                        <a href="https://github.com/Leonid-Elkin?tab=repositories" target="_blank" rel="noopener">All
-                            repositories</a>.</p>
+                    <p>A year of commits from the GitHub API, then the newest ones.</p>
                     <div id="commit-graph" class="commit-graph"></div>
                     <div id="commit-feed"></div>
                 </div>
@@ -118,27 +81,32 @@
         </section>
     </main>
 
-    <footer id="contact">
+    <footer class="site-foot">
         <div class="wrap">
-            <p class="col-label">Contact</p>
+            <span>Leonid Elkin, 2026</span>
             <ul class="foot-links">
-                <li><a href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a></li>
-                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/papers/">Papers</a></li>
+                <li><a href="/live/">Live</a></li>
+                <li><a href="/fuguesplit/">FugueSplit</a></li>
+                <li><a href="/practice/euler/">Project Euler</a></li>
                 <li><a href="https://www.linkedin.com/in/leonid-elkin-b0b58843b/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
-            <span class="colophon mono" id="last-change"></span>
+            <p class="credits">Photographs via Wikimedia Commons: <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_skyline.jpg" target="_blank" rel="noopener">Moscow
+                    City from Sparrow Hills</a> by Quintin Soloviev, <a href="https://creativecommons.org/licenses/by/4.0/"
+                    target="_blank" rel="noopener">CC BY 4.0</a>, and <a
+                    href="https://commons.wikimedia.org/wiki/File:Moscow_State_University_crop.jpg" target="_blank"
+                    rel="noopener">Moscow State University</a> by Dmitry A. Mottl, <a
+                    href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.
+                Avatar: Porco Rosso, &copy; Studio Ghibli.</p>
         </div>
     </footer>
 
-    <script src="/shared/script.js?v=14"></script>
-    <script src="/shared/durak-sfx.js"></script>
-    <script src="/shared/durak.js"></script>
-    <script src="/live/live.js"></script>
-    <script src="/shared/extras.js?v=2"></script>
-    <script src="/shared/motion.js?v=2"></script>
-    <script src="/shared/terrain.js"></script>
-    <script src="/shared/nav.js"></script>
+    <script src="/shared/script.js?v=40"></script>
+    <script src="/live/live.js?v=40"></script>
+    <script src="/shared/nav.js?v=40"></script>
 </body>
 
 </html>
