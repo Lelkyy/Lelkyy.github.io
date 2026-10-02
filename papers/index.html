@@ -4,111 +4,171 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Papers · Leonid Elkin</title>
-    <meta name="description" content="Leonid Elkin's research papers: neural scaling laws in a multilayer perceptron, and primordial binaries in open star clusters." />
+    <title>Papers &middot; Leonid Elkin</title>
+    <meta name="description"
+        content="Leonid Elkin's research papers: neural scaling laws in a multilayer perceptron, and primordial binaries in open star clusters." />
     <meta name="theme-color" content="#0a0a0a" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Papers · Leonid Elkin" />
-    <meta property="og:description" content="Leonid Elkin's research papers: neural scaling laws in a multilayer perceptron, and primordial binaries in open star clusters." />
+    <meta property="og:description"
+        content="Two research papers by Leonid Elkin, each with its code: neural scaling laws, and how binary stars change how long an open cluster survives." />
     <meta property="og:url" content="https://leonid-elkin.github.io/papers/" />
-    <meta property="og:site_name" content="Leonid Elkin" />
-    <meta property="og:image" content="https://leonid-elkin.github.io/previews/share.jpg" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="420" />
+    <meta property="og:image" content="https://leonid-elkin.github.io/previews/this-website.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://leonid-elkin.github.io/papers/" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
+    <link rel="canonical" href="https://leonid-elkin.github.io/about.html" />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=30" />
-    <link rel="stylesheet" href="/shared/durak.css?v=30" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=19" />
 </head>
 
 <body>
-    <a class="skip" href="#main">Skip to content</a>
-    <header class="site-head">
+    <div class="progress" aria-hidden="true"></div>
+    <nav class="nav" aria-label="Main">
         <div class="wrap">
-            <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span
-                    class="bars" aria-hidden="true"></span>Menu</button>
-            <nav class="site-nav" id="site-nav" aria-label="Main">
-                <ul>
-                    <li><a href="/projects/">Work</a></li>
-                    <li><a href="/papers/" aria-current="page">Papers</a></li>
-                    <li><a href="/live/">Live</a></li>
-                    <li><a href="/fuguesplit/">FugueSplit</a></li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>Leonid Elkin</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/papers/" aria-current="page">Papers</a></li>
+                <li><a href="/live/">Live</a></li>
+                <li><a href="/fuguesplit/">Fugue</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <main id="main">
+    <div class="facet-band slim" data-terrain aria-hidden="true">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
+            <rect width="1440" height="100" fill="#0a0a0a" />
+            <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
+            <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
+            <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
+            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
+            <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
+        </svg>
+    </div>
 
-        <div class="wrap">
-            <header class="page-head">
-                <p class="label"><b>02</b>Research</p>
-                <h1 class="display">Papers</h1>
-                <p class="lede">Two papers from independent research: one on how a neural network scales, one on how
-                    long a star cluster survives. Both open in the page, and the code behind each is public.</p>
-            </header>
-            <div id="papers-list"></div>
-            <section class="section" style="padding-bottom: 0;" aria-labelledby="reports-title">
-                <div class="sec-head">
-                    <span class="label">Also</span>
-                    <h2 class="display" id="reports-title">Reports</h2>
+    <main>
+        <section class="section" id="papers">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="idx">Papers</span>
+                    <h1 class="display overprint" data-text="Papers">Papers</h1>
+                    <span class="aside mono">two papers, both open</span>
                 </div>
-                <ol class="lines" id="reports-list"></ol>
-            </section>
-        </div>
+                <p class="setup">Two papers from independent research: one on how a neural network scales, one on
+                    how long a star cluster survives. Each opens in the page, and the code behind both is public.</p>
+
+                <article class="paper" id="neural-scaling-laws">
+                    <div class="plate" aria-hidden="true">01<span class="plate-cat">EPQ</span></div>
+                    <div class="paper-body">
+                        <h2 class="paper-title">Investigating Neural Scaling Laws in a Multilayer Perceptron</h2>
+                        <p class="paper-meta mono">April 2025 &middot; 57 pages &middot; Extended Project Qualification</p>
+                        <p>How do model size, learning rate and the number of training epochs change what a multilayer
+                            perceptron can do? I built an MLP from scratch in NumPy, trained it in many configurations
+                            and measured each one on MNIST.</p>
+                        <p>Bigger models scored better, with diminishing returns past a certain size. More epochs
+                            raised accuracy and made the larger models overfit. Higher learning rates converged faster
+                            and went unstable when pushed, and the best rate depended on the size of the model. A
+                            model built from those findings reached 98.51% on MNIST.</p>
+                        <dl class="paper-stats">
+                            <div><dt>98.51%</dt><dd class="mono">MNIST accuracy</dd></div>
+                            <div><dt>9.4%</dt><dd class="mono">fewer errors than the best comparable result</dd></div>
+                            <div><dt>57</dt><dd class="mono">pages</dd></div>
+                        </dl>
+                        <p class="paper-links mono">
+                            <a href="/doc/?f=%2FDocumentation%2FInvestigating_neural_scaling_laws.pdf&amp;t=Investigating%20Neural%20Scaling%20Laws%20in%20a%20Multilayer%20Perceptron">read the paper</a>
+                            <a href="/Documentation/Investigating_neural_scaling_laws.pdf" download="investigating-neural-scaling-laws.pdf">download</a>
+                            <a href="https://github.com/Leonid-Elkin/Scratch-MLP-implementation" target="_blank" rel="noopener">source</a>
+                            <a href="https://pypi.org/project/elkwork/" target="_blank" rel="noopener">elkwork on PyPI</a>
+                            <a href="/case/?p=neural-scaling-laws">the project</a>
+                        </p>
+                    </div>
+                    <figure class="paper-fig">
+                        <img src="/previews/neural-scaling-laws.jpg" alt="The compute efficiency frontier: loss against compute, one curve per model" loading="lazy" decoding="async" />
+                        <figcaption class="mono">The compute efficiency frontier, one curve per model.</figcaption>
+                    </figure>
+                </article>
+
+                <article class="paper" id="open-clusters">
+                    <div class="plate" aria-hidden="true">02<span class="plate-cat">Physics</span></div>
+                    <div class="paper-body">
+                        <h2 class="paper-title">How Does the Primordial Binary Fraction Affect the Survival Time of an Open Cluster in the Galactic Disk?</h2>
+                        <p class="paper-meta mono">June 2025 &middot; 5 pages and a poster &middot; Physics investigation</p>
+                        <p>A 2D N-body simulation, written for the question, ran clusters from identical starting
+                            conditions with 0%, 8%, 16% and 24% of their stars in primordial binaries, 10 seeds each.</p>
+                        <p>Clusters with more binaries kept more of their mass and their cores contracted more slowly,
+                            which supports binaries acting as an internal energy source that delays core collapse. The
+                            effect grew steadily with the binary fraction, with no point where binaries started to hurt.</p>
+                        <dl class="paper-stats">
+                            <div><dt>~30,000</dt><dd class="mono">extra time units survived at 24% binaries</dd></div>
+                            <div><dt>4 &times; 10</dt><dd class="mono">binary fractions &times; seeds</dd></div>
+                            <div><dt>5</dt><dd class="mono">pages, plus a poster</dd></div>
+                        </dl>
+                        <p class="paper-links mono">
+                            <a href="/doc/?f=%2FDocumentation%2FPhysics_investigation%20%282%29.pdf&amp;t=How%20Does%20the%20Primordial%20Binary%20Fraction%20Affect%20the%20Survival%20Time%20of%20an%20Open%20Cluster%20in%20the%20Galactic%20Disk%3F">read the paper</a>
+                            <a href="/doc/?f=%2FDocumentation%2FPhysics_investigation_poster.pdf&amp;t=Primordial%20binaries%20and%20open%20cluster%20survival%2C%20poster">the poster</a>
+                            <a href="/Documentation/Physics_investigation (2).pdf" download="primordial-binaries-open-cluster-survival.pdf">download</a>
+                            <a href="https://github.com/Leonid-Elkin/N-body-simulation" target="_blank" rel="noopener">source</a>
+                            <a href="/case/?p=open-clusters">the project</a>
+                        </p>
+                    </div>
+                    <figure class="paper-fig">
+                        <div class="cluster-band" id="cluster" aria-hidden="true">
+                            <canvas></canvas>
+                            <p class="cluster-readout"><span>Star cluster &middot; running live</span><b>N 140</b></p>
+                        </div>
+                        <figcaption class="mono">A toy version, live in your browser. It softens gravity to stay smooth, and the paper's own code did not.</figcaption>
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="reports">
+            <div class="wrap">
+                <div class="section-head">
+                    <span class="idx">Reports</span>
+                    <h2 class="display">Reports</h2>
+                    <span class="aside mono">&nbsp;</span>
+                </div>
+                <ul class="doors">
+                    <li>
+                        <a href="/doc/?f=%2FDocumentation%2FTonbridge%20CanSat_ReLAACS_%202024-25%20CDR%20.pdf&amp;t=Team%20Re-LAACS%20Critical%20Design%20Review">
+                            <span class="door-idx mono">01</span>
+                            <h3>Critical Design Review</h3>
+                            <p>Team Re-LAACS for the UK CanSat competition, 31 January 2025: the mission, the payload, the
+                                ground station and the test campaign. 36 pages, written by seven of us.</p>
+                            <span class="door-go mono">read it &rarr;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
 
-    <footer class="site-foot" id="contact">
-        <div class="wrap foot-main">
-            <div>
-                <p class="label">Contact</p>
-                <h2 class="display">Get in touch</h2>
-                <div class="email-row">
-                    <a class="email" href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a>
-                    <button class="btn small" type="button" data-copy="lnd.elkn@gmail.com">Copy</button>
-                </div>
-            </div>
-            <div>
-                <button class="egg" id="egg" type="button" aria-label="A stack of cards. Deal them.">
-                    <span class="egg-hint" aria-hidden="true">deal?</span>
-                    <span class="egg-stack" aria-hidden="true"></span>
-                </button>
-                <ul class="foot-links">
-                    <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
-                    <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
-                    <li><a href="https://pypi.org/project/elkwork/" target="_blank" rel="noopener">PyPI</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="wrap foot-base">
-            <span>Leonid Elkin, 2026</span>
-            <a href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io" target="_blank" rel="noopener">Source for this site &#8599;</a>
+    <footer id="contact">
+        <div class="wrap">
+            <p class="col-label">Contact</p>
+            <ul class="foot-links">
+                <li><a href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a></li>
+                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+            </ul>
         </div>
     </footer>
 
-    <div class="durak-panel" id="durak-panel" role="dialog" aria-modal="true" aria-label="Durak" hidden>
-        <div class="panel-inner">
-            <div class="panel-head">
-                <h2 class="display">Durak</h2>
-                <a class="panel-link" href="/durak-online/">Play a friend online &rarr;</a>
-                <button class="panel-close" type="button">Close &times;</button>
-            </div>
-            <div class="durak" id="durak" data-deferred></div>
-        </div>
-    </div>
-
-    <script src="/shared/data.js?v=30"></script>
-    <script src="/shared/site.js?v=30"></script>
-    <script src="/shared/durak-sfx.js"></script>
-    <script src="/shared/durak.js?v=30"></script>
-    <script src="/shared/egg.js?v=30"></script>
+    <script src="/shared/script.js?v=14"></script>
+    <script src="/papers/cluster.js"></script>
+    <script src="/shared/extras.js?v=2"></script>
+    <script src="/shared/motion.js?v=2"></script>
+    <script src="/shared/terrain.js"></script>
+    <script src="/shared/nav.js"></script>
 </body>
 
 </html>

@@ -86,8 +86,8 @@ Four behaviours worth knowing:
 
 `fuguesplit/index.html` is left out: a generated score viewer with thirteen
 thousand runs of text in it, none of them site copy. The project captions and
-write-ups are not in here either: they all live in one file,
-`shared/data.js`.
+case write-ups are not in here either — they already live in one file each,
+`shared/script.js` and `case/cases.js`.
 
 ## refresh_titles.py
 

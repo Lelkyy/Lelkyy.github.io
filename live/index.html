@@ -4,181 +4,139 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Live · Leonid Elkin</title>
-    <meta name="description" content="Things Leonid Elkin built, running now: the Drone Strike Map, MoveGrade grading a game, Durak against the computer, and a year of commits." />
+    <title>Live &middot; Leonid Elkin</title>
+    <meta name="description"
+        content="Running now: the Drone Strike Map, MoveGrade grading a game in the page, Durak against the computer, and a year of commits." />
     <meta name="theme-color" content="#0a0a0a" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Live · Leonid Elkin" />
-    <meta property="og:description" content="Things Leonid Elkin built, running now: the Drone Strike Map, MoveGrade grading a game, Durak against the computer, and a year of commits." />
-    <meta property="og:url" content="https://leonid-elkin.github.io/live/" />
-    <meta property="og:site_name" content="Leonid Elkin" />
-    <meta property="og:image" content="https://leonid-elkin.github.io/previews/share.jpg" />
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="420" />
+    <meta property="og:description"
+        content="The Drone Strike Map, and a year of commits pulled live from the GitHub API." />
+    <meta property="og:url" content="https://leonid-elkin.github.io/live.html" />
+    <meta property="og:image" content="https://leonid-elkin.github.io/previews/drone-strike-map.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="canonical" href="https://leonid-elkin.github.io/live/" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
+    <link rel="canonical" href="https://leonid-elkin.github.io/live.html" />
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%23ff2d16'/%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
-    <link rel="stylesheet" href="/shared/style.css?v=30" />
-    <link rel="stylesheet" href="/shared/durak.css?v=30" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="/shared/style.css?v=19" />
+    <link rel="stylesheet" href="/shared/durak.css" />
 </head>
 
 <body>
-    <a class="skip" href="#main">Skip to content</a>
-    <header class="site-head">
+    <div class="progress" aria-hidden="true"></div>
+    <nav class="nav" aria-label="Main">
         <div class="wrap">
-            <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span>Leonid Elkin</a>
-            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span
-                    class="bars" aria-hidden="true"></span>Menu</button>
-            <nav class="site-nav" id="site-nav" aria-label="Main">
-                <ul>
-                    <li><a href="/projects/">Work</a></li>
-                    <li><a href="/papers/">Papers</a></li>
-                    <li><a href="/live/" aria-current="page">Live</a></li>
-                    <li><a href="/fuguesplit/">FugueSplit</a></li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>Leonid Elkin</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/papers/">Papers</a></li>
+                <li><a href="/live/" aria-current="page">Live</a></li>
+                <li><a href="/fuguesplit/">Fugue</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
-    <main id="main">
+    <div class="facet-band slim" data-terrain aria-hidden="true">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" shape-rendering="crispEdges">
+            <rect width="1440" height="100" fill="#0a0a0a" />
+            <polygon points="0,100 0,62 240,30 480,66 700,40 940,74 1180,44 1440,70 1440,100" fill="#131313" />
+            <polygon points="240,30 480,66 380,100 120,100" fill="#0f0f0f" />
+            <polygon points="700,40 940,74 830,100 560,100" fill="#171717" />
+            <polygon points="940,74 1180,44 1240,100 1040,100" fill="#141414" />
+            <polygon points="1180,44 1440,70 1440,100 1240,100" fill="#101010" />
+        </svg>
+    </div>
 
-        <div class="wrap">
-            <header class="page-head">
-                <p class="label"><b>03</b>Running now</p>
-                <h1 class="display">Live</h1>
-                <p class="lede">Things that are running, not pictures of them. The map updates itself every morning.
-                    MoveGrade, Durak and the commit log run in your browser.</p>
-            </header>
-        </div>
-
-        <div class="live-tabs">
+    <main>
+        <section class="section" id="live">
             <div class="wrap">
-                <div class="tabs" id="live-tabs" role="tablist" aria-label="What is running">
-                    <button class="tab" type="button" role="tab" id="tab-map" aria-controls="panel-map"
-                        data-panel="map"><span class="n">01</span>Strike map</button>
-                    <button class="tab" type="button" role="tab" id="tab-movegrade" aria-controls="panel-movegrade"
-                        data-panel="movegrade"><span class="n">02</span>MoveGrade</button>
-                    <button class="tab" type="button" role="tab" id="tab-durak" aria-controls="panel-durak"
-                        data-panel="durak"><span class="n">03</span>Durak</button>
-                    <button class="tab" type="button" role="tab" id="tab-commits" aria-controls="panel-commits"
-                        data-panel="commits"><span class="n">04</span>Commits</button>
+                <div class="section-head">
+                    <span class="idx">Live</span>
+                    <h1 class="display overprint" data-text="Live fire">Live fire</h1>
+                    <span class="aside mono">running, not pictured</span>
+                </div>
+                <p class="setup">Everything on this page is running. The strike map updates itself every morning on
+                    its own server; MoveGrade, Durak and the commit log run in your browser.</p>
+
+                <div class="filter-row live-tabs" id="live-tabs" role="tablist" aria-label="What is running">
+                    <button class="filter" type="button" role="tab" id="tab-map" aria-controls="panel-map"
+                        data-panel="map">Strike map</button>
+                    <button class="filter" type="button" role="tab" id="tab-movegrade"
+                        aria-controls="panel-movegrade" data-panel="movegrade">MoveGrade</button>
+                    <button class="filter" type="button" role="tab" id="tab-durak" aria-controls="panel-durak"
+                        data-panel="durak">Durak</button>
+                    <button class="filter" type="button" role="tab" id="tab-commits" aria-controls="panel-commits"
+                        data-panel="commits">Commits</button>
+                </div>
+
+                <div class="live-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map">
+                    <p class="setup">The Drone Strike Map, served from its own box. Every figure is a claim, and each
+                        one names the outlet that made it; the arrows walk the days. Its server admits one origin to
+                        frame it, so the map runs right here on leonid-elkin.github.io and opens in its own tab
+                        anywhere else. <a href="/project/">How it is built</a>.</p>
+                    <div class="live-embed" data-live-src="https://dronestrikemap.com/">
+                        <a class="live-still" href="https://dronestrikemap.com/" target="_blank" rel="noopener">
+                            <img src="/previews/drone-strike-map.jpg" alt="The Drone Strike Map: a map of Ukraine with the day's reported strikes, and the sources behind them" loading="lazy" decoding="async" />
+                            <span class="mono">dronestrikemap.com &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="live-panel" id="panel-movegrade" role="tabpanel" aria-labelledby="tab-movegrade" hidden>
+                    <p class="setup">The extension's own panel and its own Stockfish, running in this page. Pick a
+                        famous game or paste a PGN, then step through it; each move is graded as it appears.
+                        <a href="/case/?p=movegrade">How it works</a>.</p>
+                    <div id="mg-root"></div>
+                </div>
+
+                <div class="live-panel" id="panel-durak" role="tabpanel" aria-labelledby="tab-durak" hidden>
+                    <p class="setup">Thirty-six cards, transfers on, the lowest trump leads. Click a card to play it;
+                        the buttons under the table take the cards or end your turn. To play a friend instead,
+                        <a href="/durak-online/">open a table online</a>.</p>
+                    <div class="durak" id="durak" data-deferred></div>
+                </div>
+
+                <div class="live-panel" id="panel-commits" role="tabpanel" aria-labelledby="tab-commits" hidden>
+                    <p class="setup">A year of work, one square a day, then the newest of it in longhand, both pulled
+                        live from the GitHub API in your browser, across the ten repositories pushed to most
+                        recently. Each line is what was edited, and when.
+                        <a href="https://github.com/Leonid-Elkin?tab=repositories" target="_blank" rel="noopener">All
+                            repositories</a>.</p>
+                    <div id="commit-graph" class="commit-graph"></div>
+                    <div id="commit-feed"></div>
                 </div>
             </div>
-        </div>
-
-        <div class="wrap">
-            <section class="live-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map">
-                <div class="panel-top">
-                    <div>
-                        <h2 class="display">Drone Strike Map</h2>
-                        <p>Every reported drone and missile strike in the Russia-Ukraine war, day by day, with the
-                            outlet behind each figure. Step through the days with the arrows.</p>
-                        <p class="readouts"><span class="status live">Updates every morning</span><span
-                                class="label">Public API</span><span class="label">A source on every figure</span></p>
-                    </div>
-                    <div class="gos">
-                        <a class="go ext" href="https://dronestrikemap.com/" target="_blank" rel="noopener">Open the map</a>
-                        <a class="go ext" href="https://dronestrikemap.com/api/strikes" target="_blank" rel="noopener">The API</a>
-                        <a class="go" href="/case/?p=drone-strike-map">How it works</a>
-                    </div>
-                </div>
-                <div class="map-frame" data-src="https://dronestrikemap.com/">
-                    <a class="still" href="https://dronestrikemap.com/" target="_blank" rel="noopener">
-                        <img src="/previews/drone-strike-map.jpg"
-                            alt="The Drone Strike Map: one day's reported strikes, with the sources for each figure" />
-                        <span>Open the live map &#8599;</span>
-                    </a>
-                </div>
-            </section>
-
-            <section class="live-panel" id="panel-movegrade" role="tabpanel" aria-labelledby="tab-movegrade" hidden>
-                <div class="panel-top">
-                    <div>
-                        <h2 class="display">MoveGrade</h2>
-                        <p>The extension's own panel and its own Stockfish, running in this page. Pick a famous game
-                            or paste a PGN, then step through it. Each move is graded as it appears.</p>
-                    </div>
-                    <div class="gos">
-                        <a class="go ext" href="https://github.com/Leonid-Elkin/MoveGrade/releases/latest/download/MoveGrade.zip">Get the extension</a>
-                        <a class="go" href="/case/?p=movegrade">How it works</a>
-                    </div>
-                </div>
-                <div id="mg-root"></div>
-            </section>
-
-            <section class="live-panel" id="panel-durak" role="tabpanel" aria-labelledby="tab-durak" hidden>
-                <div class="panel-top">
-                    <div>
-                        <h2 class="display">Durak</h2>
-                        <p>The Russian card game with transfers. 36 cards, trumps from the bottom of the deck, and the
-                            last player holding cards loses. Click a card to play it. The buttons under the table take
-                            the cards or end your turn.</p>
-                    </div>
-                    <div class="gos">
-                        <a class="go" href="/durak-online/">Play a friend online</a>
-                    </div>
-                </div>
-                <div class="durak" id="durak" data-deferred></div>
-                <div class="section" style="padding-bottom: 0;">
-                    <p class="durak-note">A defender who hasn't beaten anything yet can lay a card of the same rank and
-                        pass the whole attack on. That works only while nothing on the table is beaten, the other
-                        player has enough cards to answer, and there are fewer than six cards down.</p>
-                    <p class="durak-note">The online table has no server. One player hosts and shares a six-letter
-                        code, and the two browsers talk directly over WebRTC. The host runs every move through the same
-                        rules function and sends the whole state to both players.</p>
-                </div>
-            </section>
-
-            <section class="live-panel" id="panel-commits" role="tabpanel" aria-labelledby="tab-commits" hidden>
-                <div class="panel-top">
-                    <div>
-                        <h2 class="display">Commits</h2>
-                        <p>A year of work, one square a day, then the newest commits. Both come from the GitHub API, in
-                            your browser, across the ten repositories pushed to most recently.</p>
-                    </div>
-                    <div class="gos">
-                        <a class="go ext" href="https://github.com/Leonid-Elkin?tab=repositories" target="_blank" rel="noopener">All repositories</a>
-                    </div>
-                </div>
-                <div id="commit-graph" class="commit-graph"></div>
-                <div id="commit-feed"></div>
-            </section>
-        </div>
+        </section>
     </main>
 
-    <footer class="site-foot" id="contact">
-        <div class="wrap foot-main">
-            <div>
-                <p class="label">Contact</p>
-                <h2 class="display">Get in touch</h2>
-                <div class="email-row">
-                    <a class="email" href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a>
-                    <button class="btn small" type="button" data-copy="lnd.elkn@gmail.com">Copy</button>
-                </div>
-            </div>
-            <div>
-                <ul class="foot-links">
-                    <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
-                    <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
-                    <li><a href="https://pypi.org/project/elkwork/" target="_blank" rel="noopener">PyPI</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="wrap foot-base">
-            <span>Leonid Elkin, 2026</span>
-            <a href="https://github.com/Leonid-Elkin/Leonid-Elkin.github.io" target="_blank" rel="noopener">Source for this site &#8599;</a>
+    <footer id="contact">
+        <div class="wrap">
+            <p class="col-label">Contact</p>
+            <ul class="foot-links">
+                <li><a href="mailto:lnd.elkn@gmail.com">lnd.elkn@gmail.com</a></li>
+                <li><a href="https://github.com/Leonid-Elkin" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://elkyy.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
+            </ul>
+            <span class="colophon mono" id="last-change"></span>
         </div>
     </footer>
 
-    <script src="/shared/data.js?v=30"></script>
-    <script src="/shared/site.js?v=30"></script>
+    <script src="/shared/script.js?v=14"></script>
     <script src="/shared/durak-sfx.js"></script>
-    <script src="/shared/durak.js?v=30"></script>
+    <script src="/shared/durak.js"></script>
+    <script src="/live/live.js"></script>
+    <script src="/shared/extras.js?v=2"></script>
+    <script src="/shared/motion.js?v=2"></script>
+    <script src="/shared/terrain.js"></script>
+    <script src="/shared/nav.js"></script>
 </body>
 
 </html>

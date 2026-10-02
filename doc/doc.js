@@ -27,8 +27,8 @@
     } catch (e) {
       return null;
     }
-    /* Links have been written both with and without the leading slash, so
-       accept either and store it without. */
+    /* Links are written with and without the leading slash; accept both
+       and keep it without. */
     path = path.replace(/^\//, "");
     if (path.indexOf("..") !== -1) return null;
     if (!/^Documentation\/[^/\\]+\.pdf$/i.test(path)) return null;
@@ -56,6 +56,7 @@
        leaving an empty grey box. */
     document.title = "Document not found · Leonid Elkin";
     titleEl.textContent = "Not found";
+    titleEl.setAttribute("data-text", "Not found");
     if (frame) {
       frame.innerHTML = "";
       const box = document.createElement("div");
@@ -63,16 +64,15 @@
       const p = document.createElement("p");
       p.textContent = "There is no document at that address.";
       const back = document.createElement("p");
+      back.className = "mono";
       const a = document.createElement("a");
-      a.className = "btn";
       a.href = "/projects/";
-      a.textContent = "See all work";
+      a.textContent = "back to the index →";
       back.appendChild(a);
       box.append(p, back);
       frame.appendChild(box);
     }
-    const actions = document.querySelector(".page-head .actions");
-    if (actions) actions.hidden = true;
+    document.querySelector(".doc-actions").hidden = true;
     return;
   }
 
@@ -80,6 +80,7 @@
 
   document.title = label + " · Leonid Elkin";
   titleEl.textContent = label;
+  titleEl.setAttribute("data-text", label);
 
   /* The filenames carry spaces and brackets - "/Physics_investigation (2).pdf"
      - so the path is encoded before it becomes a URL. */
@@ -89,19 +90,19 @@
      when the frame is narrower than the paper it is showing. */
   const obj = document.getElementById("doc-object");
   obj.setAttribute("data", href + "#view=FitH");
-  obj.setAttribute("aria-label", label + ", PDF");
+  obj.setAttribute("aria-label", label + " (PDF)");
 
   ["doc-open", "doc-open-fallback", "doc-download"].forEach(function (id) {
     const a = document.getElementById(id);
     if (a) a.href = href;
   });
 
-  /* Save it under its title rather than whatever the file happens to be
-     called in the repo. */
+  /* A saved copy takes the document's title as its name, not whatever the
+     file is called in the repo. */
   const save = document.getElementById("doc-download");
   if (save) {
     save.setAttribute("download",
-      label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + ".pdf");
+      label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 80) + ".pdf");
   }
 
   /* Back to wherever you came from, when that was us. A referrer from
@@ -112,8 +113,8 @@
       const from = new URL(document.referrer);
       if (from.origin === location.origin && !/^\/doc\//.test(from.pathname)) {
         back.href = from.href;
-        if (/^\/case\//.test(from.pathname)) back.textContent = "← Back to the project";
-        else if (/^\/about\//.test(from.pathname)) back.textContent = "← Back to About";
+        if (/^\/case\//.test(from.pathname)) back.textContent = "← back to the project";
+        else if (/^\/papers\//.test(from.pathname)) back.textContent = "← back to the papers";
       }
     } catch (e) {
       /* leave the default */
