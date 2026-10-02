@@ -281,12 +281,12 @@ window.SITE = (function () {
       title: "Neural scaling laws",
       cat: "research",
       tier: 1,
-      blurb: "MLPs written from scratch in NumPy and trained at many sizes to measure how loss falls with parameters. A 56-page paper.",
-      summary: "Multilayer perceptrons written from scratch in NumPy, with no framework, trained at a range of sizes to measure how test loss falls with parameter count. The library is on PyPI as elkwork, and the write-up is a 56-page paper.",
+      blurb: "MLPs written from scratch in NumPy and trained at many sizes to measure how loss falls with parameters. A 57-page paper.",
+      summary: "Multilayer perceptrons written from scratch in NumPy, with no framework, trained at a range of sizes to measure how test loss falls with parameter count. The library is on PyPI as elkwork, and the write-up is a 57-page paper.",
       tags: ["Python", "NumPy", "LaTeX"],
       image: { src: "/previews/neural-scaling-laws.jpg", alt: "The efficiency frontier: test loss against parameter count, one point per model", caption: "The efficiency frontier: test loss against parameter count, one point per model." },
       links: [
-        { label: "Read the paper", url: "/Documentation/Investigating_neural_scaling_laws (9).pdf", title: "Investigating neural scaling laws" },
+        { label: "Read the paper", url: "/Documentation/Investigating_neural_scaling_laws.pdf", title: "Investigating neural scaling laws" },
         { label: "elkwork on PyPI", url: "https://pypi.org/project/elkwork/" },
         { label: "Source", url: GH + "Scratch-MLP-implementation" },
         { label: "Code and models, zip", url: "/MLP all documents (2).zip" },
@@ -295,7 +295,7 @@ window.SITE = (function () {
         ["Results", "98.52% on MNIST and 93.35% on FashionMNIST, and a clean power-law frontier once the models were trained to convergence. Much of what first looked like scaling turned out to depend on the optimiser."],
         ["Companion", "Drawer is the same network reading a digit you draw, one layer at a time."],
       ],
-      facts: [["Role", "Solo"], ["Stack", "Python, NumPy, LaTeX"], ["Output", "56-page paper, PyPI package"], ["Dates", "2024 to April 2025"]],
+      facts: [["Role", "Solo"], ["Stack", "Python, NumPy, LaTeX"], ["Output", "57-page paper, PyPI package"], ["Dates", "2024 to April 2025"]],
     },
     {
       slug: "globular-clusters",
@@ -392,7 +392,7 @@ window.SITE = (function () {
 
   const education = [
     { when: "Now", title: "BS CSE-AI", org: "UC San Diego" },
-    { when: "Until 2025", title: "A-Levels", org: "Tonbridge School" },
+    { when: "", title: "A-Levels", org: "Tonbridge School" },
   ];
 
   const research = [
@@ -409,7 +409,7 @@ window.SITE = (function () {
     {
       when: "2024 to Apr 2025",
       title: "Investigating neural scaling laws",
-      org: "Independent research, 56-page paper",
+      org: "Independent research, 57-page paper",
       points: [
         "Wrote multilayer perceptrons from scratch in NumPy and published the library on PyPI as elkwork.",
         "Trained a range of model sizes to measure how test loss falls with parameter count. Reached 98.52% on MNIST and 93.35% on FashionMNIST.",
