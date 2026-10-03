@@ -212,7 +212,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .timeline-title:first-child { margin-top: 0; }
 .timeline { list-style: none; border-top: 1px solid var(--line); }
 .timeline li { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 4px 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-.timeline .when { font-family: var(--f-mono); font-size: 0.78rem; color: var(--text-3); padding-top: 3px; }
+.timeline .when { font-family: var(--f-mono); font-size: 0.78rem; color: var(--text-3); padding-top: 3px; white-space: nowrap; }
 .timeline h3 { font-family: var(--f-sans); font-size: 1rem; font-weight: 600; letter-spacing: 0; line-height: 1.4; }
 .timeline p { font-size: 0.93rem; color: var(--text-2); }
 .skill-lines { list-style: none; margin-top: 28px; }
