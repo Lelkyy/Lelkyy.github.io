@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350">
+<title>Yavalath star</title>
+<defs><radialGradient id="glow" cx="175.0" cy="175.0" r="105.00" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="rgb(0,220,255)" stop-opacity="0.4"/><stop offset="1" stop-color="rgb(0,220,255)" stop-opacity="0"/></radialGradient></defs>
+<rect width="350" height="350" fill="#000"/>
+<polygon points="332.50,175.00 253.75,311.40 96.25,311.40 17.50,175.00 96.25,38.60 253.75,38.60" fill="none" stroke="rgb(0,200,255)" stroke-width="0.8"/>
+<circle cx="175.0" cy="175.0" r="157.50" fill="url(#glow)"/>
+<polygon points="175.00,175.00 175.00,96.25 189.32,150.20" fill="rgb(0,169,196)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 189.32,150.20 243.20,135.62" fill="rgb(76,230,255)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 243.20,135.62 203.64,175.00" fill="rgb(0,169,196)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 203.64,175.00 243.20,214.38" fill="rgb(76,230,255)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 243.20,214.38 189.32,199.80" fill="rgb(0,169,196)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 189.32,199.80 175.00,253.75" fill="rgb(76,230,255)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 175.00,253.75 160.68,199.80" fill="rgb(0,169,196)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 160.68,199.80 106.80,214.38" fill="rgb(76,230,255)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 106.80,214.38 146.36,175.00" fill="rgb(0,169,196)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 146.36,175.00 106.80,135.62" fill="rgb(76,230,255)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 106.80,135.62 160.68,150.20" fill="rgb(0,169,196)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,175.00 160.68,150.20 175.00,96.25" fill="rgb(76,230,255)" fill-opacity="0.588" stroke="rgb(0,220,255)" stroke-width="2" stroke-linejoin="miter"/>
+<polygon points="175.00,96.25 189.32,150.20 243.20,135.62 203.64,175.00 243.20,214.38 189.32,199.80 175.00,253.75 160.68,199.80 106.80,214.38 146.36,175.00 106.80,135.62 160.68,150.20" fill="rgb(0,80,140)" fill-opacity="0.706" stroke="rgb(0,220,255)" stroke-width="2"/>
+<line x1="253.75" y1="311.40" x2="175.00" y2="175.00" stroke="rgb(0,150,255)" stroke-opacity="0.706" stroke-width="1.5"/>
+<line x1="17.50" y1="175.00" x2="175.00" y2="175.00" stroke="rgb(0,150,255)" stroke-opacity="0.706" stroke-width="1.5"/>
+<line x1="253.75" y1="38.60" x2="175.00" y2="175.00" stroke="rgb(0,150,255)" stroke-opacity="0.706" stroke-width="1.5"/>
+<line x1="332.50" y1="175.00" x2="204.87" y2="175.00" stroke="rgb(0,150,255)" stroke-opacity="0.706" stroke-width="1.5"/>
+<line x1="96.25" y1="311.40" x2="160.06" y2="200.87" stroke="rgb(0,150,255)" stroke-opacity="0.706" stroke-width="1.5"/>
+<line x1="96.25" y1="38.60" x2="160.06" y2="149.13" stroke="rgb(0,150,255)" stroke-opacity="0.706" stroke-width="1.5"/>
+<circle cx="332.50" cy="175.00" r="5" fill="rgb(0,220,255)"/>
+<circle cx="253.75" cy="311.40" r="5" fill="rgb(0,220,255)"/>
+<circle cx="96.25" cy="311.40" r="5" fill="rgb(0,220,255)"/>
+<circle cx="17.50" cy="175.00" r="5" fill="rgb(0,220,255)"/>
+<circle cx="96.25" cy="38.60" r="5" fill="rgb(0,220,255)"/>
+<circle cx="253.75" cy="38.60" r="5" fill="rgb(0,220,255)"/>
+<circle cx="175.00" cy="175.00" r="5" fill="rgb(0,220,255)"/>
+</svg>
