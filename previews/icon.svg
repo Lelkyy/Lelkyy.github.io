@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350">
 <title>Yavalath star</title>
-<defs><radialGradient id="glow" cx="175.0" cy="175.0" r="105.00" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="rgb(0,220,255)" stop-opacity="0.4"/><stop offset="1" stop-color="rgb(0,220,255)" stop-opacity="0"/></radialGradient></defs>
+<defs><radialGradient id="glow" cx="175.0" cy="175.0" r="78" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="rgb(0,220,255)" stop-opacity="0.3"/><stop offset="0.6" stop-color="rgb(0,220,255)" stop-opacity="0.15"/><stop offset="1" stop-color="rgb(0,220,255)" stop-opacity="0"/></radialGradient></defs>
 <rect width="350" height="350" fill="#000"/>
 <polygon points="332.50,175.00 253.75,311.40 96.25,311.40 17.50,175.00 96.25,38.60 253.75,38.60" fill="none" stroke="rgb(0,200,255)" stroke-width="0.8"/>
 <circle cx="175.0" cy="175.0" r="157.50" fill="url(#glow)"/>
