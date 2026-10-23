@@ -6,7 +6,7 @@ import bisect
 import os
 from dataclasses import dataclass, field, replace
 
-from . import arrange, fretting, gpout, midi_in, musicxml_in, rhythm, voices
+from . import arrange, fretting, gpout, midi_in, musicxml_in, rhythm, solo, voices
 from .score import Note, Part, Score
 
 
@@ -50,6 +50,9 @@ class Settings:
     like: str | None = None       # a score whose arrangement this one must
                                   # reproduce wherever the two share a note
     credit: str = "Leonid Elkin"
+    solo: bool = False            # one classical guitar plays every voice,
+                                  # in two notated voices, instead of an
+                                  # ensemble of single lines
     voice_config: voices.VoiceConfig = field(default_factory=voices.VoiceConfig)
 
 
@@ -86,6 +89,9 @@ class Report:
                                  # this arrangement gave to another part
     added_guitar: bool = False
     added_voices: int = 0        # players added because the texture thickened
+    solo: bool = False           # one guitar, every voice
+    dropped: int = 0             # solo: notes no hand could reach
+    barres: int = 0              # solo: barres the fingering calls for
     parts: list[PartReport] = field(default_factory=list)
     # The finished parts and the score they came from, for `check` to
     # audit. Held in memory only; nothing is written out from these.
@@ -140,6 +146,8 @@ def resolve_source(score: Score, choice: str) -> str:
 def convert(midi_path: str, out_path: str, settings: Settings) -> Report:
     score = read_source(midi_path)
     score = _clip_bars(score, settings)
+    if settings.solo:
+        return _convert_solo(score, midi_path, out_path, settings)
     # Count the notes we actually set out to arrange. Counting the whole
     # file instead makes a movement look as though it threw most of the
     # music away: the prelude of BWV 532 is 31 bars of 244, and reported
@@ -272,14 +280,7 @@ def convert(midi_path: str, out_path: str, settings: Settings) -> Report:
         part.extras = _drop_unplayable_chords(part, spots, settings.hand_span)
         end_gp = max(end_gp, max((n.end for n in quantised), default=0))
 
-    bars = rhythm.build_bars(score, score.end_tick)
-    # Make sure the last sounding note has a bar to live in.
-    while bars and bars[-1].end < end_gp:
-        last = bars[-1]
-        if last.length <= 0:
-            break               # a bar of no length would never reach the end
-        bars.append(rhythm.Bar(last.index + 1, last.end, last.numerator,
-                               last.denominator))
+    bars = _bars_to(score, end_gp)
 
     # A source with fewer voices than we have players leaves some parts
     # silent; an empty stave is clutter, so drop it.
@@ -355,6 +356,101 @@ def convert(midi_path: str, out_path: str, settings: Settings) -> Report:
             for part, pos, relief in zip(parts, positions, relief_counts)
         ],
     )
+
+
+def _bars_to(score: Score, end_gp: int) -> list[rhythm.Bar]:
+    """The score's bar lines, carried on until the last note has a bar."""
+    bars = rhythm.build_bars(score, score.end_tick)
+    while bars and bars[-1].end < end_gp:
+        last = bars[-1]
+        if last.length <= 0:
+            break               # a bar of no length would never reach the end
+        bars.append(rhythm.Bar(last.index + 1, last.end, last.numerator,
+                               last.denominator))
+    return bars
+
+
+def _convert_solo(score: Score, midi_path: str, out_path: str,
+                  settings: Settings) -> Report:
+    """Every voice on one classical guitar, written in two voices.
+
+    Nothing here deals notes out: the texture stays whole, and the work is
+    in fretting it as chords and in drawing it as a classical score does.
+    The ensemble's options for players, the bass and chord thinning do not
+    apply. The neck is a classical one, so `fret_count` is capped at its
+    nineteen frets.
+    """
+    if settings.like:
+        raise ValueError("--like is not supported with --solo")
+    cfg = solo.SoloConfig(
+        tuning=list(arrange.TUNINGS[settings.guitar_tuning]),
+        max_fret=min(settings.fret_count, solo.NECK),
+        hand_span=settings.hand_span,
+        fewest_ties=settings.ties == "few",
+    )
+    notes, folded = solo.prepare(score.notes, score.ppq,
+                                 rhythm.grid_ticks(settings.grid), cfg,
+                                 settings.transpose)
+    if not notes:
+        raise ValueError("no notes to arrange")
+    bars = _bars_to(score, max(n.end for n in notes))
+    result = solo.arrange_solo(notes, bars, cfg)
+
+    tempo = settings.tempo or round(score.tempo_at(0))
+    tempo_changes = [] if settings.tempo else _tempo_changes(score, bars)
+    song = solo.build_song(
+        result, bars,
+        title=settings.title or score.title,
+        tempo=tempo,
+        key=score.key,
+        tuning=cfg.tuning,
+        program=gpout.PROGRAMS[settings.guitar_program],
+        tempo_changes=tempo_changes,
+        fewest_ties=cfg.fewest_ties,
+        artist=settings.artist,
+        credit=settings.credit,
+        source=os.path.basename(midi_path),
+    )
+    gpout.write(song, out_path)
+
+    played = result.notes
+    upper = sum(1 for n in played if result.voice_of[n.id] == 1)
+    span = max(n.end for n in played) - min(n.start for n in played)
+    return Report(
+        source=score,
+        title=settings.title or score.title,
+        source_notes=len(score.notes),
+        bars=len(bars),
+        tempo=tempo,
+        key=score.key,
+        bass_tracks=set(),
+        read_as="solo",
+        pulled_back=folded,
+        solo=True,
+        dropped=result.dropped,
+        barres=len(result.barres),
+        parts=[PartReport(
+            name="Guitar",
+            notes=upper,
+            low=min(n.pitch for n in played),
+            high=max(n.pitch for n in played),
+            octave_shift=0,
+            max_fret=max(n.f for n in played),
+            open_strings=sum(1 for n in played if n.f == 0),
+            sounding=_covered(played) / span if span else 0.0,
+            second_notes=len(played) - upper,
+        )],
+    )
+
+
+def _covered(notes) -> int:
+    """Ticks during which at least one of `notes` is sounding."""
+    total = reach = 0
+    for n in sorted(notes, key=lambda n: n.start):
+        if n.end > reach:
+            total += n.end - max(n.start, reach)
+            reach = n.end
+    return total
 
 
 @dataclass

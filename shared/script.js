@@ -45,6 +45,19 @@ const projects = [
     ],
   },
   {
+    title: "Triton Trails",
+    cat: "software",
+    status: "wip",
+    caption:
+      "A navigation app for the UC San Diego campus. Add your classes and it routes you on the footpaths, stairs and bike paths students actually use, with live shuttles, buses and Spin scooters. I lead a team of three.",
+    summary:
+      "Google Maps doesn't know UCSD's footpaths or bike paths. Triton Trails builds its own map of them and routes walks, bike rides, scooter trips and transit across it. Add your classes and it tells you when to leave, which door to use and which floor the room is on.",
+    tags: ["TypeScript", "React", "MapLibre", "GTFS"],
+    links: [
+      { name: "source", url: "https://github.com/Lelkyy/ucsd-campus-nav" },
+    ],
+  },
+  {
     title: "Bach Works Guitar Arranger",
     cat: "software",
     status: "live",
@@ -468,7 +481,7 @@ function initProjects() {
    The home page carries five entries, not the index. These five because each
    one answers a different question: is it real (live and public), was it
    written up (a paper), does anyone use it (installed), does the physics hold
-   (an N-body simulation), and does it ship at scale (3,445 arrangements). Everything else is one click away on the projects index. Titles, so
+   (an N-body simulation), and does it ship at scale. Everything else is one click away on the projects index. Titles, so
    the picks track the entries above rather than their positions.
 
    They are numbered from one in the order listed here: a shortlist counts
@@ -476,7 +489,7 @@ function initProjects() {
 
 const HOME_PICKS = [
   "MoveGrade",
-  "Bach Works Guitar Arranger",
+  "Triton Trails",
   "Penumbra",
   "CanSat 2025",
 ];

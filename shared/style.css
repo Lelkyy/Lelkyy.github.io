@@ -301,7 +301,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* MoveGrade's demo on its own page and on Live */
 .mg-demo { margin-top: 36px; }
 .mg-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 12px; }
-.mg-game { flex: 1 1 260px; min-height: 40px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--paper); font-size: 0.9rem; }
+.mg-game { flex: 1 1 260px; min-width: 0; max-width: 100%; min-height: 40px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--paper); font-size: 0.9rem; }
 .mg-btn { min-width: 44px; min-height: 40px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 10px; background: var(--paper); font-family: var(--f-mono); font-size: 0.8rem; cursor: pointer; }
 .mg-btn:hover { border-color: var(--night); }
 .mg-pos { font-family: var(--f-mono); font-size: 0.78rem; color: var(--text-3); }

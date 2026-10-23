@@ -16,7 +16,7 @@ from .score import Part
 
 # General MIDI programs.
 PROGRAMS = {
-    "clean": 27, "jazz": 26, "overdrive": 29, "distortion": 30,
+    "nylon": 24, "clean": 27, "jazz": 26, "overdrive": 29, "distortion": 30,
     "bass-finger": 33, "bass-pick": 34,
 }
 

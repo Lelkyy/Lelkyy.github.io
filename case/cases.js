@@ -60,6 +60,17 @@ const CASES = {
     ],
     facts: [["Role", "Solo"], ["Stack", "Python, PyQt5, python-chess, C++"], ["Source", "private until it is finished"]],
   },
+  "triton-trails": {
+    picture: "A walk from Geisel Library to WLH 2001: five minutes, with the entrance to use and the room on the second floor.",
+    sections: [
+      ["What it does", "Pick a start and a destination, or add your classes from the Fall 2026 schedule, and it plans the trip on foot, step-free, by bike, by Spin scooter or by transit. For your next class it gives a leave-by time, and for a whole day it shows each walk between classes and whether the gap is long enough. Press Start for turn-by-turn directions that follow your GPS and re-route when you go off course."],
+      ["How routing works", "Routes come from a time-dependent A* search over a graph built from OpenStreetMap, plus the courtyards, plazas and building-side walks traced from UC San Diego's surveyed ground plan. Each mode has its own speeds and preferences. Bikes keep to bike paths and ride with traffic, scooters slow to 8 mph on shared paths and are walked where Spin bans them, and a walk only cuts across a lawn when it saves real time. Transit runs on the campus shuttle, MTS bus and Blue Line trolley timetables from their GTFS feeds."],
+      ["Inside the building", "556 rooms across 84 building codes are mapped to their buildings, so a search for WLH 2001 or CSE 11 lands on the right building. The directions say which door to use, whether there's an elevator and which floor the room is on. A route that starts inside a building leaves by one of its doors."],
+      ["Live data", "Trolleys and buses appear where they last reported, from MTS's GTFS-realtime feed, which the app trims from 650 KB to 21 KB per update. Spin e-bikes and scooters show with their battery and range."],
+      ["The team", "I started the project and lead it. The work is split into tickets that teammates claim, each done on its own branch and merged through a pull request, and two other UCSD students contribute."],
+    ],
+    facts: [["Role", "Lead, team of three"], ["Stack", "TypeScript, React, MapLibre, Vite, GTFS, Vitest"]],
+  },
   "sheet2tab": {
     picture: "A page of notation read into tablature for two guitars.",
     sections: [
