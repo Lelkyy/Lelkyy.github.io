@@ -23,11 +23,6 @@ class Note:
     uid: int = -1       # stable identity of the source note, kept through
                         # every octave fold, transposition and quantisation
                         # so a written note can be traced back to its origin
-    # What a guitar edition says about playing it. Only the solo arranger
-    # reads these; everywhere else a note is just a pitch and a span.
-    finger: int | None = None   # left-hand finger, 0 = open string
-    string: int | None = None   # string the edition asks for, 1 = top
-    slur: bool = False          # hammered or pulled on to the next note
 
     @property
     def duration(self) -> int:

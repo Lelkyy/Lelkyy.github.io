@@ -50,8 +50,7 @@ def read_musicxml(path: str) -> Score:
     # Read every part on its own clock, then line the measures up: the
     # engraving's own bar lines are the truth, and a part that rests for a
     # whole measure still has to advance by it.
-    measured = [_read_part(part, ppq, _is_guitar(part, names.get(part.get("id"), "")))
-                for part in parts]
+    measured = [_read_part(part, ppq) for part in parts]
     bars = max(len(m.bars) for m in measured)
     lengths = []
     for index in range(bars):
@@ -87,9 +86,6 @@ def read_musicxml(path: str) -> Score:
                 velocity=90,
                 src_track=tracks[key],
                 src_channel=pi,
-                finger=entry.finger,
-                string=entry.string,
-                slur=entry.slur,
             ))
 
     score.time_sigs = _signatures(lengths, measured[0].signatures, ppq)
@@ -104,8 +100,7 @@ def read_musicxml(path: str) -> Score:
 class _Entry:
     """One sounding note, still measured from its own bar line."""
 
-    __slots__ = ("measure", "offset", "duration", "pitch", "staff", "voice",
-                 "finger", "string", "slur")
+    __slots__ = ("measure", "offset", "duration", "pitch", "staff", "voice")
 
     def __init__(self, measure, offset, duration, pitch, staff, voice):
         self.measure = measure
@@ -114,9 +109,6 @@ class _Entry:
         self.pitch = pitch
         self.staff = staff
         self.voice = voice
-        self.finger: int | None = None
-        self.string: int | None = None
-        self.slur = False
 
 
 class _Part:
@@ -130,19 +122,12 @@ class _Part:
         self.grace = 0
 
 
-def _read_part(part: ET.Element, ppq: int, guitar: bool = False) -> _Part:
-    """Walk one part, measure by measure, on its own clock.
-
-    A guitar part's fingerings are kept, since a guitar edition's finger
-    numbers are left-hand fingers; a piano's are not, as its 1 is a thumb.
-    """
+def _read_part(part: ET.Element, ppq: int) -> _Part:
+    """Walk one part, measure by measure, on its own clock."""
     out = _Part()
     divisions = ppq
     num, den = 4, 4
     seen_key = False
-    # Written pitch -> sounding pitch. A guitar is written an octave above
-    # where it sounds, and says so here.
-    shift = 0
     # (staff, voice, pitch) -> the entry waiting for its tie to close.
     tied: dict[tuple[str, str, int], _Entry] = {}
 
@@ -152,10 +137,6 @@ def _read_part(part: ET.Element, ppq: int, guitar: bool = False) -> _Part:
         for node in measure:
             if node.tag == "attributes":
                 divisions = _int(node.findtext("divisions"), divisions)
-                transpose = node.find("transpose")
-                if transpose is not None:
-                    shift = (_int(transpose.findtext("chromatic"), 0)
-                             + 12 * _int(transpose.findtext("octave-change"), 0))
                 time = node.find("time")
                 if time is not None:
                     num = _int(time.findtext("beats"), num)
@@ -196,7 +177,6 @@ def _read_part(part: ET.Element, ppq: int, guitar: bool = False) -> _Part:
                 pitch = _pitch(node.find("pitch"))
                 if pitch is None:       # a rest: it only moves the clock
                     continue
-                pitch += shift
                 sounding = max(sounding, onset + length)
                 staff = (node.findtext("staff") or "1").strip()
                 voice = (node.findtext("voice") or "1").strip()
@@ -210,8 +190,6 @@ def _read_part(part: ET.Element, ppq: int, guitar: bool = False) -> _Part:
                     entry = held
                 else:
                     entry = _Entry(index, onset, length, pitch, staff, voice)
-                    if guitar:
-                        _read_technical(node, entry)
                     out.notes.append(entry)
                 if "start" in ties:
                     tied[key] = entry
@@ -273,26 +251,6 @@ def _fit(length: int, ppq: int, den: int) -> tuple[int, int]:
         if unit and length % unit == 0:
             return max(1, length // unit), denominator
     return max(1, round(length / ppq)), 4
-
-
-def _is_guitar(part: ET.Element, name: str) -> bool:
-    """Is this part written for guitar: named so, or tuned like one?"""
-    return "guit" in name.lower() or part.find(".//staff-tuning") is not None
-
-
-def _read_technical(node: ET.Element, entry: _Entry) -> None:
-    """Left-hand finger, circled string and slur, where the edition has them."""
-    for technical in node.iter("technical"):
-        finger = _int(technical.findtext("fingering"), -1)
-        if 0 <= finger <= 4:
-            entry.finger = finger
-        string = _int(technical.findtext("string"), 0)
-        if 1 <= string <= 12:
-            entry.string = string
-        for tag in ("hammer-on", "pull-off"):
-            for mark in technical.findall(tag):
-                if mark.get("type") == "start":
-                    entry.slur = True
 
 
 def _parse(path: str) -> ET.Element:
